@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+    <br><br><br>
+
+    <form style="margin-left: 110px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')"
+          name="level2_test" method="post" action="{{ url_for('evaluate_level2_test') }}" onsubmit="return result();">
+
+    <br>
+    <table>
+        <tr>
+            <td>
+                <label style="font-size: 26px; text-align :left; margin-left: 150px;"><b><font color="black">Preliminary
+                    Level Test</font></b></label>
+            </td>
+            <td>
+                <div>
+                    <button class="btn-info btn" type="submit" id="period" style="display: none ;">Start Quiz</button>
+                </div>
+
+                <div id="getting-started"></div>
+
+                <div style="margin-left: 300px">
+                    <label style="font-size: 24px; text-align :left; margin-left: 100px;"><b><font color="#f08080">Time
+                        Left :&nbsp;</font></b></label>
+                    <snap id="countdown"
+                          style="font-weight: bold;margin-top: -20px ; font-size:30px;color: #f08080;">
+                    </snap>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <div style="overflow: auto; overflow-x: hidden; height: 460px; width: 1150px;margin-left: -50px">
+
+
+    <div class="form-group" style="text-align :left; margin-left: 150px;">
+
+        <!-- Pronoun Question-->
+        <label style="font-size: 18px"><b><font color="purple">Question : Fill in the blanks with the correct
+            pronoun.(Type the correct answer in the relevant text box.)</font></b></label><br><br>
+
+        <table cellspacing="0" cellpadding="0">
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question1" style="color: #000000">1.</label>
+                    <font for="Question1" id="Question1"
+                          style="color: #000000">{{ pronounData[0][1].split("#")[0]|safe }}</font>
+
+                    <input name="pronoun_provided_answer1" type="AnswerSet1" class="form-control" id="AnswerSet1"
+                           placeholder="Answer" style="border-color: #7cfc00">
+
+                    <font for="Question1" id="Question1"
+                          style="color: #000000">{{ pronounData[0][1].split("#")[1]|safe }}</font>
+                </td>
+                <td>
+                    <input type="hidden" id="ans1" name="pronoun_correct_answer1" value="{{ pronounData[0][2]|safe }}"/>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question2" style="color: #000000">2.</label>
+
+                    <font for="Question" id="Question2"
+                          style="color: #000000">{{ pronounData[1][1].split("#")[0]|safe }}</font>
+
+                    <input name="pronoun_provided_answer2" type="AnswerSet2" class="form-control" id="AnswerSet2"
+                           placeholder="Answer" style="border-color: #7cfc00">
+
+                    <font for="Question" id="Question2"
+                          style="color: #000000">{{ pronounData[1][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+
+                    <input type="hidden" id="ans2" name="pronoun_correct_answer2" value="{{ pronounData[1][2]|safe }}"/>
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question3" style="color: #000000">3.</label>
+
+                    <font for="Question" id="Question3"
+                          style="color: #000000">{{ pronounData[2][1].split("#")[0]|safe }}</font>
+
+                    <input name="pronoun_provided_answer3" type="AnswerSet3" class="form-control" id="AnswerSet3"
+                           placeholder="Answer" style="border-color: #7cfc00">
+
+                    <font for="Question" id="Question3"
+                          style="color: #000000">{{ pronounData[2][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+
+                    <input type="hidden" id="ans3" name="pronoun_correct_answer3" value="{{ pronounData[2][2]|safe }}"/>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question4" style="color: #000000">4.</label>
+
+                    <font for="Question" id="Question4"
+                          style="color: #000000">{{ pronounData[3][1].split("#")[0]|safe }}</font>
+
+                    <input name="pronoun_provided_answer4" type="AnswerSet4" class="form-control" id="AnswerSet4"
+                           placeholder="Answer" style="border-color: #7cfc00">
+
+                    <font for="Question" id="Question4"
+                          style="color: #000000">{{ pronounData[3][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+
+                    <input type="hidden" id="ans4" name="pronoun_correct_answer4" value="{{ pronounData[3][2]|safe }}"/>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question5" style="color: #000000">5.</label>
+
+                    <font for="Question" id="Question5"
+                          style="color: #000000">{{ pronounData[4][1].split("#")[0]|safe }}</font>
+
+
+                    <input name="pronoun_provided_answer5" type="AnswerSet5" class="form-control" id="AnswerSet5"
+                           placeholder="Answer" style="border-color: #7cfc00">
+
+                    <font for="Question" id="Question5"
+                          style="color: #000000">{{ pronounData[4][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+
+                    <input type="hidden" id="ans5" name="pronoun_correct_answer5" value="{{ pronounData[4][2]|safe }}"/>
+
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+        <br><br><br>
+
+
+        <!-- Jumble Sentences Question-->
+        <label style="font-size: 18px"><b><font color="purple">Question : Click on each word to put them into a
+            sentence.</font></b></label><br><br>
+    </div>
+
+    <div>
+        <table cellspacing="0" cellpadding="0" style="margin-left: 250px;">
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question1" style="color: #000000">1.</label>
+
+                    {% for key in range((jumbleSentenceData[0][1].split(" "))|length) %}
+                        <input type="button" id="Question1" class="btn btn-warning"
+                               value="{{ jumbleSentenceData[0][1].split(" ")[key] }}" onclick="setText1(this)"/>
+                    {% endfor %}
+
+                </td>
+                <tr>
+                <td height="10"></td>
+                </tr>
+                <td>
+                    <input type="text" name="jumbleSentence_provided_answer1" id="textBox1" value=""
+                           class="form-control" style="width: 500px;border-color: deepskyblue" readonly/>
+
+                </td>
+
+                <td>
+                    <button type="button" id="clear1" class="btn btn-default"
+                            onclick="document.getElementById('textBox1').value = '';"
+                            style="background-color: deepskyblue;color: #ffffff">Clear
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <input type="hidden" id="ans1" name="jumbleSentence_correct_answer1"
+                           value="{{ jumbleSentenceData[0][2]|safe }}"/>
+
+                </td>
+            </tr>
+            <tr>
+            <td height="5"></td>
+            </tr>
+            <tr class="item">
+
+                <td class="form-inline" width="600px">
+                    <label for="Question1" style="color: #000000">2.</label>
+
+                    {% for key in range((jumbleSentenceData[1][1].split(" "))|length) %}
+                        <input type="button" id="Question1" class="btn btn-warning"
+                               value="{{ jumbleSentenceData[1][1].split(" ")[key] }}" onclick="setText2(this)"/>
+
+
+
+                    {% endfor %}
+
+
+                </td>
+                <tr>
+                <td height="10"></td>
+                </tr>
+                <td>
+                    <input type="text" name="jumbleSentence_provided_answer2" id="textBox2" value=""
+                           class="form-control" style="width: 500px;border-color: deepskyblue" readonly/>
+
+                </td>
+
+
+                <td><input type="button" id="clear2" class="btn btn-default" value="Clear"
+                           onclick="document.getElementById('textBox2').value ='';"
+                           style="background-color: deepskyblue;color: #ffffff"/></td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="hidden" id="ans2" name="jumbleSentence_correct_answer2"
+                           value="{{ jumbleSentenceData[1][2]|safe }}"/>
+
+                </td>
+            </tr>
+            <tr>
+            <td height="5"></td>
+            </tr>
+
+
+            <tr class="item">
+
+                <td class="form-inline">
+                    <label for="Question1" style="color: #000000">3.</label>
+
+                    {% for key in range((jumbleSentenceData[2][1].split(" "))|length) %}
+                        <input type="button" id="Question1" class="btn btn-warning"
+                               value="{{ jumbleSentenceData[2][1].split(" ")[key] }}" onclick="setText3(this)"/>
+
+
+
+                    {% endfor %}
+
+
+                </td>
+                <tr>
+                <td height="10"></td>
+                </tr>
+                <td>
+                    <input type="text" name="jumbleSentence_provided_answer3" id="textBox3" value=""
+                           class="form-control" style="width: 500px;border-color: deepskyblue" readonly/>
+
+                </td>
+
+
+                <td><input type="button" id="clear3" class="btn btn-default" value="Clear"
+                           style="background-color: deepskyblue;color: #ffffff"
+                           onclick="document.getElementById('textBox3').value ='';"/></td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="hidden" id="ans3" name="jumbleSentence_correct_answer3"
+                           value="{{ jumbleSentenceData[2][2]|safe }}"/>
+
+                </td>
+            </tr>
+            <tr>
+            <td height="5"></td>
+            </tr>
+
+
+            <tr class="item">
+
+                <td class="form-inline">
+                    <label for="Question1" style="color: #000000">4.</label>
+
+                    {% for key in range((jumbleSentenceData[3][1].split(" "))|length) %}
+                        <input type="button" id="Question1" class="btn btn-warning"
+                               value="{{ jumbleSentenceData[3][1].split(" ")[key] }}" onclick="setText4(this)"/>
+
+
+
+                    {% endfor %}
+
+
+                </td>
+                <tr>
+                <td height="10"></td>
+                </tr>
+                <td>
+                    <input type="text" name="jumbleSentence_provided_answer4" id="textBox4" value=""
+                           class="form-control" style="width: 500px;border-color: deepskyblue" readonly/>
+
+                </td>
+
+
+                <td><input type="button" id="clear4" class="btn btn-default" value="Clear"
+                           style="background-color: deepskyblue;color: #ffffff"
+                           onclick="document.getElementById('textBox4').value ='';"/></td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="hidden" id="ans4" name="jumbleSentence_correct_answer4"
+                           value="{{ jumbleSentenceData[3][2]|safe }}"/>
+
+                </td>
+            </tr>
+            <tr>
+            <td height="5"></td>
+            </tr>
+
+
+            <tr class="item">
+
+                <td class="form-inline">
+                    <label for="Question1" style="color: #000000">5.</label>
+
+                    {% for key in range((jumbleSentenceData[4][1].split(" "))|length) %}
+                        <input type="button" id="Question1" class="btn btn-warning"
+                               value="{{ jumbleSentenceData[4][1].split(" ")[key] }}" onclick="setText(this)"/>
+
+
+
+                    {% endfor %}
+
+
+                </td>
+                <tr>
+                <td height="10"></td>
+                </tr>
+                <td>
+                    <input type="text" name="jumbleSentence_provided_answer5" id="textBox5" value=""
+                           class="form-control" style="width: 500px;border-color: deepskyblue" readonly/>
+
+                </td>
+
+
+                <td><input type="button" id="clear5" class="btn btn-default" value="Clear"
+                           style="background-color: deepskyblue;color: #ffffff"
+                           onclick="document.getElementById('textBox5').value ='';"/></td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="hidden" id="ans5" name="jumbleSentence_correct_answer5"
+                           value="{{ jumbleSentenceData[4][2]|safe }}"/>
+
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <br><br><br>
+
+
+    <div class="form-group" style="text-align :left; margin-left: 150px;">
+        <!-- matching Question -->
+        <label style="font-size: 18px"><b><font color="purple">Question : Match the similar words.(Type the letter in
+            relevant text box.)</font></b></label><br><br>
+        </br></br></br></br></br></br></br></br></br></br>
+        <div>
+
+
+            <ol class="dinosaurs" id="questionset" type="1"
+                style="margin-left: 100px ; margin-top: -200px;color: #000000  ;font-size: 20px; ">
+                <li id="answerset5">{{ matchWordsData[0][1] }}</li>
+                <li>{{ matchWordsData[1][1] }}</li>
+                <li>{{ matchWordsData[2][1] }}</li>
+                <li>{{ matchWordsData[3][1] }}</li>
+                <li>{{ matchWordsData[4][1] }}</li>
+            </ol>
+
+
+            <ol id="text" style="margin-left: 250px ;margin-top: -150px">
+                <input name="match_provided_answer1" type="text"
+                       style="width: 40px;height: 25px;font-size: 15px;border-color:  #d119cf" class="form-control"
+                       id="text1">
+                <input name="match_provided_answer2" type="text"
+                       style="width: 40px;height: 25px;margin-top: 5px;font-size: 15px;border-color:  #d119cf"
+                       class="form-control" id="text2">
+                <input name="match_provided_answer3" type="text"
+                       style="width: 40px;height: 25px;margin-top: 5px;font-size: 15px;border-color:  #d119cf"
+                       class="form-control" id="text3">
+                <input name="match_provided_answer4" type="text"
+                       style="width: 40px;height: 25px;margin-top: 5px;font-size: 15px;border-color:  #d119cf"
+                       class="form-control" id="text4">
+                <input name="match_provided_answer5" type="text"
+                       style="width: 40px;height: 25px;margin-top: 5px;font-size: 15px;border-color:  #d119cf"
+                       class="form-control" id="text5">
+            </ol>
+
+
+            <ol class="dinosaurs" id="answerset" type="a"
+                style="margin-left: 400px ; margin-top: -155px;color: #000000  ;font-size: 20px;border-color: plum">
+                <li id="answerset1">{{ matchWordsData[0][2] }}</li>
+                <li id="answerset2">{{ matchWordsData[1][2] }}</li>
+                <li id="answerset3">{{ matchWordsData[2][2] }}</li>
+                <li id="answerset4">{{ matchWordsData[3][2] }}</li>
+                <li id="answerset5">{{ matchWordsData[4][2] }}</li>
+            </ol>
+
+
+            {# answers for validation #}
+
+            <input type="hidden" id="answer1" name="match_correct_answer1" value="{{ matchWordsData[0][2]|safe }}"/>
+            <input type="hidden" id="answer2" name="match_correct_answer2" value="{{ matchWordsData[1][2]|safe }}"/>
+            <input type="hidden" id="answer3" name="match_correct_answer3" value="{{ matchWordsData[2][2]|safe }}"/>
+            <input type="hidden" id="answer4" name="match_correct_answer4" value="{{ matchWordsData[3][2]|safe }}"/>
+            <input type="hidden" id="answer5" name="match_correct_answer5" value="{{ matchWordsData[4][2]|safe }}"/>
+
+
+        </div>
+        <br><br><br>
+
+
+        <!-- dialogue Question -->
+        <label style="font-size: 18px"><b><font color="purple">Question : Match the answers with the correct responses.
+            (Tick the correct radio button.)</font></b></label><br><br>
+
+        <div>
+
+            {% for key in dialogData %}
+                <input type="hidden" name="dialog_question_no" value="{{ key[0] }}"/>
+                <br>
+                <div class="form-inline">
+                    <div style="border: solid; border-color:#f08080; width: 900px; line-height:30px;"
+                         class="form-inline">
+                        <div style="padding-left: 10px"><font
+                                style="color: gold; font-size: 16px;">{{ key[3] |safe }}</font></div>
+                    </div>
+                    <br>
+
+                    <font style="color: #000000; line-height: 2em">
+
+                        {{ key[2].split("1)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                1)&nbsp;
+                                <input type="radio" name="dialog_provided_answer1" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer1" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer1" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer1" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer1" value="e">e &nbsp;&nbsp;
+                            </font>
+                        </div>
+
+                        {{ key[2].split("1)")[1].split("2)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                2)&nbsp;
+                                <input type="radio" name="dialog_provided_answer2" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer2" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer2" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer2" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer2" value="e">e &nbsp;&nbsp;
+                            </font>
+                        </div>
+
+                        {{ key[2].split("2)")[1].split("3)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                3)&nbsp;
+                                <input type="radio" name="dialog_provided_answer3" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer3" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer3" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer3" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer3" value="e">e &nbsp;&nbsp;
+                            </font>
+                        </div>
+
+                        {{ key[2].split("3)")[1].split("4)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                4)&nbsp;
+                                <input type="radio" name="dialog_provided_answer4" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer4" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer4" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer4" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer4" value="e">e &nbsp;&nbsp;
+                            </font>
+                        </div>
+
+                        {{ key[2].split("4)")[1].split("5)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                5)&nbsp;
+                                <input type="radio" name="dialog_provided_answer5" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer5" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer5" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer5" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="dialog_provided_answer5" value="e">e &nbsp;&nbsp;
+                            </font>
+                        </div>
+
+                        {{ key[2].split("5)")[1] |safe }}
+
+                    </font><br><br>
+                </div>
+
+                <input type="hidden" name="dialog_correct_answer1" value="{{ key[4] }}"/>
+                <input type="hidden" name="dialog_correct_answer2" value="{{ key[5] }}"/>
+                <input type="hidden" name="dialog_correct_answer3" value="{{ key[6] }}"/>
+                <input type="hidden" name="dialog_correct_answer4" value="{{ key[7] }}"/>
+                <input type="hidden" name="dialog_correct_answer5" value="{{ key[8] }}"/>
+
+            {% endfor %}
+
+        </div>
+        <input name="matchMarks" id="matchMarks" style="display: none" value="0">
+
+        <input id="yes" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image"
+               src="/static/img/submit.png" border="0" alt="Submit" name="sub_but" height="90" width="100"
+               style="outline: none"/>
+
+    </div>
+    </div>
+    </form>
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "100px";
+            x.style.width = "120px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "90px";
+            x.style.width = "100px";
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        function onLoad() {
+            shuffleNodes()
+            start()
+        }
+        window.onload = onLoad;
+        {# shuffling #}
+
+        var list = document.getElementById("answerset")
+
+        function shuffle(items) {
+            var cached = items.slice(0), temp, i = cached.length, rand;
+            while (--i) {
+                rand = Math.floor(i * Math.random());
+                temp = cached[rand];
+                cached[rand] = cached[i];
+                cached[i] = temp;
+            }
+            return cached;
+        }
+        function shuffleNodes() {
+            var nodes = list.children, i = 0;
+            nodes = Array.prototype.slice.call(nodes);
+            nodes = shuffle(nodes);
+            while (i < nodes.length) {
+                list.appendChild(nodes[i]);
+                ++i;
+
+            }
+        }
+        //window.onload = shuffleNodes;
+    </script>
+
+
+
+    <script>
+        function setText1(obj) {
+            var val = obj.value;
+            console.log(val);
+            document.getElementById('textBox1').value = document.getElementById('textBox1').value + " " + val;
+        }
+    </script>
+
+    <script>
+
+        function setText2(obj) {
+            var val = obj.value;
+            console.log(val);
+            document.getElementById('textBox2').value = document.getElementById('textBox2').value + " " + val;
+        }
+
+
+    </script>
+    <script>
+        function setText3(obj) {
+            var val = obj.value;
+            console.log(val);
+            document.getElementById('textBox3').value = document.getElementById('textBox3').value + " " + val;
+        }
+
+
+    </script>
+    <script>
+        function setText4(obj) {
+            var val = obj.value;
+            console.log(val);
+            document.getElementById('textBox4').value = document.getElementById('textBox4').value + " " + val;
+        }
+
+    </script>
+    <script>
+        function setText(obj) {
+            var val = obj.value;
+            console.log(val);
+            document.getElementById('textBox5').value = document.getElementById('textBox5').value + " " + val;
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+
+        var timeInSecs;
+        var ticker;
+        var s;
+        var count = 0;
+        var secs = 0;
+        //window.onload = start;
+
+        function start() {
+            s = document.getElementById("period").value;
+            document.getElementById("period").disabled = true;
+            s = 1860;
+            startTimer(s);
+        }
+
+        function startTimer(secs) {
+            timeInSecs = parseInt(secs);
+            ticker = setInterval("tick()", 1000);
+            tick(); // to start counter display right away
+        }
+
+        function tick() {
+            var secs = timeInSecs;
+            if (secs > 0) {
+                timeInSecs--;
+                showTime(secs);
+            }
+        }
+
+        function showTime(secs) {
+            var hours = Math.floor(secs / 3600);
+            secs %= 3600;
+            var min = Math.floor(secs / 60);
+            secs %= 60;
+            var result = ((hours < 10 ) ? "0" : "" ) + hours + ":" + ( (min < 10) ? "0" : "" ) + min
+                    + ":" + ( (secs < 10) ? "0" : "" ) + secs;
+
+            document.getElementById('countdown').innerHTML = result;
+        }
+
+        var auto = setInterval(function () {
+            submitform();
+        }, 2401000);
+        function submitform() {
+
+            document.getElementById("form1").submit();
+        }
+    </script>
+
+
+    <script>
+        function result() {
+
+            var count = 0;
+            var list1 = document.getElementById('answerset').getElementsByTagName("li");
+
+            var A = list1[0].innerText;
+            var B = list1[1].innerText;
+            var C = list1[2].innerText;
+            var D = list1[3].innerText;
+            var E = list1[4].innerText;
+
+            a1 = document.getElementById('answer1').value;
+            a2 = document.getElementById('answer2').value;
+            a3 = document.getElementById('answer3').value;
+            a4 = document.getElementById('answer4').value;
+            a5 = document.getElementById('answer5').value;
+            {#document.write(a1);
+             document.write(a2);
+             document.write(a3);
+             document.write(a4);
+             document.write(a5+"  ");
+
+             document.write(A);
+             document.write(B);
+             document.write(C);
+             document.write(D);
+             document.write(E);#}
+
+            if ((document.getElementById('text1').value == 'a') && (A == document.getElementById('answer1').value)) {
+                count++;
+            } else if ((document.getElementById('text1').value == 'b') && (B == document.getElementById('answer1').value)) {
+                count++;
+            } else if ((document.getElementById('text1').value == 'c') && (C == document.getElementById('answer1').value)) {
+                count++;
+            } else if ((document.getElementById('text1').value == 'd') && (D == document.getElementById('answer1').value)) {
+                count++;
+            } else if ((document.getElementById('text1').value == 'e') && (E == document.getElementById('answer1').value)) {
+                count++;
+            } else {
+
+            }
+
+
+            if ((document.getElementById('text2').value == 'a') && (A == document.getElementById('answer2').value)) {
+                count++;
+            } else if ((document.getElementById('text2').value == 'b') && ( B == document.getElementById('answer2').value)) {
+                count++;
+            } else if ((document.getElementById('text2').value == 'c') && ( C == document.getElementById('answer2').value)) {
+                count++;
+            } else if ((document.getElementById('text2').value == 'd') && (D == document.getElementById('answer2').value)) {
+                count++;
+            } else if ((document.getElementById('text2').value == 'e') && ( E == document.getElementById('answer2').value)) {
+                count++;
+            } else {
+
+            }
+
+
+            if ((document.getElementById('text3').value == 'a') && (A == document.getElementById('answer3').value)) {
+                count++;
+            } else if ((document.getElementById('text3').value == 'b') && (B == document.getElementById('answer3').value)) {
+                count++;
+            } else if ((document.getElementById('text3').value == 'c') && ( C == document.getElementById('answer3').value)) {
+                count++;
+            } else if ((document.getElementById('text3').value == 'd') && ( D == document.getElementById('answer3').value)) {
+                count++;
+            } else if ((document.getElementById('text3').value == 'e') && ( E == document.getElementById('answer3').value)) {
+                count++;
+            } else {
+
+            }
+
+
+            if ((document.getElementById('text4').value == 'a') && (A == document.getElementById('answer4').value)) {
+                count++;
+            } else if ((document.getElementById('text4').value == 'b') && ( B == document.getElementById('answer4').value)) {
+                count++;
+            } else if ((document.getElementById('text4').value == 'c') && ( C == document.getElementById('answer4').value)) {
+                count++;
+            } else if ((document.getElementById('text4').value == 'd') && (D == document.getElementById('answer4').value)) {
+                count++;
+            } else if ((document.getElementById('text4').value == 'e') && ( E == document.getElementById('answer4').value)) {
+                count++;
+            } else {
+
+            }
+
+            if ((document.getElementById('text5').value == 'a') && ( A == document.getElementById('answer5').value)) {
+                count++;
+            } else if ((document.getElementById('text5').value == 'b') && ( B == document.getElementById('answer5').value)) {
+                count++;
+            } else if ((document.getElementById('text5').value == 'c') && (C == document.getElementById('answer5').value)) {
+                count++;
+            } else if ((document.getElementById('text5').value == 'd') && (D == document.getElementById('answer5').value)) {
+                count++;
+            } else if ((document.getElementById('text5').value == 'e') && (E == document.getElementById('answer5').value)) {
+                count++;
+            } else {
+
+            }
+
+
+            document.getElementById('matchMarks').value = count;
+            return count;
+
+        }
+        ;
+    </script>
+
+{% endblock %}

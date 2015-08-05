@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+    {% if student_data %}
+        {% for key in student_data %}
+            <center>
+                <br><br><br><br>
+                <font color="white" style="font-size: 17px">Your request send to {{ key[0] }}&nbsp;{{ key[1] }} is pending.</font>
+                <br><br>
+                <a class="btn" href='http://127.0.0.1:5000/cancel_teacher_subscribe_request/?email={{ key[2] }}'><button onclick="return doconfirm1();" class="btn btn-danger" style="height: 40px; width: 150px"><span class='glyphicon glyphicon-remove-sign'></span>&nbsp;Cancel Request</button></a>
+            </center>
+        {% endfor %}
+    {% elif subscribedData %}
+        {% for key in subscribedData %}
+            <center>
+                <br><br><br><br>
+                <font color="white" style="font-size: 17px">Your have subscribed {{ key[0] }}&nbsp;{{ key[1] }}.</font>
+                <br><br>
+                <a class="btn" href='http://127.0.0.1:5000/cancel_teacher_subscribe_request/?email={{ key[2] }}'><button onclick="return doconfirm1();" class="btn btn-danger" style="height: 40px; width: 180px"><span class='glyphicon glyphicon-remove-sign'></span>&nbsp;Unsubscribe Teacher</button></a>
+            </center>
+        {% endfor %}
+    {% else %}
+    <center>
+        <div>
+          <table class="table1" id="mytable" style="color: #ffffff" >
+             <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='10%' style="text-align: center">&nbsp;</th>
+                    <th width='35%' style="text-align: center">Full Name</th>
+                    <th width='35%' style="text-align: center">School</th>
+                    <th width='20%' style="text-align: center">Subscribe</th>
+                </tr>
+             </thead>
+
+             <tbody>
+
+             {% for key in data %}
+                <tr>
+                    <td style="text-align: center; vertical-align:middle">
+                        <img src="/static/uploads/{{ key[6] }}" height="45px" width="45px"/>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[1] }}&nbsp;{{ key[2] }}
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[5] }}
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <a class="btn" href='http://127.0.0.1:5000/subscribe_teacher/?email={{ key[0] }}'><button class="btn btn-info" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-plus-sign'></span></button></a>
+                    </td>
+                </tr>
+             {% endfor %}
+          </tbody>
+          </table>
+        </div>
+    </center>
+    {% endif %}
+<br>
+
+
+
+    <script>
+        function doconfirm() {
+            var status = confirm("Are you sure you want to subscribe this teacher ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        function doconfirm1() {
+            var status = confirm("Are you sure you want to cancel this request ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+{% endblock %}

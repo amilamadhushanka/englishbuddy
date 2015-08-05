@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<form name="level4_active_passive" method="post" style="margin-left: 70px;margin-top: -5px ;width: 1150px;height: 600px;background-image: url('/static/img/testback.png')" action="{{ url_for('evaluate_level4_active_passive') }}">
+
+    <br>
+
+    <div class="form-group" style="margin-left: 300px">
+        <label style="margin-left:100px;  color: darkmagenta; font-size: 20px; font-weight: bold; margin-top: 40px">Rewrite the sentence in passive voice in the given space.</label>
+    </div>
+
+    <div class="form-group" style="margin-left: 200px">
+        <label for="Question1" style="color: #000000; line-height: 2em; font-weight: bold">1.</label>
+        <input type="hidden" name="question1" value="{{data[0][1]|safe}}"/>
+        <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{data[0][1]|safe}}</font>
+        <textarea style="color:blue;font-weight: bold;width:828px;height: 52px;border-color: deepskyblue" rows="1" name="answer1" id="answer1" required=""></textarea>
+    </div>
+
+    <br>
+
+    <div class="form-group" style="margin-left: 200px">
+        <label for="Question2" style="color: #000000; line-height: 2em; font-weight: bold">2.</label>
+        <input type="hidden" name="question2" value="{{data[1][1]|safe}}"/>
+        <font for="Question2" id="Question2" style="color: #000000; line-height: 2em; font-weight: bold">{{data[1][1]|safe}}</font>
+        <textarea style="color:blue;font-weight: bold;width:828px;height: 52px;border-color: deepskyblue" rows="1" name="answer2" id="answer2" required=""></textarea>
+    </div>
+
+    <br>
+
+    <div class="form-group" style="margin-left: 200px">
+        <label for="Question3" style="color: #000000; line-height: 2em; font-weight: bold">3.</label>
+        <input type="hidden" name="question3" value="{{data[2][1]|safe}}"/>
+        <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{data[2][1]|safe}}</font>
+        <textarea style="color:blue;font-weight: bold;width:828px;height: 52px;border-color: deepskyblue; " rows="1" name="answer3" id="answer3" required=""></textarea>
+        <br><br>
+
+        <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/ship.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: -180px;margin-top: -110px;outline: none;"  height="200" width="250" />
+
+    </div>
+
+</form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "220px";
+    x.style.width = "270px";
+}
+
+function normalImg(x) {
+    x.style.height = "200px";
+    x.style.width = "250px";
+}
+
+</script>
+
+{% endblock %}
+

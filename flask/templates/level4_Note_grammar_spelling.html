@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+<br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level3_notice_Invitation" method="post" action="{{ url_for('structure_evaluation_note') }}">
+<br>
+
+ <textarea name="answer"  rows="15" style="width: 400px;height:300px;margin-left: 680px;margin-top: 70px;background:none;border-width: 2px;border-color: deepskyblue;color: #000000;font-size: 15px;resize: none" id="comment" readonly>
+        {{ ans|safe }}
+ </textarea>
+
+<table style="margin-left: 750px;">
+ <tr>
+  <td width="20">
+  <div style="border-color: red;border-style:ridge;border-width: 5px;height: 5px ;width: 5px;"></div>
+  </td>
+
+  <td>
+  <label style="color: red; font-style: oblique">Spelling and Grammar Errors </label>
+  </td>
+</tr>
+<tr>&nbsp;</tr>
+<tr>
+  <td width="20">
+  <div style="border-color: green;border-style:ridge;border-width: 5px;height: 5px ;width: 5px;"></div>
+  </td>
+  <td>
+  <label style="color: green;font-style: oblique">Corrected Spellings and Grammar </label>
+  </td>
+</tr>
+</table>
+<br>
+<table style="margin-left: 670px">
+<tr>
+    <td>
+        <label class="label " style="width: 5px;color: #ff1493 ;font-size: 20px;font-style:oblique;" >Language: </label>
+        <label id="marks" class="label " style="height:2px;border-color: #000000;border-width:2px;border-style:ridge;color: #ff1493 ;font-size: 20px;font-style:oblique;" >{{ grammar_tot }} / 3</label>
+    </td>
+</tr>
+</table>
+<br>
+<div class="panel-body" style="width: 900px;height: 300px ; "  >
+
+<div  style="border-color: red;border-style:ridge;margin-left: 100px;margin-top: -500px;border-width: 5px;height: 250px ;width: 550px">
+
+ {{ original|safe }}
+</div>
+
+
+<div style="border-color: green;border-style:ridge;margin-left: 100px;border-width: 5px;margin-top: 20px;height: 250px;width: 550px">
+
+    <br>
+
+    {{fixed|safe }}
+
+</div>
+</div>
+
+ <style type="text/css">
+    .ansi2html-content{
+        height: 250px;
+        width: 500px;
+        background-color: transparent;
+        font-size: 18px;
+        font-family:Georgia, serif ;
+        border: hidden;
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+ </style>
+
+
+<button class="btn-info btn" type="submit" style="margin-left: 900px;margin-top: -540px;background-color: deepskyblue;border-color: #FF0066;border-width: 2px">Go to see Structure Mistakes </button>
+
+<textarea style="display: none" name="answer" > {{ ans|safe }} </textarea>
+<textarea type="hidden" name="question" > {{ qus|safe }} </textarea>
+<input type="hidden" name="total" value="{{ struct_tot }}">
+<input type="hidden" name="grammar_total" value="{{ grammar_tot }}">
+<input type="hidden" name="total_val" value="{{ tot }}">
+<input type="hidden" name="writer" value="{{ stat_writer }}">
+<input type="hidden" name="receiver" value="{{ stat_receiver }}">
+<input type="hidden" name="yours" value="{{ stat_your }}">
+
+</form>
+
+
+
+{% endblock %}

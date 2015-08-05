@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>English Buddy</title>
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script>
+      function openWin()
+      {
+        window.open("http://agilepartner.comxa.com/index.php/resetPassword","_blank","toolbar=yes, scrollbars=yes, resizable=yes, top=150, left=360, width=600, height=325");
+      }
+    </script>
+
+  </head>
+
+  <body style="overflow:hidden;">
+
+    <div style="width: 80%;height: 638px;">
+
+    <div style="width: 50%; height:auto; height: inherit; float:left;">
+        <!-- <img src="/static/img/eb1.png" height="638" width="100%"> -->
+    </div>
+
+    <div style="width:50%;height:inherit;float:left">
+    <div class="container">
+
+      <br><br><br><br><br><br>
+      <form class="form-signin" role="form" method="post" action="/login"  >
+
+        <h2 class="form-signin-heading"><font color="white">Sign in</font></h2>
+        <br>
+        <input type="email" name="txtEmail" id="txtEmail" class="form-control" placeholder="Email address" required autofocus>
+
+        <input type="password" name="txtPassword" id="txtPassword" class="form-control" placeholder="Password" required autofocus>
+        
+        
+
+        <label class="checkbox" style="color:#ffffff; font-size: 16px; padding-top: 5px">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="remember_me" id="remember_me" value="1" style="transform: scale(1.4);"> Remember me
+        </label>
+
+          {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                  <ul class=flashes>
+                      {% for message in messages %}
+                          <li style="color: #FF8080; font-size: 17px">{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endwith %}
+
+          <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnLogin" id="btnLogin">Sign in</button>
+        <br>
+
+        <center>
+       <a href="" onclick="javascript:void window.open('/view_forgot_password','1393836897034','toolbar=yes, scrollbars=yes, resizable=no, top=180, left=330, width=700, height=290');
+        return false;"><font color="aqua" style="font-size: 16px;">Forgot your password?</font></a>
+      </center>
+      <br>
+        <center><font color="white" style="font-size: 16px"><b>Not registered yet?</b></font>&nbsp;&nbsp;<a href="/register"><font color="aqua" style="font-size: 16px;">Sign Up Here</font></a></center>
+        
+      </form>
+
+        
+
+    </div>
+    </div> <!-- /container -->
+  </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
+
+</html>
+
+<script>
+    $(function() {
+
+        if (localStorage.chkbx && localStorage.chkbx != '') {
+            $('#remember_me').attr('checked', 'checked');
+            $('#txtEmail').val(localStorage.usrname);
+            $('#txtPassword').val(localStorage.pass);
+        } else {
+            $('#remember_me').removeAttr('checked');
+            $('#txtEmail').val('');
+            $('#txtPassword').val('');
+        }
+
+        $('#remember_me').click(function() {
+
+            if ($('#remember_me').is(':checked')) {
+                // save username and password
+                localStorage.usrname = $('#txtEmail').val();
+                localStorage.pass = $('#txtPassword').val();
+                localStorage.chkbx = $('#remember_me').val();
+            } else {
+                localStorage.usrname = '';
+                localStorage.pass = '';
+                localStorage.chkbx = '';
+            }
+        });
+    });
+
+</script>

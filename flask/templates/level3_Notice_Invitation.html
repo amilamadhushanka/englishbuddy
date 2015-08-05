@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level3_notice_Invitation" method="post" action="{{ url_for('evaluate_level3_Notice_Invitation') }}">
+
+<div class="form-group" style="margin-left: 100px; color: #000000;font-size: 20px;width: 1000px">
+  </br><textarea name="question" style="width: 1000px;font-size: 18px;height: 165px;background: none;border: none;color: purple;outline: none" readonly>Q.)&nbsp; {{ data[0][1] }}</textarea>
+  </br><textarea name="answer" class="form-control" rows="15" style="width: 600px;height: 300px;margin-left: 150px;border-width: 2px;background-color: transparent;border-color: deepskyblue;color: #000000;font-size: 15px" id="comment" required></textarea>
+</div>
+  <input type="hidden" name="type" value="{{ data[0][3] }}">
+
+   <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/snail.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 40px;margin-top: -125px;outline: none;"  height="170" width="200" />
+
+
+</form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "230px";
+}
+
+function normalImg(x) {
+    x.style.height = "170px";
+    x.style.width = "200px";
+}
+</script>
+{% endblock %}

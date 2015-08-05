@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+    <br><br><br>
+    <form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')">
+    <link href="/static/css/main2.css" rel="stylesheet">
+    <br><br>
+    <label style="margin-left: 150px; color: #A319A3;font-size: 20px; margin-top: -5px">Match the answers with the correct responses. (Tick the correct radio button.)</label><br><br>
+
+    <div class="form-group" style="text-align :left; margin-left: 150px;overflow: auto;height: 360px;overflow-x: hidden">
+
+        <div style="border: solid; border-color:#f08080; width: 900px; line-height:30px;">
+            <div style="padding-left: 10px"><font style="color: blue; font-size: 16px">{{ data['answers'] |safe }}</font></div>
+        </div>
+
+        <br>
+
+        <font style="color: #000000; line-height: 2em">
+
+            {{ data['question'].split("1)")[0] |safe }} &nbsp;
+
+            <div style="background-color: #f08080; display: inline;">
+                <font color="black" style="font-weight: bold">
+                    1)&nbsp;
+                    <input type="radio" name="one" value="a" {% if data['pa1']=='a' %} checked {% else %} disabled {% endif %}>a &nbsp;&nbsp;
+                    <input type="radio" name="one" value="b" {% if data['pa1']=='b' %} checked {% else %} disabled {% endif %}>b &nbsp;&nbsp;
+                    <input type="radio" name="one" value="c" {% if data['pa1']=='c' %} checked {% else %} disabled {% endif %}>c &nbsp;&nbsp;
+                    <input type="radio" name="one" value="d" {% if data['pa1']=='d' %} checked {% else %} disabled {% endif %}>d &nbsp;&nbsp;
+                    <input type="radio" name="one" value="e" {% if data['pa1']=='e' %} checked {% else %} disabled {% endif %}>e &nbsp;&nbsp;
+{#                    <input type="radio" name="one" value="f" {% if data['pa1']=='f' %} checked {% else %} disabled {% endif %}>f &nbsp;&nbsp;#}
+                </font>
+            </div>
+
+            {% if (data['a1_status']=='Correct') %} &nbsp;&nbsp; <img src="/static/img/Right.png" height="26" width="26"> {% else %} &nbsp;&nbsp; <img src="/static/img/Wrong.png" height="26" width="22"> &nbsp; <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data['a1']|safe }}&nbsp;</label> {% endif %}
+
+            {{ data['question'].split("1)")[1].split("2)")[0] |safe }} &nbsp;
+
+            <div style="background-color: #f08080; display: inline;">
+                <font color="black" style="font-weight: bold">
+                    2)&nbsp;
+                    <input type="radio" name="two" value="a" {% if data['pa2']=='a' %} checked {% else %} disabled {% endif %}>a &nbsp;&nbsp;
+                    <input type="radio" name="two" value="b" {% if data['pa2']=='b' %} checked {% else %} disabled {% endif %}>b &nbsp;&nbsp;
+                    <input type="radio" name="two" value="c" {% if data['pa2']=='c' %} checked {% else %} disabled {% endif %}>c &nbsp;&nbsp;
+                    <input type="radio" name="two" value="d" {% if data['pa2']=='d' %} checked {% else %} disabled {% endif %}>d &nbsp;&nbsp;
+                    <input type="radio" name="two" value="e" {% if data['pa2']=='e' %} checked {% else %} disabled {% endif %}>e &nbsp;&nbsp;
+{#                    <input type="radio" name="two" value="f" {% if data['pa2']=='f' %} checked {% else %} disabled {% endif %}>f &nbsp;&nbsp;#}
+                </font>
+            </div>
+
+            {% if (data['a2_status']=='Correct') %} &nbsp;&nbsp; <img src="/static/img/Right.png" height="26" width="26"> {% else %} &nbsp;&nbsp; <img src="/static/img/Wrong.png" height="26" width="22"> &nbsp; <label class="btn btn-danger btn-xs" style="font-size: 16px; color: #ffffff">{{data['a2']|safe }}&nbsp;</label> {% endif %}
+
+            {{ data['question'].split("2)")[1].split("3)")[0] |safe }} &nbsp;
+
+            <div style="background-color: #f08080; display: inline;">
+                <font color="black" style="font-weight: bold">
+                    3)&nbsp;
+                    <input type="radio" name="three" value="a" {% if data['pa3']=='a' %} checked {% else %} disabled {% endif %}>a &nbsp;&nbsp;
+                    <input type="radio" name="three" value="b" {% if data['pa3']=='b' %} checked {% else %} disabled {% endif %}>b &nbsp;&nbsp;
+                    <input type="radio" name="three" value="c" {% if data['pa3']=='c' %} checked {% else %} disabled {% endif %}>c &nbsp;&nbsp;
+                    <input type="radio" name="three" value="d" {% if data['pa3']=='d' %} checked {% else %} disabled {% endif %}>d &nbsp;&nbsp;
+                    <input type="radio" name="three" value="e" {% if data['pa3']=='e' %} checked {% else %} disabled {% endif %}>e &nbsp;&nbsp;
+{#                    <input type="radio" name="three" value="f" {% if data['pa3']=='f' %} checked {% else %} disabled {% endif %}>f &nbsp;&nbsp;#}
+                </font>
+            </div>
+
+            {% if (data['a3_status']=='Correct') %} &nbsp;&nbsp; <img src="/static/img/Right.png" height="26" width="26"> {% else %} &nbsp;&nbsp; <img src="/static/img/Wrong.png" height="26" width="22"> &nbsp; <label class="btn btn-danger btn-xs" style="font-size: 16px; color: #ffffff">{{data['a3']|safe }}&nbsp;</label> {% endif %}
+
+            {{ data['question'].split("3)")[1].split("4)")[0] |safe }} &nbsp;
+
+            <div style="background-color: #f08080; display: inline;">
+                <font color="black" style="font-weight: bold">
+                    4)&nbsp;
+                    <input type="radio" name="four" value="a" {% if data['pa4']=='a' %} checked {% else %} disabled {% endif %}>a &nbsp;&nbsp;
+                    <input type="radio" name="four" value="b" {% if data['pa4']=='b' %} checked {% else %} disabled {% endif %}>b &nbsp;&nbsp;
+                    <input type="radio" name="four" value="c" {% if data['pa4']=='c' %} checked {% else %} disabled {% endif %}>c &nbsp;&nbsp;
+                    <input type="radio" name="four" value="d" {% if data['pa4']=='d' %} checked {% else %} disabled {% endif %}>d &nbsp;&nbsp;
+                    <input type="radio" name="four" value="e" {% if data['pa4']=='e' %} checked {% else %} disabled {% endif %}>e &nbsp;&nbsp;
+{#                    <input type="radio" name="four" value="f" {% if data['pa4']=='f' %} checked {% else %} disabled {% endif %}>f &nbsp;&nbsp;#}
+                </font>
+            </div>
+
+            {% if (data['a4_status']=='Correct') %} &nbsp;&nbsp; <img src="/static/img/Right.png" height="26" width="26"> {% else %} &nbsp;&nbsp; <img src="/static/img/Wrong.png" height="26" width="22"> &nbsp; <label class="btn btn-danger btn-xs" style="font-size: 16px; color: #ffffff">{{data['a4']|safe }}&nbsp;</label> {% endif %}
+
+            {{ data['question'].split("4)")[1].split("5)")[0] |safe }} &nbsp;
+
+            <div style="background-color: #f08080; display: inline;">
+                <font color="black" style="font-weight: bold">
+                    5)&nbsp;
+                    <input type="radio" name="five" value="a" {% if data['pa5']=='a' %} checked {% else %} disabled {% endif %}>a &nbsp;&nbsp;
+                    <input type="radio" name="five" value="b" {% if data['pa5']=='b' %} checked {% else %} disabled {% endif %}>b &nbsp;&nbsp;
+                    <input type="radio" name="five" value="c" {% if data['pa5']=='c' %} checked {% else %} disabled {% endif %}>c &nbsp;&nbsp;
+                    <input type="radio" name="five" value="d" {% if data['pa5']=='d' %} checked {% else %} disabled {% endif %}>d &nbsp;&nbsp;
+                    <input type="radio" name="five" value="e" {% if data['pa5']=='e' %} checked {% else %} disabled {% endif %}>e &nbsp;&nbsp;
+{#                    <input type="radio" name="five" value="f" {% if data['pa5']=='f' %} checked {% else %} disabled {% endif %}>f &nbsp;&nbsp;#}
+                </font>
+            </div>
+
+            {% if (data['a5_status']=='Correct') %} &nbsp;&nbsp; <img src="/static/img/Right.png" height="26" width="26"> {% else %} &nbsp;&nbsp; <img src="/static/img/Wrong.png" height="26" width="22"> &nbsp; <label class="btn btn-danger btn-xs" style="font-size: 16px; color: #ffffff">{{data['a5']|safe }}&nbsp;</label> {% endif %}
+
+            {{ data['question'].split("5)")[1] |safe }}
+
+        </font>
+
+
+    </div>
+        <input type="image" src="/static/img/buttonMs.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 30px;margin-top: -110px;outline: none;"   height="170" width="120" />
+        <label id="marks" class="label " style="background-color: #000000;color: red ;font-size: 20px;font-style:oblique;" >{{ data['marks']}}/5</label>
+
+        <div id="disables" style="margin-left: 450px ;margin-top: -105px" class="form-group"><br>
+            <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+        </div>
+
+
+</form>
+
+<script>
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level1_dialogs"
+}
+
+function no() {
+    window.location.href = "/level1"
+}
+</script>
+{% endblock %}

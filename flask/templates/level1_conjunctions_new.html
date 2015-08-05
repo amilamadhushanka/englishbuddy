@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<head>
+    <style type="text/css">
+        .form-group {
+            width: 976px;
+        }
+    </style>
+    <link href="/static/css/main2.css" rel="stylesheet">
+</head>
+
+{% extends "home2.html" %}
+{% block content %}
+
+    <br><br><br>
+    <form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')" name="level1_conjunctions" method="post" action="{{ url_for('evaluate_level1_conjunctions_new') }}">
+    <div class="form-group" style="text-align :left; margin-left: 150px;">
+
+    <input type="hidden" name="qNo" value=""/>
+    <br><br>
+
+    <label style="margin-left: -80px; color: #A319A3;font-size: 19px; margin-top: -5px">Fill in the blanks with the most suitable
+        conjunction. (Drag & drop the correct answer to the relevant blank.)</label><br><br>
+
+
+    <div>
+    <div style="background-image: url('/static/img/tag_red.png'); background-size:100%; width: 150px; height: 83px; float: left;">
+        <label draggable="true" ondragstart="drag(event)" id="ansCollection1" style="padding-top: 35px; padding-left: 60px; text-align: center; display: block; cursor:move; color: #000000; font-size: 18px;">{{ shuffledData['shuffledArray'][0] }}</label>
+    </div>
+    <div style="background-image: url('/static/img/tag_light_blue.png'); background-size:100%; width: 150px; height: 83px; float: left; ">
+        <label draggable="true" ondragstart="drag(event)" id="ansCollection2" style="padding-top: 35px; padding-left: 60px; text-align: center; display: block; cursor:move; color: #000000; font-size: 18px;">{{ shuffledData['shuffledArray'][1] }}</label>
+    </div>
+    <div style="background-image: url('/static/img/tag_purple.png'); background-size:100%; width: 150px; height: 83px; float: left; ">
+        <label draggable="true" ondragstart="drag(event)" id="ansCollection3" style="padding-top: 35px; padding-left: 60px; text-align: center; display: block; cursor:move; color: #000000; font-size: 18px;">{{ shuffledData['shuffledArray'][2] }}</label>
+    </div>
+    <div style="background-image: url('/static/img/tag_orange.png'); background-size:100%; width: 150px; height: 83px; float: left; ">
+        <label draggable="true" ondragstart="drag(event)" id="ansCollection4" style="padding-top: 35px; padding-left: 60px; text-align: center; display: block; cursor:move; color: #000000; font-size: 18px;">{{ shuffledData['shuffledArray'][3] }}</label>
+    </div>
+    <div style="background-image: url('/static/img/tag_green.png'); background-size:100%; width: 150px; height: 83px; float: left; ">
+        <label draggable="true" ondragstart="drag(event)" id="ansCollection5" style="padding-top: 35px; padding-left: 60px; text-align: center; display: block; cursor:move; color: #000000; font-size: 18px;">{{ shuffledData['shuffledArray'][4] }}</label>
+    </div>
+    </div>
+
+    <br><br><br><br><br>
+
+
+    <div>
+    <!-- Question 1 -->
+    <div style="margin-left: 20px">
+        <img id="speak_q1" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            1.&nbsp;{{ data[0][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a1_status']=='Correct') %}
+                <input type="text" style="color:#00CC00; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa1'] }}">
+            {% else %}
+                {% if answer_data['pa1'] =="" %}<input type="text" style="width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" readonly>{% else %}<input type="text" style="color:red; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa1'] }}" readonly>{% endif %}
+            {% endif %}
+        {% else %}
+            <input type="text" name="one" ondrop="drop(event)" ondragover="allowDrop(event)" readonly style="font-size:18px; text-align: center; font-weight: bold; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px; width: 150px; color: blue">
+            <input name="correctAnswer1" style="display: none" value="{{ data[0][3] }}">
+            <input name="question1" style="display: none" value="{{ data[0][2] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            {{ data[0][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a1_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a1'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 2 -->
+    <div style="margin-left: 20px">
+        <img id="speak_q2" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            2.&nbsp;{{ data[1][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a2_status']=='Correct') %}
+                <input type="text" style="color:#00CC00; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa2'] }}">
+            {% else %}
+                {% if answer_data['pa2'] =="" %}<input type="text" style="width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" readonly>{% else %}<input type="text" style="color:red; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa2'] }}" readonly>{% endif %}
+            {% endif %}
+        {% else %}
+            <input type="text" name="two" ondrop="drop(event)" ondragover="allowDrop(event)" readonly style="font-size:18px;text-align: center; font-weight: bold; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px; width: 150px; color: blue">
+            <input name="correctAnswer2" style="display: none" value="{{ data[1][3] }}">
+            <input name="question2" style="display: none" value="{{ data[1][2] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            {{ data[1][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a2_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a2'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 3 -->
+    <div style="margin-left: 20px">
+        <img id="speak_q3" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            3.&nbsp;{{ data[2][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a3_status']=='Correct') %}
+                <input type="text" style="color:#00CC00; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa3'] }}">
+            {% else %}
+                {% if answer_data['pa3'] =="" %}<input type="text" style="width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" readonly>{% else %}<input type="text" style="color:red; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa3'] }}" readonly>{% endif %}
+            {% endif %}
+        {% else %}
+            <input type="text" name="three" ondrop="drop(event)" ondragover="allowDrop(event)" readonly style="font-size:18px; text-align: center; font-weight: bold; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px; width: 150px; color: blue">
+            <input name="correctAnswer3" style="display: none" value="{{ data[2][3] }}">
+            <input name="question3" style="display: none" value="{{ data[2][2] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            {{ data[2][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a3_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a3'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 4 -->
+    <div style="margin-left: 20px">
+        <img id="speak_q4" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            4.&nbsp;{{ data[3][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a4_status']=='Correct') %}
+                <input type="text" style="color:#00CC00; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa4'] }}">
+            {% else %}
+                {% if answer_data['pa4'] =="" %}<input type="text" style="width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" readonly>{% else %}<input type="text" style="color:red; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa4'] }}" readonly>{% endif %}
+            {% endif %}
+        {% else %}
+            <input type="text" name="four" ondrop="drop(event)" ondragover="allowDrop(event)" readonly style="font-size:18px; text-align: center; font-weight: bold; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px; width: 150px; color: blue">
+            <input name="correctAnswer4" style="display: none" value="{{ data[3][3] }}">
+            <input name="question4" style="display: none" value="{{ data[3][2] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            {{ data[3][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a4_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a4'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 5 -->
+    <div style="margin-left: 20px">
+        <img id="speak_q5" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            5.&nbsp;{{ data[4][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a5_status']=='Correct') %}
+                <input type="text" style="color:#00CC00; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa5'] }}">
+            {% else %}
+                {% if answer_data['pa5'] =="" %}<input type="text" style="width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" readonly>{% else %}<input type="text" style="color:red; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px;" value="{{ answer_data['pa5'] }}" readonly>{% endif %}
+            {% endif %}
+        {% else %}
+            <input type="text" name="five" ondrop="drop(event)" ondragover="allowDrop(event)" readonly style="font-size:18px; text-align: center; font-weight: bold; background-color: transparent; border: 0px solid #f08080; border-bottom-width: 2px; width: 150px; color: blue">
+            <input name="correctAnswer5" style="display: none" value="{{ data[4][3] }}">
+            <input name="question5" style="display: none" value="{{ data[4][2] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em; font-weight: bold">
+            {{ data[4][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a5_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a5'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br>
+    </div>
+    </div>
+
+    {% if answer_data %}
+        <input type="image" src="/static/img/buttonSt.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: -120px;margin-top: -100px;outline: none;"   height="170" width="120" />
+        <label id="marks" class="label " style="background-color: #000000;color: red ;font-size: 20px;font-style:oblique;" >{{ answer_data['marks'] }}/5</label>
+
+        <div id="disables" style="margin-left: 400px ; margin-top: -100px" class="form-group"><br>
+            <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+        </div>
+         {% else %}
+        <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/buttonSt.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: -120px;margin-top: -100px;outline: none;"  height="170" width="120" />
+
+    {% endif %}
+
+    </div>
+    </form>
+
+    <script>
+
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "150px";
+}
+
+function normalImg(x) {
+    x.style.height = "170px";
+    x.style.width = "120px";
+}
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level1_conjunctions_new"
+}
+
+function no() {
+    window.location.href = "/level1"
+}
+</script>
+
+    <script type="text/javascript">
+        function openWin() {
+            window.location.href = "http://127.0.0.1:5000/level1_conjunctions_new"
+        }
+
+    </script>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.target.style.color = "#0000B2";
+            ev.dataTransfer.setData("text", ev.target.textContent);
+        }
+
+        function drop(ev) {
+            document.getElementById("ansCollection1").style.color = "black";
+            document.getElementById("ansCollection2").style.color = "black";
+            document.getElementById("ansCollection3").style.color = "black";
+            document.getElementById("ansCollection4").style.color = "black";
+            document.getElementById("ansCollection5").style.color = "black";
+
+            if (ev.target.getAttribute("name") == "one") {
+                document.getElementById("speak_q1").style.visibility = 'visible'
+            }
+            else if (ev.target.getAttribute("name") == "two") {
+                document.getElementById("speak_q2").style.visibility = 'visible'
+            }
+            else if (ev.target.getAttribute("name") == "three") {
+                document.getElementById("speak_q3").style.visibility = 'visible'
+            }
+            else if (ev.target.getAttribute("name") == "four") {
+                document.getElementById("speak_q4").style.visibility = 'visible'
+            }
+            else if (ev.target.getAttribute("name") == "five") {
+                document.getElementById("speak_q5").style.visibility = 'visible'
+            }
+
+            ev.target.style.color = "blue";
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.value=data;
+        }
+    </script>
+
+    <script type=text/javascript>
+        $(function () {
+            $('#speak_q1').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question1"]').val(),
+                    answer: $('input[name="one"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q2').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question2"]').val(),
+                    answer: $('input[name="two"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q3').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question3"]').val(),
+                    answer: $('input[name="three"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q4').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question4"]').val(),
+                    answer: $('input[name="four"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q5').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question5"]').val(),
+                    answer: $('input[name="five"]').val()
+                });
+                return false;
+            });
+        });
+    </script>
+
+{% endblock %}

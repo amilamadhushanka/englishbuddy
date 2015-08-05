@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <style type="text/css">
+        .form-group {
+            width: 976px;
+        }
+    </style>
+    <link href="/static/css/main2.css" rel="stylesheet">
+</head>
+
+{% extends "home2.html" %}
+{% block content %}
+<body style="overflow: auto; overflow-x: hidden">
+    <br><br><br>
+    <form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')" name="level1_dialogs" method="post" action="{{ url_for('evaluate_level1_dialogs') }}">
+        <br><br>
+        <label style="margin-left: 150px; color: #A319A3;font-size: 20px; margin-top: -5px">Match the answers with the correct responses. (Tick the correct radio button.)</label><br><br>
+
+        <div class="form-group" style="margin-top: -20px; text-align :left; margin-left: 150px;overflow: auto;height: 360px;overflow-x: hidden">
+
+            {% for key in data %}
+                <input type="hidden" name="qNo" value="{{ key[0] }}"/>
+                <br>
+                <div>
+                     <div style="border: solid; border-color:#f08080; width: 900px; line-height:30px;">
+                        <div style="padding-left: 10px"><font style="color: blue; font-size: 16px;">{{ key[3] |safe }}</font></div>
+                    </div>
+                    <br>
+                    <font style="color: #000000; line-height: 2em">
+
+                        {{ key[2].split("1)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                1)&nbsp;
+                                <input type="radio" name="one" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="one" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="one" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="one" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="one" value="e">e &nbsp;&nbsp;
+{#                                <input type="radio" name="one" value="f">f &nbsp;&nbsp;#}
+                            </font>
+                        </div>
+
+                        {{ key[2].split("1)")[1].split("2)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                2)&nbsp;
+                                <input type="radio" name="two" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="two" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="two" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="two" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="two" value="e">e &nbsp;&nbsp;
+{#                                <input type="radio" name="two" value="f">f &nbsp;&nbsp;#}
+                            </font>
+                        </div>
+
+                        {{ key[2].split("2)")[1].split("3)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                3)&nbsp;
+                                <input type="radio" name="three" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="three" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="three" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="three" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="three" value="e">e &nbsp;&nbsp;
+{#                                <input type="radio" name="three" value="f">f &nbsp;&nbsp;#}
+                            </font>
+                        </div>
+
+                        {{ key[2].split("3)")[1].split("4)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                4)&nbsp;
+                                <input type="radio" name="four" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="four" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="four" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="four" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="four" value="e">e &nbsp;&nbsp;
+{#                                <input type="radio" name="four" value="f">f &nbsp;&nbsp;#}
+                            </font>
+                        </div>
+
+                        {{ key[2].split("4)")[1].split("5)")[0] |safe }} &nbsp;
+
+                        <div style="background-color: #f08080; display: inline;">
+                            <font color="black" style="font-weight: bold">
+                                5)&nbsp;
+                                <input type="radio" name="five" value="a" required>a &nbsp;&nbsp;
+                                <input type="radio" name="five" value="b">b &nbsp;&nbsp;
+                                <input type="radio" name="five" value="c">c &nbsp;&nbsp;
+                                <input type="radio" name="five" value="d">d &nbsp;&nbsp;
+                                <input type="radio" name="five" value="e">e &nbsp;&nbsp;
+{#                                <input type="radio" name="five" value="f">f &nbsp;&nbsp;#}
+                            </font>
+                        </div>
+
+                        {{ key[2].split("5)")[1] |safe }}
+
+                    </font><br><br>
+                </div>
+            {% endfor %}
+
+        </div>
+        <br><br>
+        <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image"
+           src="/static/img/buttonMs.png" border="0" alt="Submit" name="sub_but"
+           style="margin-left: 20px;margin-top: -130px;outline: none;"  height="170" width="150"/>
+    </form>
+</body>
+
+ <script>
+        function bigImg(x) {
+            x.style.height = "200px";
+            x.style.width = "170px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "170px";
+            x.style.width = "150px";
+        }
+
+    </script>
+
+ <script type="text/javascript">
+    function openWin()
+    {
+        window.location.href ="http://127.0.0.1:5000/level1_dialogs"
+    }
+ </script>
+
+
+{% endblock %}

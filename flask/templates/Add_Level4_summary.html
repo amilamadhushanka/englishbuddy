@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% block content %}
+ <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/add_conjunction_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <br>
+
+<form method="post" role="form" action="/addSummaryQues_Level4">
+<h2 style="color: #FF99FF; padding-left: 180px">Advanced Level ->Add Summary Questions.</h2>
+    <br>
+    <div style="height:450px; overflow:scroll; overflow-x:hidden; border:thin solid; border-color:DarkGray;">
+    <br><br>
+        <center>
+
+<div id="question1_container">
+    <label style="color: #ffffff;margin-right: 600px" id="Question">Question : </label>
+
+      <textarea id="Question1"  name="Question1" rows="6" cols="70" class="form-control" style="border: 3px double #CCCCCC;width: 600px;height:200px"  required="required" placeholder="Enter Question">{% if errors %}{{ errors['Question1'] }}{% endif %}</textarea>
+
+      <br><br>
+       <input id="addQuestion2" class="btn btn-warning" type="button" style="margin-right:450px; width: 150px" value="Add Question 2"/>
+            <br><br>
+</div>
+
+    <div id="question2_container" style="display: none">
+   <label style="color: #ffffff;margin-right: 600px">Question 2 : </label>
+
+
+      <textarea id="Question2"  name="Question2" rows="6" cols="70" class="form-control" style="border: 3px double #CCCCCC;width: 600px;height: 200px" placeholder="Enter Question" >{% if errors %}{{ errors['Question2'] }}{% endif %}</textarea>
+
+      <br><br>
+       <input id="addQuestion3" class="btn btn-warning" type="button" style="margin-right:450px; width: 150px" value="Add Question 3"/>
+            <br><br>
+</div>
+
+    <div id="question3_container" style="display: none">
+    <label style="color: #ffffff;margin-right: 600px">Question 3 : </label>
+
+      <textarea id="Question3"  name="Question3" rows="6" cols="70" class="form-control" style="border: 3px double #CCCCCC;width: 600px;height: 200px" placeholder="Enter Question" >{% if errors %}{{ errors['Question3'] }}{% endif %}</textarea>
+
+
+</div>
+
+
+            </center>
+        </div>
+
+</br></br>
+
+   <table align = "center">
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn btn-primary" style="margin-left: 225px;width:150px " id="save" value="Save Question"/> &nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" style="width:150px " onclick="window.close()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+<script type="text/javascript" src="/static/bootstrap/js/nicEdit-latest.js"></script>
+
+ <script type="text/javascript">
+//<![CDATA[
+  bkLib.onDomLoaded(function() {
+
+        new nicEditor({fullPanel : true,maxHeight : 200}).panelInstance('area');
+  });
+  //]]>
+  </script>
+
+
+
+<script type="text/javascript">
+ function setbg(color,id){
+
+     document.getElementById(id).style.background=color
+ }
+</script>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion2").click(function()
+            {
+                $("#question2_container").fadeToggle(300);
+                var el = document.getElementById("addQuestion2");
+                if (el.value == "Add Question 2")
+                {
+                    el.value = "Remove Question 2";
+                    document.getElementById("Question").textContent = "Question 1 : "
+                    document.getElementById("Question2").required=true;
+                    document.getElementById("save").value="Save Questions";
+
+                }
+                else
+                {
+                      el.value = "Add Question 2";
+                     document.getElementById("Question").textContent = "Question : "
+                    document.getElementById("Question2").value='';
+                    document.getElementById("Question2").required=false;
+                    document.getElementById("save").value="Save Question";
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question2_container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion3").click(function()
+            {
+                $("#question3_container").fadeToggle(300);
+                var el = document.getElementById("addQuestion3");
+                if (el.value == "Add Question 3")
+                {
+                    el.value = "Remove Question 3";
+                    document.getElementById("Question3").required=true;
+
+                }
+                else
+                {
+                      el.value = "Add Question 3";
+                    document.getElementById("Question3").value='';
+                    document.getElementById("Question3").required=false;
+
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question3_container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+
+{% endblock %}

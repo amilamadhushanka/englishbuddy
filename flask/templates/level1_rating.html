@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+{% extends "homeRating.html" %}
+{% block content %}
+     <link href="/static/css/font.css" rel="stylesheet" media="screen">
+
+    <br>
+
+    <table>
+        <tr>
+
+            <td>
+
+                <div>
+                    <button class="btn-info btn" type="submit" id="period" style="display: none ;">Start Quiz</button>
+                </div>
+
+                <div id="getting-started"></div>
+
+                <div style="margin-left: -400px">
+                    <label style="font-size: 24px; text-align :left; margin-left: 1100px;margin-top: 20px"><b><font
+                            color="#7cfc00">Time
+                        Left :&nbsp;</font></b></label>
+                    <snap id="countdown"
+                          style="font-weight: bold;margin-top: -20px ; font-size:30px;color: #7cfc00;">
+                    </snap>
+                </div>
+                <label style="font-family:hobo; margin-left: 420px;margin-bottom:-50px;border:dashed;border-color: #000000;text-align: center;color: deepskyblue">Your Current Score<br>{{ marks }}</label>
+
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <form name="level1_test" method="post" action="{{ url_for('evaluate_ranking') }}">
+    <div>
+
+    <table style="border-collapse:separate;border-spacing: 0 0.94em;margin-left: -50px;margin-top: -90px;font-family: 'hobo';text-align: center;">
+        <tr style="margin-bottom: 20em">
+            <td style="width: 230px;">
+                <label class="btn btn-warning " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #FFCC00;">{{ answer[0] }}</label>
+            </td>
+
+            <td style="width: 230px;">
+                <label class="btn btn-warning " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #0000CC;">{{ answer[1] }}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #FF0066;">{{ answer[2] }}</label>
+            </td>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #FFCC00;">{{ answer[3] }}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #006633;">{{ answer[4] }}</label>
+            </td>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;">{{ answer[5] }}</label>
+            </td>
+        </tr>
+        <tr style="height: 30px">
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;">{{ answer[6] }}</label>
+            </td>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #006633;">{{ answer[7] }}</label>
+            </td>
+        </tr>
+        <tr style="height: 30px">
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 230px;">
+                <label class="btn btn-primary " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #0000CC;">{{ answer[8] }}</label>
+            </td>
+            <td style="width: 230px;">
+                <label class="btn btn-danger " draggable="true" ondragstart="drag(event)"
+                       style="background: none;border: none;outline:none;font-size: 18px;color: #FF0066;">{{ answer[9] }}</label>
+            </td>
+        </tr>
+    </table>
+
+    <div style="margin-left: 600px;margin-top: -400px;overflow: auto; overflow-x: hidden;height: 450px; width: 650px">
+    <table cellspacing="0" cellpadding="0">
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">1.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[0][0].split("#")[0]|safe }}</font>
+
+            <input type="text"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   ondrop="drop(event)" ondragover="allowDrop(event)" name="provideAnswer1"/>
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[0][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer1" value="{{ result[0][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">2.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[1][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer2"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[1][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer2" value="{{ result[1][1]|safe }}"/>
+        </td>
+    </tr>
+    <td>&nbsp;</td>
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">3.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[2][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer3"/>
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[2][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer3" value="{{ result[2][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">4.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[3][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer4"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[3][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer4" value="{{ result[3][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">5.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[4][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black; outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer5"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[4][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer5" value="{{ result[4][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">6.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[5][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black; outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer6"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[5][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer6" value="{{ result[5][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">7.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[6][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer7"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[6][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer7" value="{{ result[6][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">8.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[7][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer8"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[7][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer8" value="{{ result[7][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">9.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[8][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer9"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[8][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer9" value="{{ result[8][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1" style="color: #ffffff">10.</label>
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[9][0].split("#")[0]|safe }}</font>
+
+            <input type="text" ondrop="drop(event)" ondragover="allowDrop(event)"
+                   style="background-color: transparent;border: none;border-bottom: 2px solid black;outline: none;color: #0BFFFC;font-weight: bold;text-align: center"
+                   name="provideAnswer10"
+                    />
+
+            <font for="Question1" id="Question1" style="color: #ffffff">{{ result[9][0].split("#")[1]|safe }}</font>
+
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td>
+            <input type="hidden" id="ans1" name="correct_answer10" value="{{ result[9][1]|safe }}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+
+   <br><br><br><br>
+                <input id="yes" onmouseover="bigSImg(this)" onmouseout="normalSImg(this)" type="image" src="/static/img/submit.png" border="0" alt="Submit" name="sub_but"   height="90" width="100" style="outline: none;margin-top: -100px;margin-left: 10px" />
+
+
+
+    </div>
+
+    </div>
+
+
+    <br><br>
+    </form>
+    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)" onclick="return false" type="image" src="/static/img/level1Ranking.png" border="0" style=";outline:none;margin-left: 410px;margin-top: -1000px" height="200" width="150" id="bubble" data-toggle="popover"
+           title="Instructions" data-placement="top" data-content="Drag and drop the correct answer to the given space."/>
+
+
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        var timeInSecs;
+        var ticker;
+        var s;
+        var count = 0;
+        var secs = 0;
+        window.onload = start;
+
+        function start() {
+            s = document.getElementById("period").value;
+            document.getElementById("period").disabled = true;
+            s = 1860;
+            startTimer(s);
+        }
+
+        function startTimer(secs) {
+            timeInSecs = parseInt(secs);
+            ticker = setInterval("tick()", 1000);
+            tick(); // to start counter display right away
+        }
+
+        function tick() {
+            var secs = timeInSecs;
+            if (secs > 0) {
+                timeInSecs--;
+                showTime(secs);
+            }
+        }
+
+        function showTime(secs) {
+            var hours = Math.floor(secs / 3600);
+            secs %= 3600;
+            var min = Math.floor(secs / 60);
+            secs %= 60;
+            var result = ((hours < 10 ) ? "0" : "" ) + hours + ":" + ( (min < 10) ? "0" : "" ) + min
+                    + ":" + ( (secs < 10) ? "0" : "" ) + secs;
+
+            document.getElementById('countdown').innerHTML = result;
+        }
+
+        var auto = setInterval(function () {
+            submitform();
+        }, 2401000);
+        function submitform() {
+
+            document.getElementById("form1").submit();
+        }
+    </script>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.textContent);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.value = data;
+        }
+    </script>
+
+<script>
+    $('#bubble').popover('show')
+    $('.popover').css("background-color", "#00FFCC");
+    $('.popover').css("max-width", "250px")
+    $('.popover').css("max-height", "250px");
+    $('.popover-title').css("background-color", "#333300");
+    $('.popover-title').css("color", "#CC0000");
+    $('.popover-title').css("font-family", "myFirstFont");
+    $('.popover-title').css("font-size", "30px");
+    $('.popover').css("font-family", "hobo");
+
+</script>
+
+<script>
+    function bigImg(x) {
+        x.style.height = "250px";
+        x.style.width = "200px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "200px";
+        x.style.width = "150px";
+    }
+
+    function bigSImg(x) {
+        x.style.height = "100px";
+        x.style.width = "120px";
+    }
+
+    function normalSImg(x) {
+        x.style.height = "90px";
+        x.style.width = "100px";
+    }
+
+</script>
+{% endblock %}

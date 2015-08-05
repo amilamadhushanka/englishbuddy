@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<form name="level3_active_passive_evaluate"
+      style="margin-left: 100px;margin-top: -5px ;width: 1150px;height: 600px;background-image: url('/static/img/testback.png')">
+<br>
+
+<div>
+    <label style="margin-left:300px;  color: darkmagenta; font-size: 20px; font-weight: bold; margin-top: 20px">
+        Rewrite the sentence in passive voice in the given space.</label></div>
+<br>
+<div class="form-inline" style="font-size: 16px;padding-left: 230px">
+
+<!--question 1------------------------------------------------------------------->
+<div>
+    <label for="txtQuestion1" style="color: #000000; line-height: 2em; font-weight: bold">1.</label>
+
+    <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['sentence1']|safe}}</font><br>
+
+    <label name="txtAnswerSet1" id="txtAnswerSet1"
+          style="color:orangered; font-weight: bold; font-size: 16px; text-align: center; width: 400px; background-color: transparent; border: 0px solid saddlebrown; border-bottom-width: 2px;">{{data_set['answer1']}}
+        &nbsp; &nbsp;&nbsp;&nbsp;</label>
+    {% if (data_set['p1']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p1']}}</label>
+
+    {% elif (data_set['p2']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p2']}}</label>
+
+    {% elif (data_set['p3']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p3']}}</label>
+
+    {% elif (data_set['p4']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p4']}}</label>
+
+    {% elif (data_set['p5']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p5']}}</label>
+
+    {% elif (data_set['p6']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p6']}}</label>
+
+    {% elif (data_set['p7']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p7']}}</label>
+
+    {% elif (data_set['p8']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['p8']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p2']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p3']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p4']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p5']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p6']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p7']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['p8']}}</label>
+    <br>
+
+    <label style="color:deepskyblue; font-size: 16px;">Subject :&nbsp;&nbsp;{{data_set['subject']}}&nbsp;&nbsp;/&nbsp;&nbsp;Object :{{data_set['object']}}</label>
+    <br>
+    <label style="color: dodgerblue; font-size: 16px;">{{data_set['subject']}}&nbsp;+</label>
+    <label style="color: firebrick; font-size: 16px;"> Verb +</label>
+    <label style="color: dodgerblue; font-size: 16px;">&nbsp;{{data_set['object']}}</label>
+
+    {% endif %}
+
+</div><br>
+<!------------------------------2nd question--------------------------------------------->
+<div>
+    <label for="txtQuestion2" style="color: #000000; line-height: 2em; font-weight: bold">2.</label>
+
+    <font for="Question2" id="Question2" style="color: #000000; line-height: 0.5em; font-weight: bold">{{
+        data_set['sentence2']|safe}}</font><br>
+
+    <label name="txtAnswerSet2" id="txtAnswerSet2"
+           style="color:orangered; font-weight: bold; font-size: 16px; text-align: center; width: 400px; background-color: transparent; border: 0px solid saddlebrown; border-bottom-width: 2px;">{{data_set['answer2']}}
+        &nbsp; &nbsp;&nbsp;&nbsp;</label>
+
+    {% if (data_set['s1']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s1']}}</label>
+
+    {% elif (data_set['s2']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s2']}}</label>
+
+    {% elif (data_set['s3']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s3']}}</label>
+
+    {% elif (data_set['s4']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s4']}}</label>
+
+    {% elif (data_set['s5']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s5']}}</label>
+
+    {% elif (data_set['s6']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s6']}}</label>
+
+    {% elif (data_set['s7']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s7']}}</label>
+
+    {% elif (data_set['s8']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['s8']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s2']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s3']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s4']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s5']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s6']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s7']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['s8']}}</label>
+
+    <br>
+    <label style="color:deepskyblue; font-size: 16px;">Subject :&nbsp;&nbsp;{{data_set['subject2']}}&nbsp;&nbsp;/&nbsp;&nbsp;Object :{{data_set['object2']}}</label>
+    <br>
+    <label style="color: dodgerblue; font-size: 16px;">{{data_set['subject2']}}&nbsp;+</label>
+    <label style="color: firebrick; font-size: 16px;"> Verb +</label>
+    <label style="color: dodgerblue; font-size: 16px;">&nbsp;{{data_set['object2']}}</label>
+
+
+    {% endif %}
+</div><br>
+<!------------------------------3rd question--------------------------------------------->
+<div>
+    <label for="txtQuestion3" style="color: #000000; line-height: 2em; font-weight: bold">3.</label>
+
+    <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['sentence3']|safe}}</font><br>
+
+    <label name="txtAnswerSet3" id="txtAnswerSet3"
+           style="color:orangered; font-weight: bold; font-size: 16px; text-align: center; width: 400px; background-color: transparent; border: 0px solid saddlebrown; border-bottom-width: 2px;">{{data_set['answer3']}}
+        &nbsp; &nbsp;&nbsp;&nbsp;</label>
+
+    {% if (data_set['t1']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t1']}}</label>
+
+    {% elif (data_set['t2']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t2']}}</label>
+
+    {% elif (data_set['t3']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t3']}}</label>
+
+    {% elif (data_set['t4']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t4']}}</label>
+
+    {% elif (data_set['t5']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t5']}}</label>
+
+    {% elif (data_set['t6']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t6']}}</label>
+
+    {% elif (data_set['t7']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t7']}}</label>
+
+    {% elif (data_set['t8']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['t8']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t2']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t3']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t4']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t5']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t6']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t7']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['t8']}}</label>
+
+     <br>
+    <label style="color:deepskyblue; font-size: 16px;">Subject :&nbsp;&nbsp;{{data_set['subject3']}}&nbsp;&nbsp;/&nbsp;&nbsp;Object :{{data_set['object3']}}</label>
+    <br>
+    <label style="color: dodgerblue; font-size: 16px;">{{data_set['subject3']}}&nbsp;+</label>
+    <label style="color: firebrick; font-size: 16px;"> Verb +</label>
+    <label style="color: dodgerblue; font-size: 16px;">&nbsp;{{data_set['object3']}}</label>
+
+    {% endif %}
+</div>
+<br>
+<label id="marks" class="label " style="color:  orangered ;font-size: 20px;font-style:oblique;border-style: ridge; border-color: red;border-width: 2px">Marks:{{data_set['count']}}/3</label>
+<br>
+<div id="disables" style="margin-left: 350px ;margin-top: -140px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+</div>
+
+</div>
+</form>
+
+<script>
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level4_active_passive"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level4"
+}
+</script>
+
+{% endblock %}

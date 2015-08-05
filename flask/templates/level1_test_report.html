@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+
+    <div class="panel panel-success" style="width: 600px;text-align: center;margin-left: 300px;margin-top: 30px;border-color: plum;box-shadow: 10px 10px 5px #000000">
+    <div class="panel-heading"  style="color:red;font-family:Verdana;font: bolder;font-size: large" >Elementary Level Test Results</div>
+    <div class="panel-body" style="background:url(/static/img/background2_blur.jpg); " >
+
+    <h1 style="color:#ffffff">Correct answers: {{ data['marks'] }} / 20</h1>
+        <br>
+        <h2 style="color:#ffffff">Your score: {{ "{0:.2f}".format((data['marks']/20)*100) }} % </h2>
+        {% if data['level']=='Preliminary' %}
+            <h2 style="color:#ffffff">Congratulations! You are selected for <h2 style="color: gold">{{ data['level'] }} Level</h2></h2>
+        {% else %}
+            <h2 style="color:#ffffff">Sorry! You are not eligible for <h2 style="color: gold">Preliminary Level</h2></h2>
+            <h3 style="color:#ffffff">Do Elementary level activities and attempt the Elementary level test again.</h3>
+        {% endif %}
+        <br>
+        <input type="button" onclick="home();" class="btn btn-primary" value="Home" style="width: 150px; font-size: 16px">
+        <br><br>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function home() {
+            window.location.href = "/home"
+        }
+    </script>
+
+{% endblock %}

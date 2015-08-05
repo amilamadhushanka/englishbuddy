@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level4_note" method="post" action="{{ url_for('evaluate_level4_Note') }}">
+
+<div class="form-group" style="margin-left: 150px; color: #000000;font-size: 15px">
+  <br><br><textarea name="question" style="width: 900px;font-size: 18px;height: 165px;background: none;border: none;color: purple;outline: none" readonly>Q.)&nbsp; {{ data[0][1] }} </textarea>
+    <br><br><textarea name="answer" style="width: 700px;margin-left: 150px;margin-top: -5px;background-color: transparent;border-color: deepskyblue;border-width: 2px;color: #000000;font-size: 15px"  rows="10" id="comment" required></textarea>
+</div>
+
+
+<input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/ship.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 40px;margin-top: -110px;outline: none;"  height="200" width="250" />
+
+</form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "220px";
+    x.style.width = "270px";
+}
+
+function normalImg(x) {
+    x.style.height = "200px";
+    x.style.width = "250px";
+}
+
+</script>
+{% endblock %}

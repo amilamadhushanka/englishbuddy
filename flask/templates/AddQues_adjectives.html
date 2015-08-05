@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>Add Adjective Question</title>
+</head>
+
+{% block content %}
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/add_conjunction_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <br>
+    <form style="width:850px;height: 600px;background-image: url('/static/img/addquesback.png');margin-left: 50px" class="form-conjunctions" name="drop_list" id="conjunctionsForm" method="post"
+          action="{{ url_for('Save_adjectives') }}" onsubmit="return validateForm()">
+
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <h3 style="color: purple; padding-left: 180px;">Elementary Level -> Add adjective
+                        Question</h3>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <div style="height:450px; overflow:auto; overflow-x:hidden;margin-left: -50px">
+
+            <br>
+
+
+            <div id="div_question1" role="menu">
+                <div style="display: inline">
+                    <label style="margin-left: 200px;font-size: 16px; color:#000000;">Question:</label></br>
+                    <input type="text" name="txtQuestion" id="txtQuestion" onkeyup="previewFunc1()" class="form-control"
+                           style="border-color: deepskyblue;margin-left: 200px;background-color: #CCF5FF ;width: 500px;display: inline; color:#000000; font-size: 16px"
+                           placeholder="Enter your question here, insert # to indicate the blank line "
+                           required autofocus value="{% if errors %}{{ errors['question'] }}{% endif %}">
+                    <button type="button" id="preview1" data-toggle="modal" data-target="#previewModal"
+                            class="btn btn-info" data-id="1" style="border-color: blue;margin-left: 5px; width: 40px" disabled><img
+                            src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                    <br><br>
+                    <label style="margin-left: 200px;font-size: large; color: #000000">Enter multiple answers for the
+                        question in below fields :</label>
+                    <br>
+                    <input type="Answer1" name="txtAnswer1" class="form-control" id="txtAnswer1" placeholder=" Answer A"
+                           style="border-color: #d119cf;background-color:#FFE6F0;margin-left: 200px; width: 500px; display: inline; color:#000000; font-size: 16px"
+                           required value="{% if errors %}{{ errors['a'] }}{% endif %}">
+                    <br><br>
+                    <input type="Answer2" name="txtAnswer2" class="form-control" id="txtAnswer2" placeholder=" Answer B"
+                           style="border-color: #d119cf;background-color:#FFE6F0;margin-left: 200px; width: 500px; display: inline; color:#000000; font-size: 16px"
+                           required value="{% if errors %}{{ errors['b'] }}{% endif %}">
+                    <br><br>
+                    <input type="Answer3" name="txtAnswer3" class="form-control" id="txtAnswer3" placeholder=" Answer C"
+                           style="border-color: #d119cf;background-color:#FFE6F0;margin-left: 200px; width: 500px; display: inline; color:#000000; font-size: 16px"
+                           required value="{% if errors %}{{ errors['c'] }}{% endif %}">
+                    <br><br>
+
+                    <label style="margin-left: 200px;font-size: large; color: #000000;">Enter Correct answer :</label>
+                    <br>
+                    <input type="Answer" name="txtCorrectAnswer" class="form-control" id="txtCorrectAnswer"
+                           placeholder="Correct Answer for question"
+                           style="border-color: #d119cf;background-color:#FFE6F0;margin-left: 200px; width: 500px; display: inline; color:#000000; font-size: 16px"
+                           required value="{% if errors %}{{ errors['answer'] }}{% endif %}">
+
+                </div>
+            </div>
+            <br>
+
+            {% if errors %}{% if errors['questionStatus'] %}
+                <label style="margin-left: 180px; color:#f08080; font-size: 16px">Question already exists!</label><br>
+                <br>{% endif %}{% endif %}
+
+            <br>
+            <table align="center">
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="btn btn-primary" style="border-color: deepskyblue;margin-left: 225px;width:150px" id="save"
+                               value="Save Question"/>&nbsp;&nbsp;
+                        <button type="button" class="btn btn-danger" style="border-color: red;width:150px " onclick="window.close()">
+                            Cancel
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+
+    <!--  Preview Question Model -->
+
+    <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModal"
+         aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Preview</h4>
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <br>
+                    <label style="color: green; font-size: 21px">Question : </label>
+                    <label id="display_question" style="font-size: 20px"></label>
+                    <br>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Preview Model -->
+
+    <script type="text/javascript">
+        $('#previewModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            if (id == 1) {
+                var question = document.getElementById("txtQuestion").value;
+            }
+
+            var que = question.split("#");
+            if (que[1]) {
+                var result = que[0] + " __________ " + que[1];
+            }
+            else {
+                var result = question;
+            }
+            que[1] = " ";
+            var modal = $(this)
+            //modal.find('#question').val(result);
+            document.getElementById('display_question').textContent = result;
+
+        })
+    </script>
+
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+
+    <!-- Enable/Disable Preview Buttons -->
+
+    <script type="text/javascript">
+
+        function previewFunc1() {
+            var question = document.getElementById("txtQuestion").value;
+
+            if (!question) {
+                document.getElementById("preview1").disabled = true;
+            }
+            else {
+                document.getElementById("preview1").disabled = false;
+            }
+        }
+
+    </script>
+
+
+
+
+    <!-- Validate Questions -->
+
+    <script>
+        function validateForm() {
+
+            var q1 = document.getElementById("txtQuestion");
+
+            if (q1.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing in question,Please insert # to insert the blank.");
+                q1.focus();
+                return false;
+            }
+        }
+
+    </script>
+
+    <!-- Enable Question 1 preview button when question exists -->
+    {% if errors %}{% if errors['question'] %}
+        <script>
+            document.getElementById("preview1").disabled = false;
+        </script>
+    {% endif %}{% endif %}
+
+{% endblock %}

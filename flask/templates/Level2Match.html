@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<br><br><br>
+
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')" >
+<br>
+<h2 style="margin-left: 180px;color: #A319A3;font-size: 26px; font-weight: bold">Match the similar words. (Type the letter in relevant text box.)</h2></br>
+<h2 style="margin-left: 250px;color:#A319A3;font-size: 28px;font-style: oblique;display: inline">Example -></h2><h2 style="color:maroon;font-size: 28px;font-style: oblique;display: inline"> 1. talk &nbsp;&nbsp;</h2><h2 style="color: maroon;font-size: 28px;font-style: italic;display: inline;margin-left: 60px">&nbsp;&nbsp; a. chat</h2><input id="text0" type="text" style="background-color: plum;width: 40px;height: 30px;margin-left: 510px;margin-top: -30px;font-size: 20px; border-color: #d119cf;color: #000000" value="a" class="form-control"  readonly>
+
+<div style="margin-left: 100px">
+  <ol class="dinosaurs" id="questionset" type="1" style="margin-left: 100px ; margin-top: 50px;color: #000000 ;font-size: 28px; " >
+        <li id="answerset5">{{data[0][1]}}</li>
+        <li>{{data[1][1]}}</li>
+        <li>{{data[2][1]}}</li>
+        <li>{{data[3][1]}}</li>
+        <li>{{data[4][1]}}</li>
+     </ol>
+
+
+     <ol  id="text" style="margin-left: 300px ;margin-top: -200px;">
+        <input id="text1" type="text" style="width: 40px;height: 30px;font-size: 20px;border-color: #FF0066;background-color:lightpink;color: #000000 " class="form-control" id="CorrectAns"  >
+        <input id="text2" type="text" style="width: 40px;height: 30px;margin-top: 10px;font-size: 20px;background-color: lightgreen;border-color: limegreen;color: #000000" class="form-control" id="CorrectAns"  >
+        <input id="text3" type="text" style="background-color: #f08080;border-color: saddlebrown;width: 40px;height: 30px;margin-top: 10px;font-size: 20px;color: #000000" class="form-control" id="CorrectAns"  >
+        <input id="text4" type="text" style="width: 40px;height: 30px;margin-top: 10px;font-size: 20px;background-color: lightskyblue;border-color: blue;color: #000000" class="form-control" id="CorrectAns"  >
+        <input id="text5" type="text" style="width: 40px;height: 30px;margin-top: 10px;font-size: 20px;background-color: lightsalmon ;border-color: orangered;color: #000000" class="form-control" id="CorrectAns"  >
+     </ol>
+
+
+     <ol class="dinosaurs" id="answerset" type="a" style="margin-left: 550px ; margin-top: -210px;color: #000000  ;font-size: 28px;border-color: plum">
+        <li id="answerset1">{{data[0][2]}}</li>
+        <li id="answerset2">{{data[1][2]}}</li>
+        <li id="answerset3">{{data[2][2]}}</li>
+        <li id="answerset4">{{data[3][2]}}</li>
+        <li id="answerset5">{{data[4][2]}}</li>
+     </ol>
+
+
+     <div style="display:none; margin-left: 400px; margin-top: -200px" id="validWrong1"  >
+        <img src="/static/img/Wrong.png" height="26" width="22">
+        &nbsp;&nbsp;&nbsp;
+        <label class="btn btn-danger btn-xs" style="color: #ffffff;font-size: 20px">{{ data[0][2]|safe  }}</label>
+     </div>
+
+     <div  style="display:none ; margin-left: 400px; margin-top: -200px" id="validRight1">
+       <img src="/static/img/Right.png" height="26" width="26">
+     </div>
+
+     <div style="display:none;margin-left: 400px;margin-top: 5px" id="validWrong2" >
+        <img src="/static/img/Wrong.png" height="26" width="22">
+        &nbsp;&nbsp;&nbsp;
+        <label class="btn btn-danger btn-xs" style="color: #ffffff;font-size: 20px">{{ data[1][2]|safe  }}</label>
+     </div>
+
+     <div  style="display:none;margin-left: 400px;margin-top: 15px;" id="validRight2">
+         <img src="/static/img/Right.png" height="26" width="26">
+     </div>
+
+     <div style="display:none;margin-left: 400px;margin-top: 10px" id="validWrong3" >
+        <img src="/static/img/Wrong.png" height="26" width="22">
+        &nbsp;&nbsp;&nbsp;
+        <label class="btn btn-danger btn-xs" style="color: #ffffff;font-size: 20px">{{ data[2][2]|safe  }}</label>
+     </div>
+
+     <div  style="display:none;margin-left: 400px;margin-top: 15px" id="validRight3">
+       <img src="/static/img/Right.png" height="26" width="26">
+     </div>
+
+     <div style="display:none;margin-left: 400px;margin-top: 10px" id="validWrong4" >
+        <img src="/static/img/Wrong.png" height="26" width="22">
+        &nbsp;&nbsp;&nbsp;
+        <label class="btn btn-danger btn-xs" style="color: #ffffff;font-size: 20px">{{ data[3][2]|safe  }}</label>
+     </div>
+
+     <div  style="display:none;margin-left: 400px;margin-top: 15px" id="validRight4">
+         <img src="/static/img/Right.png" height="26" width="26">
+     </div>
+
+     <div style="display:none;margin-left: 400px;margin-top: 10px" id="validWrong5" >
+        <img src="/static/img/Wrong.png" height="26" width="22">
+        &nbsp;&nbsp;&nbsp;
+        <label class="btn btn-danger btn-xs" style="color: #ffffff;font-size: 20px">{{ data[4][2]|safe  }}</label>
+     </div>
+
+     <div  style="display:none;margin-left: 400px;margin-top: 15px" id="validRight5">
+         <img src="/static/img/Right.png" height="26" width="26">
+     </div>
+</div>
+     </br></br>
+
+    <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/buttonMs.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 20px;margin-top: -100px;outline: none;" onclick="result();"  height="170" width="150" />
+    <label id="marks" class="label " style="background-color: #000000;color: red ;font-size: 20px; display: none;font-style:oblique;" >...</label>
+
+    <div id="disables" style="display: none;margin-left: 550px ;margin-top: -150px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    </div>
+
+     {# answers for validation #}
+
+      <input type="hidden" id="answer1" name="ans" value="{{ data[0][2]|safe  }}"/>
+      <input type="hidden" id="answer2" name="ans" value="{{ data[1][2]|safe  }}"/>
+      <input type="hidden" id="answer3" name="ans" value="{{ data[2][2]|safe  }}"/>
+      <input type="hidden" id="answer4" name="ans" value="{{ data[3][2]|safe  }}"/>
+      <input type="hidden" id="answer5" name="ans" value="{{ data[4][2]|safe  }}"/>
+
+ </form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "170px";
+}
+
+function normalImg(x) {
+    x.style.height = "170px";
+    x.style.width = "150px";
+}
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/Level2Match"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level2"
+}
+</script>
+
+<script language="javascript">
+
+{# shuffling #}
+
+var list = document.getElementById("answerset")
+
+function shuffle(items)
+{
+    var cached = items.slice(0), temp, i = cached.length, rand;
+    while(--i)
+    {
+        rand = Math.floor(i * Math.random());
+        temp = cached[rand];
+        cached[rand] = cached[i];
+        cached[i] = temp;
+    }
+    return cached;
+}
+function shuffleNodes()
+{
+    var nodes = list.children, i = 0;
+    nodes = Array.prototype.slice.call(nodes);
+    nodes = shuffle(nodes);
+    while(i < nodes.length)
+    {
+        list.appendChild(nodes[i]);
+        ++i;
+
+    }
+}
+window.onload = shuffleNodes;
+
+
+function result() {
+
+    var count = 0;
+    var list1 = document.getElementById('answerset').getElementsByTagName("li");
+
+    var A =list1[0].innerText;
+    var B =list1[1].innerText;
+    var C =list1[2].innerText;
+    var D =list1[3].innerText;
+    var E =list1[4].innerText;
+
+    a1 = document.getElementById('answer1').value;
+    a2 = document.getElementById('answer2').value;
+    a3 = document.getElementById('answer3').value;
+    a4 = document.getElementById('answer4').value;
+    a5 = document.getElementById('answer5').value;
+{#    document.write(a1);
+    document.write(a2);
+    document.write(a3);
+    document.write(a4);
+    document.write(a5+"  ");
+
+    document.write(A);
+    document.write(B);
+    document.write(C);
+    document.write(D);
+    document.write(E);#}
+
+if ((document.getElementById('text1').value=='a')&&(A == document.getElementById('answer1').value)){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('text1').disabled = true;
+    count++;
+} else if ((document.getElementById('text1').value=='b')&&(B == document.getElementById('answer1').value)){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('text1').disabled = true;
+    count++;
+}else if ((document.getElementById('text1').value=='c')&&(C == document.getElementById('answer1').value)){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('text1').disabled = true;
+    count++;
+}else if ((document.getElementById('text1').value=='d')&&(D == document.getElementById('answer1').value)){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('text1').disabled = true;
+    count++;
+}else if ((document.getElementById('text1').value=='e')&&(E == document.getElementById('answer1').value)){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('text1').disabled = true;
+    count++;
+}else{
+    document.getElementById('validWrong1').style.display = 'block';
+    document.getElementById('validRight1').style.display = 'none';
+    document.getElementById('text1').disabled = true;
+}
+
+
+
+if((document.getElementById('text2').value == 'a')&&(A == document.getElementById('answer2').value)){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('text2').disabled = true;
+    count++;
+}else if((document.getElementById('text2').value == 'b')&&( B == document.getElementById('answer2').value)){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('text2').disabled = true;
+    count++;
+}else if((document.getElementById('text2').value == 'c')&&( C == document.getElementById('answer2').value)){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('text2').disabled = true;
+    count++;
+}else if((document.getElementById('text2').value == 'd')&& (D == document.getElementById('answer2').value)){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('text2').disabled = true;
+    count++;
+}else if((document.getElementById('text2').value == 'e')&&( E == document.getElementById('answer2').value)){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('text2').disabled = true;
+    count++;
+}else{
+     document.getElementById('validWrong2').style.display = 'block';
+     document.getElementById('validRight2').style.display = 'none';
+     document.getElementById('text2').disabled = true;
+}
+
+
+if((document.getElementById('text3').value == 'a')&& (A == document.getElementById('answer3').value)){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('text3').disabled = true;
+    count++;
+}else if((document.getElementById('text3').value == 'b')&& (B == document.getElementById('answer3').value)){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('text3').disabled = true;
+    count++;
+}else if((document.getElementById('text3').value == 'c')&&( C == document.getElementById('answer3').value)){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('text3').disabled = true;
+    count++;
+}else if((document.getElementById('text3').value == 'd')&&( D == document.getElementById('answer3').value)){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('text3').disabled = true;
+    count++;
+}else if((document.getElementById('text3').value == 'e')&&( E == document.getElementById('answer3').value)){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('text3').disabled = true;
+    count++;
+}else{
+     document.getElementById('validWrong3').style.display = 'block';
+     document.getElementById('validRight3').style.display = 'none';
+     document.getElementById('text3').disabled = true;
+}
+
+
+if((document.getElementById('text4').value == 'a')&& (A == document.getElementById('answer4').value)){
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('text4').disabled = true;
+    count++;
+}else if((document.getElementById('text4').value == 'b')&&( B == document.getElementById('answer4').value)){
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('text4').disabled = true;
+    count++;
+}else if((document.getElementById('text4').value == 'c')&&( C == document.getElementById('answer4').value)){
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('text4').disabled = true;
+    count++;
+}else if((document.getElementById('text4').value == 'd')&& (D == document.getElementById('answer4').value)){
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('text4').disabled = true;
+    count++;
+}else if((document.getElementById('text4').value == 'e')&&( E == document.getElementById('answer4').value)){
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('text4').disabled = true;
+    count++;
+}else{
+     document.getElementById('validWrong4').style.display = 'block';
+     document.getElementById('validRight4').style.display = 'none';
+     document.getElementById('text4').disabled = true;
+}
+
+if((document.getElementById('text5').value == 'a')&&( A == document.getElementById('answer5').value)){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('text5').disabled = true;
+    count++;
+}else if((document.getElementById('text5').value == 'b')&&( B == document.getElementById('answer5').value)){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('text5').disabled = true;
+    count++;
+}else if((document.getElementById('text5').value == 'c')&& (C == document.getElementById('answer5').value)){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('text5').disabled = true;
+    count++;
+}else if((document.getElementById('text5').value == 'd')&& (D == document.getElementById('answer5').value)){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('text5').disabled = true;
+    count++;
+}else if((document.getElementById('text5').value == 'e')&& (E == document.getElementById('answer5').value)){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('text5').disabled = true;
+    count++;
+}else{
+     document.getElementById('validWrong5').style.display = 'block';
+     document.getElementById('validRight5').style.display = 'none';
+     document.getElementById('text5').disabled = true;
+}
+
+
+document.getElementById('marks').innerHTML = count+"/5";
+document.getElementById('marks').style.display = 'inline';
+document.getElementById('disables').style.display='block';
+document.getElementById("markAnswers").disabled = true;
+}
+
+
+
+
+
+</script>
+
+
+
+{% endblock %}

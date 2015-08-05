@@ -1,0 +1,27 @@
+@font-face {
+   font-family:myFirstFont;
+   src: url(/static/fonts/PRISTINA.TTF);
+
+ }
+
+@font-face {
+    font-family:tempus ;
+    src: url(/static/fonts/tempus-sans-itc.ttf);
+}
+
+
+@font-face {
+    font-family:comic ;
+    src: url(/static/fonts/ComicRelief.ttf);
+}
+
+@font-face {
+    font-family:hobo ;
+    src: url(/static/fonts/HoboStd.otf);
+}
+
+@font-face {
+    font-family:Bradly ;
+    src: url(/static/fonts/BradleyHandITCBold.ttf);
+}
+

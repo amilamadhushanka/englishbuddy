@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+    <script type="text/javascript" src="/static/bootstrap/js/nicEdit-latest.js"></script>
+
+    <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({menubar : false, browser_spellcheck : true, auto_focus: "question", selector:'textarea'});</script>
+
+    <center>
+        <div>
+          <table class="table1" id="mytable" style="color: #ffffff" >
+             <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='80%' style="text-align: center">Question</th>
+                    <th width='10%' style="text-align: center">Edit</th>
+                    <th width='10%' style="text-align: center">Delete</th>
+                </tr>
+             </thead>
+
+             <tbody>
+
+             {% for key in data %}
+                <tr>
+                    <td style="vertical-align:middle;">
+                        {{ key[1]|safe }}<br>
+                        {{ key[2].split("#")[0]|safe }} &nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br>
+                        {{ key[3]|safe }}<br>
+                        {{ key[4].split("#")[0]|safe }} &nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br>
+                        {{ key[5]|safe }}<br>
+                        {{ key[6].split("#")[0]|safe }} &nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br>
+                        {{ key[7]|safe }}<br>
+                        {{ key[8].split("#")[0]|safe }} &nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br>
+                        {{ key[9]|safe }}<br>
+                        {{ key[10].split("#")[0]|safe }} &nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br>
+                        {% if key[11] != None %}{{ key[11]|safe }}{% endif %}
+                        <br>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <button type="button" data-toggle="modal" data-target="#editModel" class="btn btn-info" style="height: 40px; width: 40px" data-id="{{ key[0] }}"><span class='glyphicon glyphicon-pencil'></span></button>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        <button class="btn btn-danger" style="height: 40px; width: 40px" onclick="return doconfirm({{ key[0] }});"><span class='glyphicon glyphicon-trash'></span></button>
+                    </td>
+                </tr>
+
+             {% endfor %}
+          </tbody>
+          </table>
+        </div>
+    </center>
+<br>
+
+
+    <div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 900px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <form action="{{ url_for('save_edited_level4_dialog_question') }}" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                        <div style="height: 420px;overflow: scroll; overflow-x: hidden">
+
+                            <table align = "center" border="0" style="width:auto" >
+                                <col width="150">
+                                <col width="700">
+
+                                <tr>&nbsp;</tr>
+                                <tr>
+                                    <td></td>
+                                    <td><font color="green">Type the dialog below, type # to indicate a blank in the answer field. (There should be 5 blanks in the dialog.)</font></td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question1" id="question1" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 2 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="answer1" id="answer1" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question2" id="question2" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 2 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="answer2" id="answer2" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question3" id="question3" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 2 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="answer3" id="answer3" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question4" id="question4" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 2 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="answer4" id="answer4" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question5" id="question5" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 2 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="answer5" id="answer5" class="form-control" autofocus required>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Person 1 :&nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 600px; ">
+                                            <input type="text" style="color: #000000;" name="question6" id="question6" class="form-control" autofocus placeholder="Optional">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <input type="hidden" name="qNo" id="qNo">
+
+                            <br>
+
+                        </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $('#editModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_level4_dialog') }}?qNo=" + id, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#qNo').val(id)
+
+                modal.find("#question1").val(json.q1);
+                modal.find("#question2").val(json.q2);
+                modal.find("#question3").val(json.q3);
+                modal.find("#question4").val(json.q4);
+                modal.find("#question5").val(json.q5);
+                modal.find("#question6").val(json.q6);
+                modal.find("#answer1").val(json.a1);
+                modal.find("#answer2").val(json.a2);
+                modal.find("#answer3").val(json.a3);
+                modal.find("#answer4").val(json.a4);
+                modal.find("#answer5").val(json.a5);
+
+            })
+        })
+    </script>
+
+    <script>
+        function doconfirm(qNo) {
+            var status = confirm("Are you sure you want to delete this question ?");
+            if(status==true)
+            {
+                var url = "/delete_level4_dialog_questions/?qNo="+qNo
+                window.location.href = url;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+    <!-- Validate Questions -->
+    <script>
+        function validateForm() {
+
+            var a1 = document.getElementById("answer1");
+            var a2 = document.getElementById("answer2");
+            var a3 = document.getElementById("answer3");
+            var a4 = document.getElementById("answer4");
+            var a5 = document.getElementById("answer5");
+
+            if (a1.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing. Please insert # to insert the blank.");
+                a1.focus();
+                return false;
+            }
+            else if (a2.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing. Please insert # to insert the blank.");
+                a2.focus();
+                return false;
+            }
+            else if (a3.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing. Please insert # to insert the blank.");
+                a3.focus();
+                return false;
+            }
+            else if (a4.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing. Please insert # to insert the blank.");
+                a4.focus();
+                return false;
+            }
+            else if (a5.value.indexOf('#') == -1) {
+                alert("Blank(#) is missing. Please insert # to insert the blank.");
+                a5.focus();
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

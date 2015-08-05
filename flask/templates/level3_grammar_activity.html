@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<form name="level3_grammar" method="post"
+      style="margin-left: 100px;margin-top: -5px ;width: 1150px;height: 600px;background-image: url('/static/img/testback.png')"
+      action="{{ url_for('evaluate_level3_grammar') }}">
+
+    <table>
+        <td class="form-inline">
+            <tr>
+                <label style="margin-left:300px;  color: darkmagenta; font-size: 20px; font-weight: bold; margin-top: 40px">
+                    Fill in the blanks with the correct verb form.</label><br><br>
+            </tr>
+        </td>
+    </table>
+
+    <div class="form-inline" style="font-size: 16px;padding-left: 100px">
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion1" style="color: #000000; line-height: 2em; font-weight: bold">1.&nbsp;&nbsp;</label>
+
+            <input type="hidden" name="question1" value="{{ data_Present_Tense[0][1] }}"/>
+
+            <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Present_Tense[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet1"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+
+            <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Present_Tense[0][1].split("#")[1]|safe }}</font>
+
+        </div>
+
+        <br>
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion2" style="color: #000000; line-height: 2em; font-weight: bold">2.&nbsp;&nbsp;</label>
+
+            <input type="hidden" name="question2" value="{{ data_Past_Tense[0][1] }}"/>
+
+            <font for="Question2" id="Question2" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Past_Tense[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet2"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+            <font for="Question2" id="Question2" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Past_Tense[0][1].split("#")[1]|safe }}</font>
+        </div>
+
+        <br>
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion3" style="color: #000000; line-height: 2em; font-weight: bold">3.&nbsp;&nbsp;</label>
+
+
+            <input type="hidden" name="question3" value="{{ data_Present_Continuous[0][1] }}"/>
+
+            <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Present_Continuous[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet3"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+            <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Present_Continuous[0][1].split("#")[1]|safe }}</font>
+        </div>
+
+        <br>
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion4" style="color: #000000; line-height: 2em; font-weight: bold">4.&nbsp;&nbsp;</label>
+
+            <input type="hidden" name="question4" value="{{ data_Past_Continuous[0][1] }}"/>
+
+            <font for="Question4" id="Question4" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Past_Continuous[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet4"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+            <font for="Question4" id="Question4" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Past_Continuous[0][1].split("#")[1]|safe }}</font>
+        </div>
+
+        <br>
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion5" style="color: #000000; line-height: 2em; font-weight: bold">5.&nbsp;&nbsp;</label>
+
+            <input type="hidden" name="question5" value="{{ data_Future_Tense[0][1] }}"/>
+
+
+            <font for="Question5" id="Question5" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Future_Tense[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet5"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+            <font for="Question5" id="Question5" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Future_Tense[0][1].split("#")[1]|safe }}</font>
+        </div>
+
+        <br>
+
+        <div style="margin-left: 100px">
+            <label for="txtQuestion6" style="color: #000000; line-height: 2em; font-weight: bold">6.&nbsp;&nbsp;</label>
+
+            <input type="hidden" name="question6" value="{{ data_Future_Continuous[0][1] }}"/>
+
+            <font for="Question6" id="Question6" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Future_Continuous[0][1].split("#")[0]|safe }}</font>
+
+            <input type="text" name="txtAnswerSet6"
+                   style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;"
+                   required="">
+
+            <font for="Question6" id="Question6" style="color: #000000; line-height: 2em; font-weight: bold">{{
+                data_Future_Continuous[0][1].split("#")[1]|safe }}</font>
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/snail.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 40px;margin-top: -80px;outline: none;"  height="170" width="200" />
+
+</form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "230px";
+}
+
+function normalImg(x) {
+    x.style.height = "170px";
+    x.style.width = "200px";
+}
+
+</script>
+
+
+{% endblock %}

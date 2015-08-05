@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>English Buddy</title>
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/register.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+{% block content %}
+    <body style="overflow: auto; overflow-x: hidden">
+    <div>
+        <div style="width: 80%;height: 638px;">
+
+            <div style="width: 50%; height:auto; height: inherit; float:left;">
+                <!--  -->
+                <!-- <img src="/static/img/img1.png" height="638" width="100%"> -->
+
+            </div>
+
+            <div style="width:50%;height:inherit;float:left">
+                <div class="container">
+
+                    <form class="form-register" method="post" action="/save" onsubmit="return validateForm(this)">
+                        <h2 class="form-signin-heading"><font color="white">Sign up</font></h2>
+
+                        <input type="text" id="txt" name="txtFirstName" class="form-control" placeholder="First Name"
+                               required="" autofocus="" value="">
+
+                        <input type="text" id="txt" name="txtLastName" class="form-control" placeholder="Last Name"
+                               required="" autofocus="" value="">
+
+                        <input type="email" id="txt" name="txtEmail" class="form-control" placeholder="Email Address"
+                               required="" autofocus="" value="">
+
+                        <input type="password" id="txtPassword" name="txtPassword" class="form-control"
+                               placeholder="Password" required="" autofocus >
+
+                        <input type="password" id="txt" name="txtConPassword" class="form-control"
+                               placeholder="Confirm Password" required="" autofocus>
+
+                        <input type="tel" id="txtPhone" name="txtPhone" maxlength="12" size="12" class="form-control"
+                               placeholder="Phone" required=""
+                               autofocus>
+
+                        <select id="listRole" name="listRole" class="form-control" required="" autofocus=""
+                                style="overflow:scroll;" value="" onclick="changeFunc();">
+
+                            <option value="title" selected="true" style="display:none;">Select Your Title</option>
+                            <option value="Student">Student</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Parent">Parent</option>
+
+                        </select>
+
+                        <input type="text" id="txtSchool" name="txtSchool" class="form-control" placeholder="School"
+                               required="" autofocus="" value="">
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <ul class=flashes>
+                                    {% for message in messages %}
+                                        <li style="color: gold; font-size: 17px">{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
+
+                        <font color="aqua"><b><em style="color: red; font-size: 18px">*</em> all fields are required</b></font>
+                        <br>
+                        <label style="padding-top: 7px">
+                            <input type="checkbox" value="remember_me" required="" autofocus="" ><font color="white"> I
+                            have read through and agree to the terms of</font>
+                            <!-- -->
+                            <a href="#" onclick="javascript:void window.open('','1393836897034','toolbar=yes, scrollbars=yes, resizable=no, top=200, left=175, width=1000, height=250');
+        return false;"><font color="aqua">English Buddy's Subscription Agreement</font></a><em
+                                style="color: red; font-size: 18px">*</em>
+
+                        </label>
+                        <br><br>
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" name="register" autofocus=""
+                               value="Register" style="margin-bottom:9px;"/>
+                    </form>
+
+
+                    <center><font color="white" style="font-size: 16px"><b>Already Registered? </b></font><a href="/"><font color="aqua" style="font-size: 16px">Sign
+                        in Here</font></a></center>
+
+
+                </div>
+
+                </div>
+            </div>
+            <!-- /container -->
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+
+    </body>
+
+
+    <!-- For enable/disable School text field-->
+    <script type="text/javascript">
+        function changeFunc() {
+            var title = document.getElementById("listRole");
+            var selectedValue = title.options[listRole.selectedIndex].value;
+
+            if (selectedValue == "Parent") {
+                school = document.getElementById("txtSchool");
+                //Disable the text field
+                school.disabled = true;
+            }
+            else if (selectedValue == "Student") {
+                school = document.getElementById("txtSchool");
+                //Enable the text field
+                school.disabled = false;
+            }
+            else if (selectedValue == "Teacher") {
+                school = document.getElementById("txtSchool");
+                //Enable the text field
+                school.disabled = false;
+            }
+        }
+    </script>
+
+
+    <script>
+        function validateForm(form) {
+
+            if(form.txtFirstName.value == " ") {
+                alert("Error : First name cannot be blank!");
+                form.username.focus();
+                return false;
+            }
+            if(form.txtLastName.value == " ") {
+                alert("Error : Last name cannot be blank!");
+                form.username.focus();
+                return false;
+            }
+            if(form.txtPassword.value != " " && form.txtPassword.value == form.txtConPassword.value) {
+                if(form.txtPassword.value.length < 6) {
+                    alert("Error : Password must contain at least six characters!");
+                    form.txtPassword.focus();
+                    return false;
+                }
+                if(form.txtPassword.value == form.txtEmail.value) {
+                    alert("Error : Password must be different from Username!");
+                    form.txtPassword.focus();
+                    return false;
+                }
+                re = /[0-9]/;
+                if(!re.test(form.txtPassword.value)) {
+                    alert("Error : Password must contain at least one number (0-9)!");
+                    form.txtPassword.focus();
+                    return false;
+                }
+                re = /[a-z]/;
+                if(!re.test(form.txtPassword.value)) {
+                    alert("Error : Password must contain at least one lowercase letter (a-z)!");
+                    form.txtPassword.focus();
+                    return false;
+                }
+                re = /[A-Z]/;
+                if(!re.test(form.txtPassword.value)) {
+                    alert("Error : Password must contain at least one uppercase letter (A-Z)!");
+                    form.txtPassword.focus();
+                    return false;
+                }
+            } else {
+                alert("Error : Please check that you've entered and confirmed your password!");
+                form.txtPassword.focus();
+                return false;
+            }
+
+            if (form.txtPhone.value.length != 10) {
+                alert("Error : Incorrect phone number. Phone number should be 10 digits number.");
+                return false;
+            }
+
+        }
+    </script>
+
+{% endblock %}

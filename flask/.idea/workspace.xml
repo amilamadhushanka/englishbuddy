@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d184bc3e-847e-4c4d-9961-28e111aaf4e8" name="Default" comment="" />
+    <ignored path="flask.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/flask$test.coverage" NAME="test Coverage Results" MODIFIED="1437591095346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$coordinatingConjunctions.coverage" NAME="coordinatingConjunctions Coverage Results" MODIFIED="1436780140917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1437458616739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$grammerCheck.coverage" NAME="grammerCheck Coverage Results" MODIFIED="1436791295012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$grammer.coverage" NAME="grammer Coverage Results" MODIFIED="1435382890648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$config.coverage" NAME="config Coverage Results" MODIFIED="1426666023962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$flask.coverage" NAME="flask Coverage Results" MODIFIED="1438777912539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/flask$check_tense.coverage" NAME="check_tense Coverage Results" MODIFIED="1437620692816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$ginger_python2.coverage" NAME="ginger_python2 Coverage Results" MODIFIED="1437540377961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$conjunctions.coverage" NAME="conjunctions Coverage Results" MODIFIED="1436779402213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask_2015-07-23$flask.coverage" NAME="flask Coverage Results" MODIFIED="1437755183623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="flask" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="routes.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.71391076" vertical-offset="33286" max-vertical-offset="115549">
+              <caret line="1974" column="83" selection-start-line="1974" selection-start-column="4" selection-end-line="1974" selection-end-column="83" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1438770322622" expanded="true" signature="2700:2736" placeholder="SELECT email..users..." />
+                <marker date="1438770322622" expanded="true" signature="3352:3468" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="3523:3629" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="5632:5703" placeholder="SELECT passw..users..." />
+                <marker date="1438770322622" expanded="true" signature="8571:8661" placeholder="SELECT COUNT..." />
+                <marker date="1438770322622" expanded="true" signature="9179:9350" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="10911:10947" placeholder="SELECT fName..users..." />
+                <marker date="1438770322622" expanded="true" signature="12739:12775" placeholder="SELECT fName..users..." />
+                <marker date="1438770322622" expanded="true" signature="13966:14007" placeholder="UPDATE users..." />
+                <marker date="1438770322622" expanded="true" signature="14692:14724" placeholder="SELECT * FRO..users..." />
+                <marker date="1438770322622" expanded="true" signature="15508:15540" placeholder="SELECT * FRO..users..." />
+                <marker date="1438770322622" expanded="true" signature="16256:16312" placeholder="update users..." />
+                <marker date="1438770322622" expanded="true" signature="17555:17593" placeholder="update users..." />
+                <marker date="1438770322622" expanded="true" signature="21912:21999" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+                <marker date="1438770322622" expanded="true" signature="22458:22546" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+                <marker date="1438770322622" expanded="true" signature="23006:23093" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+                <marker date="1438770322622" expanded="true" signature="23552:23640" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+                <marker date="1438770322622" expanded="true" signature="28365:28412" placeholder="update users..." />
+                <marker date="1438770322622" expanded="true" signature="30070:30142" placeholder="SELECT * FRO..conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="31584:31665" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="32385:32438" placeholder="SELECT * FRO..conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="32487:32547" placeholder="SELECT * FRO..level3_conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="33262:33326" placeholder="SELECT * FRO..conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="34192:34248" placeholder="UPDATE conju..." />
+                <marker date="1438770322622" expanded="true" signature="34305:34358" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="35175:35210" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="35259:35301" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="35793:35864" placeholder="SELECT * FRO..conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="39450:39498" placeholder="SELECT * FRO..level_1_adjectives..." />
+                <marker date="1438770322622" expanded="true" signature="40235:40321" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="40910:40980" placeholder="SELECT qno,q..level_1_adjectives..." />
+                <marker date="1438770322622" expanded="true" signature="41480:41523" placeholder="SELECT * FRO..level_1_adjectives..." />
+                <marker date="1438770322622" expanded="true" signature="42343:42420" placeholder="update level..." />
+                <marker date="1438770322622" expanded="true" signature="42874:42915" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="43308:43378" placeholder="SELECT * FRO..level_1_adjectives..." />
+                <marker date="1438770322622" expanded="true" signature="44897:44969" placeholder="SELECT * FRO..prepositions..." />
+                <marker date="1438770322622" expanded="true" signature="47177:47288" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="47886:47936" placeholder="SELECT id,qu..prepositions..." />
+                <marker date="1438770322622" expanded="true" signature="48393:48429" placeholder="SELECT * FRO..prepositions..." />
+                <marker date="1438770322622" expanded="true" signature="49420:49520" placeholder="update prepo..." />
+                <marker date="1438770322622" expanded="true" signature="50017:50051" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="50439:50488" placeholder="SELECT * FRO..prepositions..." />
+                <marker date="1438770322622" expanded="true" signature="51621:51696" placeholder="SELECT * FRO..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="53149:53233" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="53848:53891" placeholder="SELECT * FRO..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="54486:54565" placeholder="SELECT * FRO..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="55355:55420" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="56008:56052" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="56478:56530" placeholder="SELECT * FRO..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="56935:57006" placeholder="SELECT * FRO..conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="57495:57547" placeholder="SELECT * FRO..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="57818:57867" placeholder="SELECT * FRO..prepositions..." />
+                <marker date="1438770322622" expanded="true" signature="58142:58212" placeholder="SELECT * FRO..level_1_adjectives..." />
+                <marker date="1438770322622" expanded="true" signature="64102:64149" placeholder="update users..." />
+                <marker date="1438770322622" expanded="true" signature="65373:65480" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="66207:66255" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="66767:66809" placeholder="SELECT * FRO..level4_dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="67450:67515" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="68671:68753" placeholder="UPDATE dialo..." />
+                <marker date="1438770322622" expanded="true" signature="69358:69388" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="69814:69880" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="70705:70737" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="73587:73662" placeholder="SELECT * FRO..level_2_pronoun..." />
+                <marker date="1438770322622" expanded="true" signature="75048:75117" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="75661:75722" placeholder="SELECT qno,q..level_2_pronoun..." />
+                <marker date="1438770322622" expanded="true" signature="76177:76217" placeholder="SELECT * FRO..level_2_pronoun..." />
+                <marker date="1438770322622" expanded="true" signature="76855:76914" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="77362:77400" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="77779:77846" placeholder="SELECT * FRO..level_2_pronoun..." />
+                <marker date="1438770322622" expanded="true" signature="79045:79117" placeholder="SELECT * FRO..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="80577:80658" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="81289:81329" placeholder="SELECT * FRO..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="81939:82013" placeholder="SELECT * FRO..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="82814:82874" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="83477:83516" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="83951:84000" placeholder="SELECT * FRO..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="85059:85152" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="87258:87343" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="87751:87794" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="88278:88317" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="88959:89033" placeholder="update jumbl..." />
+                <marker date="1438770322622" expanded="true" signature="89507:89545" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="89946:89998" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="90388:90455" placeholder="SELECT * FRO..level_2_pronoun..." />
+                <marker date="1438770322622" expanded="true" signature="90722:90774" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="91051:91100" placeholder="SELECT * FRO..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="91371:91437" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="96132:96179" placeholder="update users..." />
+                <marker date="1438770322622" expanded="true" signature="97621:97699" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="98405:98476" placeholder="SELECT * FRO..level3_conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="98981:99059" placeholder="SELECT * FRO..level3_conjunctions..." />
+                <marker date="1438770322622" expanded="true" signature="105832:105916" placeholder="SELECT * FRO..level3_notice_invitation..." />
+                <marker date="1438770322622" expanded="true" signature="107553:107629" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="108286:108338" placeholder="SELECT * FRO..level3_notice_invitation..." />
+                <marker date="1438770322622" expanded="true" signature="108977:109042" placeholder="SELECT * FRO..level3_notice_invitation..." />
+                <marker date="1438770322622" expanded="true" signature="109784:109844" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="110466:110515" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="110988:111050" placeholder="SELECT * FRO..level3_notice_invitation..." />
+                <marker date="1438770322622" expanded="true" signature="115510:115585" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="116953:117020" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="117641:117700" placeholder="SELECT qno,q..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="118165:118205" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="118833:118890" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="119346:119384" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="120392:120486" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="120860:120951" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="121329:121422" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="121817:121922" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="122311:122413" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="122806:122910" placeholder="SELECT * FRO..level_3_grammar..." />
+                <marker date="1438770322622" expanded="true" signature="141940:142052" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="142821:142874" placeholder="SELECT * FRO..level4_dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="144264:144366" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="145077:145114" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="145577:145629" placeholder="SELECT * FRO..level4_dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="154455:154494" placeholder="SELECT * FRO..level4_dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="155636:155707" placeholder="SELECT * FRO..level4_note..." />
+                <marker date="1438770322622" expanded="true" signature="157020:157075" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="157683:157722" placeholder="SELECT * FRO..level4_note..." />
+                <marker date="1438770322622" expanded="true" signature="158305:158358" placeholder="SELECT * FRO..level4_note..." />
+                <marker date="1438770322622" expanded="true" signature="159057:159105" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="159672:159709" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="160130:160179" placeholder="SELECT * FRO..level4_note..." />
+                <marker date="1438770322622" expanded="true" signature="163241:163340" placeholder="SELECT * FRO..level_4_activepassive..." />
+                <marker date="1438770322622" expanded="true" signature="163750:163850" placeholder="SELECT * FRO..level_4_activepassive..." />
+                <marker date="1438770322622" expanded="true" signature="164818:164899" placeholder="SELECT * FRO..level_4_activepassive..." />
+                <marker date="1438770322622" expanded="true" signature="166274:166347" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="166983:167048" placeholder="SELECT qno,q..level_4_activepassive..." />
+                <marker date="1438770322622" expanded="true" signature="167531:167577" placeholder="SELECT * FRO..level_4_activepassive..." />
+                <marker date="1438770322622" expanded="true" signature="168218:168281" placeholder="UPDATE level..." />
+                <marker date="1438770322622" expanded="true" signature="168755:168799" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="183704:183735" placeholder="SELECT * FRO..users..." />
+                <marker date="1438770322622" expanded="true" signature="184110:184238" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="184627:184756" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="185448:185509" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="186149:186208" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="186775:186969" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="187870:187946" placeholder="UPDATE subsc..." />
+                <marker date="1438770322622" expanded="true" signature="188623:188682" placeholder="DELETE FROM ..." />
+                <marker date="1438770322622" expanded="true" signature="189289:189484" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="190391:190459" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="190765:190932" placeholder="SELECT email..users..." />
+                <marker date="1438770322622" expanded="true" signature="190854:190914" placeholder="SELECT recei..notification..." />
+                <marker date="1438770322622" expanded="true" signature="191354:191388" placeholder="delete from ..." />
+                <marker date="1438770322622" expanded="true" signature="191776:191827" placeholder="update notif..." />
+                <marker date="1438770322622" expanded="true" signature="192152:192291" placeholder="SELECT n.id,..users..." />
+                <marker date="1438770322622" expanded="true" signature="192581:192659" placeholder="SELECT count..notification..." />
+                <marker date="1438770322622" expanded="true" signature="192957:193109" placeholder="SELECT n.rec..users..." />
+                <marker date="1438770322622" expanded="true" signature="194035:194109" placeholder="SELECT * FRO..level3_summary..." />
+                <marker date="1438770322622" expanded="true" signature="195646:195704" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="196064:196130" placeholder="SELECT * FRO..level3_summary..." />
+                <marker date="1438770322622" expanded="true" signature="200747:200821" placeholder="SELECT * FRO..level4_summary..." />
+                <marker date="1438770322622" expanded="true" signature="202358:202416" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="202777:202843" placeholder="SELECT * FRO..level4_summary..." />
+                <marker date="1438770322622" expanded="true" signature="206130:206165" placeholder="select marks..marks..." />
+                <marker date="1438770322622" expanded="true" signature="206427:206757" placeholder="Insert into ..." />
+                <marker date="1438770322622" expanded="true" signature="206463:206506" placeholder="select quest..level1_articles..." />
+                <marker date="1438770322622" expanded="true" signature="207048:207105" placeholder="SELECT quest..temp..." />
+                <marker date="1438770322622" expanded="true" signature="209647:209687" placeholder="SELECT user,..marks..." />
+                <marker date="1438770322622" expanded="true" signature="210086:210123" placeholder="update marks..." />
+                <marker date="1438770322622" expanded="true" signature="210572:210615" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="211623:211774" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="212147:212840" placeholder="select u.ima..." />
+                <marker date="1438770322622" expanded="true" signature="212147:212418" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212253:212417" placeholder="SELECT MIN(m..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212370:212414" placeholder="select m3.ma..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212425:212562" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212569:212840" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212675:212839" placeholder="SELECT MAX(m..marks..." />
+                <marker date="1438770322622" expanded="true" signature="212792:212836" placeholder="select m3.ma..marks..." />
+                <marker date="1438770322622" expanded="true" signature="213362:213514" placeholder="SELECT u.fNa..users..." />
+                <marker date="1438770322622" expanded="true" signature="213893:214589" placeholder="select u.ima..." />
+                <marker date="1438770322622" expanded="true" signature="213893:214165" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="213999:214164" placeholder="SELECT MIN(m..marks..." />
+                <marker date="1438770322622" expanded="true" signature="214117:214161" placeholder="select m3.ma..marks..." />
+                <marker date="1438770322622" expanded="true" signature="214172:214310" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="214317:214589" placeholder="select u.ima..marks..." />
+                <marker date="1438770322622" expanded="true" signature="214423:214588" placeholder="SELECT MAX(m..marks..." />
+                <marker date="1438770322622" expanded="true" signature="214541:214585" placeholder="select m3.ma..marks..." />
+                <marker date="1438770322622" expanded="true" signature="215093:215128" placeholder="select marks..marks..." />
+                <marker date="1438770322622" expanded="true" signature="215512:215565" placeholder="SELECT * FRO..jumblesentences..." />
+                <marker date="1438770322622" expanded="true" signature="215873:215939" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="216369:216547" placeholder="Insert into ..." />
+                <marker date="1438770322622" expanded="true" signature="216406:216446" placeholder="select quest..level2_match..." />
+                <marker date="1438770322622" expanded="true" signature="216845:216903" placeholder="SELECT quest..temp2..." />
+                <marker date="1438770322622" expanded="true" signature="222408:222440" placeholder="SELECT * FRO..dialogs..." />
+                <marker date="1438770322622" expanded="true" signature="223146:223186" placeholder="SELECT user,..marks..." />
+                <marker date="1438770322622" expanded="true" signature="223582:223619" placeholder="update marks..." />
+                <marker date="1438770322622" expanded="true" signature="224068:224111" placeholder="INSERT INTO ..." />
+                <marker date="1438770322622" expanded="true" signature="225223:225358" placeholder="SELECT u.fNa..users..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/templates/add_notice_invitation_questions.html" />
+        <option value="$PROJECT_DIR$/templates/add_articles_questions.html" />
+        <option value="$PROJECT_DIR$/templates/add_conjunction_questions_new.html" />
+        <option value="$PROJECT_DIR$/templates/Add_JumbleSentences.html" />
+        <option value="$PROJECT_DIR$/templates/AddQues_adjectives.html" />
+        <option value="$PROJECT_DIR$/templates/add_preposition_questions.html" />
+        <option value="$PROJECT_DIR$/static/css/rating.css" />
+        <option value="$PROJECT_DIR$/templates/profile.html" />
+        <option value="$PROJECT_DIR$/templates/homeRating.html" />
+        <option value="$PROJECT_DIR$/templates/homeViewRatings.html" />
+        <option value="$PROJECT_DIR$/templates/home_1.html" />
+        <option value="$PROJECT_DIR$/templates/home_2.html" />
+        <option value="$PROJECT_DIR$/templates/display_teachers.html" />
+        <option value="$PROJECT_DIR$/templates/home2.html" />
+        <option value="$PROJECT_DIR$/templates/contact_teacher.html" />
+        <option value="$PROJECT_DIR$/grammerCheck.py" />
+        <option value="$PROJECT_DIR$/conjunctions.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/check_tense.py" />
+        <option value="$PROJECT_DIR$/dialog.py" />
+        <option value="$PROJECT_DIR$/templates/add_matching_words_questions.html" />
+        <option value="$PROJECT_DIR$/templates/home_4.html" />
+        <option value="$PROJECT_DIR$/notice.py" />
+        <option value="$PROJECT_DIR$/invitation.py" />
+        <option value="$PROJECT_DIR$/templates/level3_grammar_activity.html" />
+        <option value="$PROJECT_DIR$/templates/summary_level3.html" />
+        <option value="$PROJECT_DIR$/templates/summaryResult.html" />
+        <option value="$PROJECT_DIR$/templates/level3_grammar_evaluate.html" />
+        <option value="$PROJECT_DIR$/templates/level4_active_passive_evaluate.html" />
+        <option value="$PROJECT_DIR$/templates/home_pt.html" />
+        <option value="$PROJECT_DIR$/templates/PlacementTest.html" />
+        <option value="$PROJECT_DIR$/templates/level3_Notice_Invitation.html" />
+        <option value="$PROJECT_DIR$/templates/home_3.html" />
+        <option value="$PROJECT_DIR$/templates/level4_active_passive.html" />
+        <option value="$PROJECT_DIR$/templates/summary_level4.html" />
+        <option value="$PROJECT_DIR$/templates/add_dialog_questions.html" />
+        <option value="$PROJECT_DIR$/templates/level1_dialogs.html" />
+        <option value="$PROJECT_DIR$/templates/level1_dialogs_answers.html" />
+        <option value="$PROJECT_DIR$/templates/voice.html" />
+        <option value="$PROJECT_DIR$/templates/level1_conjunctions_new.html" />
+        <option value="$PROJECT_DIR$/ginger_python2_new.py" />
+        <option value="$PROJECT_DIR$/ginger_python2.py" />
+        <option value="$PROJECT_DIR$/templates/display_dialog_questions.html" />
+        <option value="$PROJECT_DIR$/templates/AddQuestions.html" />
+        <option value="$PROJECT_DIR$/templates/display_dialog_questions_level4.html" />
+        <option value="$PROJECT_DIR$/templates/level4_add_dialog_questions.html" />
+        <option value="$PROJECT_DIR$/coordinatingConjunctions.py" />
+        <option value="$PROJECT_DIR$/routes.py" />
+        <option value="$PROJECT_DIR$/templates/viewLevel2Ratings.html" />
+        <option value="$PROJECT_DIR$/templates/level3_conjunctions_activity.html" />
+        <option value="$PROJECT_DIR$/templates/level4_dialogs_activity.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="recentsLimit" value="5" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../english_buddy" />
+    <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJinja2" value="false" />
+    <property name="LayoutCode.rearrangeEntriesPython" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AMILA MADHUSHANKA\Desktop\flask\templates" />
+      <recent name="C:\Users\Darani\Desktop\flask_2015-07-23\templates" />
+      <recent name="C:\Users\Darani\Desktop\flask_2015-07-23\static\img" />
+      <recent name="C:\Users\Darani\Desktop\flask_2015-07-23" />
+      <recent name="C:\Users\AMILA MADHUSHANKA\Desktop\flask" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.flask">
+    <configuration default="false" name="grammerCheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grammerCheck.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dialog" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ginger_python2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ginger_python2.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="check_tense" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/check_tense.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="flask" type="PythonConfigurationType" factoryName="Python" singleton="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/routes.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="grammer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grammer.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Python.flask" />
+      <item index="1" class="java.lang.String" itemvalue="Python.grammer" />
+      <item index="2" class="java.lang.String" itemvalue="Python.grammerCheck" />
+      <item index="3" class="java.lang.String" itemvalue="Python.dialog" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="5" class="java.lang.String" itemvalue="Python.ginger_python2" />
+      <item index="6" class="java.lang.String" itemvalue="Python.check_tense" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.check_tense" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ginger_python2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.dialog" />
+        <item index="4" class="java.lang.String" itemvalue="Python.grammerCheck" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d184bc3e-847e-4c4d-9961-28e111aaf4e8" name="Default" comment="" />
+      <created>1426664456281</created>
+      <updated>1426664456281</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18887262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32704404" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30031446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="87193" max-vertical-offset="87295">
+          <caret line="5129" column="0" selection-start-line="5129" selection-start-column="0" selection-end-line="5129" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1438770322622" expanded="true" signature="2700:2736" placeholder="SELECT email..users..." />
+            <marker date="1438770322622" expanded="true" signature="3352:3468" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="3523:3629" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="5632:5703" placeholder="SELECT passw..users..." />
+            <marker date="1438770322622" expanded="true" signature="8571:8661" placeholder="SELECT COUNT..." />
+            <marker date="1438770322622" expanded="true" signature="9179:9350" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="10911:10947" placeholder="SELECT fName..users..." />
+            <marker date="1438770322622" expanded="true" signature="12739:12775" placeholder="SELECT fName..users..." />
+            <marker date="1438770322622" expanded="true" signature="13966:14007" placeholder="UPDATE users..." />
+            <marker date="1438770322622" expanded="true" signature="14692:14724" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="15508:15540" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="16256:16312" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="17555:17593" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="21912:21999" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="22458:22546" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="23006:23093" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="23552:23640" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="28365:28412" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="30070:30142" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="31584:31665" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="32385:32438" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="32487:32547" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="33262:33326" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="34192:34248" placeholder="UPDATE conju..." />
+            <marker date="1438770322622" expanded="true" signature="34305:34358" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="35175:35210" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="35259:35301" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="35793:35864" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="39450:39498" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="40235:40321" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="40910:40980" placeholder="SELECT qno,q..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="41480:41523" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="42343:42420" placeholder="update level..." />
+            <marker date="1438770322622" expanded="true" signature="42874:42915" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="43308:43378" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="44897:44969" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="47177:47288" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="47886:47936" placeholder="SELECT id,qu..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="48393:48429" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="49420:49520" placeholder="update prepo..." />
+            <marker date="1438770322622" expanded="true" signature="50017:50051" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="50439:50488" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="51621:51696" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="53149:53233" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="53848:53891" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="54486:54565" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="55355:55420" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="56008:56052" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="56478:56530" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="56935:57006" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="57495:57547" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="57818:57867" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="58142:58212" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="64102:64149" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="65373:65480" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="66207:66255" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="66767:66809" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="67450:67515" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="68671:68753" placeholder="UPDATE dialo..." />
+            <marker date="1438770322622" expanded="true" signature="69358:69388" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="69814:69880" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="70705:70737" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="73587:73662" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="75048:75117" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="75661:75722" placeholder="SELECT qno,q..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="76177:76217" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="76855:76914" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="77362:77400" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="77779:77846" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="79045:79117" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="80577:80658" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="81289:81329" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="81939:82013" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="82814:82874" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="83477:83516" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="83951:84000" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="85059:85152" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="87258:87343" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="87751:87794" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="88278:88317" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="88959:89033" placeholder="update jumbl..." />
+            <marker date="1438770322622" expanded="true" signature="89507:89545" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="89946:89998" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="90388:90455" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="90722:90774" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="91051:91100" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="91371:91437" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="96132:96179" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="97621:97699" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="98405:98476" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="98981:99059" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="105832:105916" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="107553:107629" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="108286:108338" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="108977:109042" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="109784:109844" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="110466:110515" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="110988:111050" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="115510:115585" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="116953:117020" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="117641:117700" placeholder="SELECT qno,q..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="118165:118205" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="118833:118890" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="119346:119384" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="120392:120486" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="120860:120951" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="121329:121422" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="121817:121922" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="122311:122413" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="122806:122910" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="141940:142052" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="142821:142874" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="144264:144366" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="145077:145114" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="145577:145629" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="154455:154494" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="155636:155707" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="157020:157075" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="157683:157722" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="158305:158358" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="159057:159105" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="159672:159709" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="160130:160179" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="163241:163340" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="163750:163850" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="164818:164899" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="166274:166347" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="166983:167048" placeholder="SELECT qno,q..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="167531:167577" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="168218:168281" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="168755:168799" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="183704:183735" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="184110:184238" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="184627:184756" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="185448:185509" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="186149:186208" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="186775:186969" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="187870:187946" placeholder="UPDATE subsc..." />
+            <marker date="1438770322622" expanded="true" signature="188623:188682" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="189289:189484" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="190391:190459" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="190765:190932" placeholder="SELECT email..users..." />
+            <marker date="1438770322622" expanded="true" signature="190854:190914" placeholder="SELECT recei..notification..." />
+            <marker date="1438770322622" expanded="true" signature="191354:191388" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="191776:191827" placeholder="update notif..." />
+            <marker date="1438770322622" expanded="true" signature="192152:192291" placeholder="SELECT n.id,..users..." />
+            <marker date="1438770322622" expanded="true" signature="192581:192659" placeholder="SELECT count..notification..." />
+            <marker date="1438770322622" expanded="true" signature="192957:193109" placeholder="SELECT n.rec..users..." />
+            <marker date="1438770322622" expanded="true" signature="194035:194109" placeholder="SELECT * FRO..level3_summary..." />
+            <marker date="1438770322622" expanded="true" signature="195646:195704" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="196064:196130" placeholder="SELECT * FRO..level3_summary..." />
+            <marker date="1438770322622" expanded="true" signature="200747:200821" placeholder="SELECT * FRO..level4_summary..." />
+            <marker date="1438770322622" expanded="true" signature="202358:202416" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="202777:202843" placeholder="SELECT * FRO..level4_summary..." />
+            <marker date="1438770322622" expanded="true" signature="206130:206165" placeholder="select marks..marks..." />
+            <marker date="1438770322622" expanded="true" signature="206427:206757" placeholder="Insert into ..." />
+            <marker date="1438770322622" expanded="true" signature="206463:206506" placeholder="select quest..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="207048:207105" placeholder="SELECT quest..temp..." />
+            <marker date="1438770322622" expanded="true" signature="209647:209687" placeholder="SELECT user,..marks..." />
+            <marker date="1438770322622" expanded="true" signature="210086:210123" placeholder="update marks..." />
+            <marker date="1438770322622" expanded="true" signature="210572:210615" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="211623:211774" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="212147:212840" placeholder="select u.ima..." />
+            <marker date="1438770322622" expanded="true" signature="212147:212418" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212253:212417" placeholder="SELECT MIN(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212370:212414" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212425:212562" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212569:212840" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212675:212839" placeholder="SELECT MAX(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212792:212836" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="213362:213514" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="213893:214589" placeholder="select u.ima..." />
+            <marker date="1438770322622" expanded="true" signature="213893:214165" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="213999:214164" placeholder="SELECT MIN(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214117:214161" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214172:214310" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214317:214589" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214423:214588" placeholder="SELECT MAX(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214541:214585" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="215093:215128" placeholder="select marks..marks..." />
+            <marker date="1438770322622" expanded="true" signature="215512:215565" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="215873:215939" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="216369:216547" placeholder="Insert into ..." />
+            <marker date="1438770322622" expanded="true" signature="216406:216446" placeholder="select quest..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="216845:216903" placeholder="SELECT quest..temp2..." />
+            <marker date="1438770322622" expanded="true" signature="222408:222440" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="223146:223186" placeholder="SELECT user,..marks..." />
+            <marker date="1438770322622" expanded="true" signature="223582:223619" placeholder="update marks..." />
+            <marker date="1438770322622" expanded="true" signature="224068:224111" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="225223:225358" placeholder="SELECT u.fNa..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38730854" vertical-offset="3767" max-vertical-offset="4556">
+          <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="232" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/display_teachers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.961538" vertical-offset="209" max-vertical-offset="1955">
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="7157">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="643" max-vertical-offset="1054">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_tense.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79217607" vertical-offset="696" max-vertical-offset="1173">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conjunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="7463">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Add_Level4_summary.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2686">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_preposition_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/prepositions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7106">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Level2Match.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6902">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_matching_words_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8422537" vertical-offset="4269" max-vertical-offset="4624">
+          <caret line="150" column="66" selection-start-line="150" selection-start-column="66" selection-end-line="150" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_articles_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5746479" vertical-offset="5202" max-vertical-offset="6290">
+          <caret line="318" column="20" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7549296" vertical-offset="3523" max-vertical-offset="4573">
+          <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/summaryResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28169015" vertical-offset="988" max-vertical-offset="1921">
+          <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.923077" vertical-offset="482" max-vertical-offset="2244">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_pt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2035928" vertical-offset="1173" max-vertical-offset="2295">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PlacementTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5988024" vertical-offset="174" max-vertical-offset="16456">
+          <caret line="22" column="90" selection-start-line="22" selection-start-column="90" selection-end-line="22" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level3_Notice_Invitation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="221" max-vertical-offset="595">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level4_Note.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/summary_level4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="782">
+          <caret line="20" column="232" selection-start-line="20" selection-start-column="232" selection-end-line="20" selection-end-column="232" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_dialog_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3026316" vertical-offset="514" max-vertical-offset="4080">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level1_dialogs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.043256998" vertical-offset="1887" max-vertical-offset="2414">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level1_dialogs_answers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91052634" vertical-offset="1830" max-vertical-offset="2431">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="3757" max-vertical-offset="4505">
+          <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/voice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.043256998" vertical-offset="153" max-vertical-offset="663">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/summary_level3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.884615" vertical-offset="398" max-vertical-offset="782">
+          <caret line="37" column="9" selection-start-line="26" selection-start-column="0" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Level1article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6324">
+          <caret line="145" column="108" selection-start-line="145" selection-start-column="108" selection-end-line="145" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/contact_teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28021017" vertical-offset="197" max-vertical-offset="2023">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ginger_python2_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="2754">
+          <caret line="70" column="41" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level3_add_conjunction_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4998">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.044736844" vertical-offset="918" max-vertical-offset="4641">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/display_dialog_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.307693" vertical-offset="589" max-vertical-offset="5797">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/display_article_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3394737" vertical-offset="2789" max-vertical-offset="3485">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/JumbleSentences.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.223919" vertical-offset="6769" max-vertical-offset="8126">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_conjunction_questions_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3846154" vertical-offset="123" max-vertical-offset="6579">
+          <caret line="17" column="282" selection-start-line="17" selection-start-column="282" selection-end-line="17" selection-end-column="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="9" column="77" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level4_add_dialog_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41842106" vertical-offset="2374" max-vertical-offset="3944">
+          <caret line="149" column="69" selection-start-line="149" selection-start-column="69" selection-end-line="149" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/display_dialog_questions_level4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.468421" vertical-offset="3716" max-vertical-offset="5525">
+          <caret line="74" column="48" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/EditPreQuestion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58157897" vertical-offset="2499" max-vertical-offset="4199">
+          <caret line="160" column="13" selection-start-line="157" selection-start-column="12" selection-end-line="160" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/display_conjunction_questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6657895" vertical-offset="4354" max-vertical-offset="5848">
+          <caret line="271" column="13" selection-start-line="271" selection-start-column="13" selection-end-line="271" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level1_conjunctions_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8809107" vertical-offset="5838" max-vertical-offset="6477">
+          <caret line="373" column="13" selection-start-line="373" selection-start-column="13" selection-end-line="373" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ginger_python2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4295082" vertical-offset="894" max-vertical-offset="2686">
+          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coordinatingConjunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3453" max-vertical-offset="4131">
+          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dialog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2229" max-vertical-offset="2839">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewRatings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74473685" vertical-offset="1842" max-vertical-offset="2278">
+          <caret line="125" column="13" selection-start-line="111" selection-start-column="4" selection-end-line="125" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/viewLevel2Ratings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.076923" vertical-offset="1898" max-vertical-offset="2278">
+          <caret line="124" column="55" selection-start-line="124" selection-start-column="55" selection-end-line="124" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level3_conjunctions_activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5473684" vertical-offset="4246" max-vertical-offset="5950">
+          <caret line="262" column="36" selection-start-line="262" selection-start-column="36" selection-end-line="262" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/level4_dialogs_activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55526316" vertical-offset="6062" max-vertical-offset="7038">
+          <caret line="369" column="36" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/AddQuestions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6868421" vertical-offset="3241" max-vertical-offset="3689">
+          <caret line="206" column="17" selection-start-line="204" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71391076" vertical-offset="33286" max-vertical-offset="115549">
+          <caret line="1974" column="83" selection-start-line="1974" selection-start-column="4" selection-end-line="1974" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1438770322622" expanded="true" signature="2700:2736" placeholder="SELECT email..users..." />
+            <marker date="1438770322622" expanded="true" signature="3352:3468" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="3523:3629" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="5632:5703" placeholder="SELECT passw..users..." />
+            <marker date="1438770322622" expanded="true" signature="8571:8661" placeholder="SELECT COUNT..." />
+            <marker date="1438770322622" expanded="true" signature="9179:9350" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="10911:10947" placeholder="SELECT fName..users..." />
+            <marker date="1438770322622" expanded="true" signature="12739:12775" placeholder="SELECT fName..users..." />
+            <marker date="1438770322622" expanded="true" signature="13966:14007" placeholder="UPDATE users..." />
+            <marker date="1438770322622" expanded="true" signature="14692:14724" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="15508:15540" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="16256:16312" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="17555:17593" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="21912:21999" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="22458:22546" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="23006:23093" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="23552:23640" placeholder="SELECT * FRO..tbl_placement_test_dc..." />
+            <marker date="1438770322622" expanded="true" signature="28365:28412" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="30070:30142" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="31584:31665" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="32385:32438" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="32487:32547" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="33262:33326" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="34192:34248" placeholder="UPDATE conju..." />
+            <marker date="1438770322622" expanded="true" signature="34305:34358" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="35175:35210" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="35259:35301" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="35793:35864" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="39450:39498" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="40235:40321" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="40910:40980" placeholder="SELECT qno,q..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="41480:41523" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="42343:42420" placeholder="update level..." />
+            <marker date="1438770322622" expanded="true" signature="42874:42915" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="43308:43378" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="44897:44969" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="47177:47288" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="47886:47936" placeholder="SELECT id,qu..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="48393:48429" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="49420:49520" placeholder="update prepo..." />
+            <marker date="1438770322622" expanded="true" signature="50017:50051" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="50439:50488" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="51621:51696" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="53149:53233" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="53848:53891" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="54486:54565" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="55355:55420" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="56008:56052" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="56478:56530" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="56935:57006" placeholder="SELECT * FRO..conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="57495:57547" placeholder="SELECT * FRO..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="57818:57867" placeholder="SELECT * FRO..prepositions..." />
+            <marker date="1438770322622" expanded="true" signature="58142:58212" placeholder="SELECT * FRO..level_1_adjectives..." />
+            <marker date="1438770322622" expanded="true" signature="64102:64149" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="65373:65480" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="66207:66255" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="66767:66809" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="67450:67515" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="68671:68753" placeholder="UPDATE dialo..." />
+            <marker date="1438770322622" expanded="true" signature="69358:69388" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="69814:69880" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="70705:70737" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="73587:73662" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="75048:75117" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="75661:75722" placeholder="SELECT qno,q..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="76177:76217" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="76855:76914" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="77362:77400" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="77779:77846" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="79045:79117" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="80577:80658" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="81289:81329" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="81939:82013" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="82814:82874" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="83477:83516" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="83951:84000" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="85059:85152" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="87258:87343" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="87751:87794" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="88278:88317" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="88959:89033" placeholder="update jumbl..." />
+            <marker date="1438770322622" expanded="true" signature="89507:89545" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="89946:89998" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="90388:90455" placeholder="SELECT * FRO..level_2_pronoun..." />
+            <marker date="1438770322622" expanded="true" signature="90722:90774" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="91051:91100" placeholder="SELECT * FRO..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="91371:91437" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="96132:96179" placeholder="update users..." />
+            <marker date="1438770322622" expanded="true" signature="97621:97699" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="98405:98476" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="98981:99059" placeholder="SELECT * FRO..level3_conjunctions..." />
+            <marker date="1438770322622" expanded="true" signature="105832:105916" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="107553:107629" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="108286:108338" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="108977:109042" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="109784:109844" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="110466:110515" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="110988:111050" placeholder="SELECT * FRO..level3_notice_invitation..." />
+            <marker date="1438770322622" expanded="true" signature="115510:115585" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="116953:117020" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="117641:117700" placeholder="SELECT qno,q..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="118165:118205" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="118833:118890" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="119346:119384" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="120392:120486" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="120860:120951" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="121329:121422" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="121817:121922" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="122311:122413" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="122806:122910" placeholder="SELECT * FRO..level_3_grammar..." />
+            <marker date="1438770322622" expanded="true" signature="141940:142052" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="142821:142874" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="144264:144366" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="145077:145114" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="145577:145629" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="154455:154494" placeholder="SELECT * FRO..level4_dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="155636:155707" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="157020:157075" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="157683:157722" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="158305:158358" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="159057:159105" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="159672:159709" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="160130:160179" placeholder="SELECT * FRO..level4_note..." />
+            <marker date="1438770322622" expanded="true" signature="163241:163340" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="163750:163850" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="164818:164899" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="166274:166347" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="166983:167048" placeholder="SELECT qno,q..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="167531:167577" placeholder="SELECT * FRO..level_4_activepassive..." />
+            <marker date="1438770322622" expanded="true" signature="168218:168281" placeholder="UPDATE level..." />
+            <marker date="1438770322622" expanded="true" signature="168755:168799" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="183704:183735" placeholder="SELECT * FRO..users..." />
+            <marker date="1438770322622" expanded="true" signature="184110:184238" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="184627:184756" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="185448:185509" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="186149:186208" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="186775:186969" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="187870:187946" placeholder="UPDATE subsc..." />
+            <marker date="1438770322622" expanded="true" signature="188623:188682" placeholder="DELETE FROM ..." />
+            <marker date="1438770322622" expanded="true" signature="189289:189484" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="190391:190459" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="190765:190932" placeholder="SELECT email..users..." />
+            <marker date="1438770322622" expanded="true" signature="190854:190914" placeholder="SELECT recei..notification..." />
+            <marker date="1438770322622" expanded="true" signature="191354:191388" placeholder="delete from ..." />
+            <marker date="1438770322622" expanded="true" signature="191776:191827" placeholder="update notif..." />
+            <marker date="1438770322622" expanded="true" signature="192152:192291" placeholder="SELECT n.id,..users..." />
+            <marker date="1438770322622" expanded="true" signature="192581:192659" placeholder="SELECT count..notification..." />
+            <marker date="1438770322622" expanded="true" signature="192957:193109" placeholder="SELECT n.rec..users..." />
+            <marker date="1438770322622" expanded="true" signature="194035:194109" placeholder="SELECT * FRO..level3_summary..." />
+            <marker date="1438770322622" expanded="true" signature="195646:195704" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="196064:196130" placeholder="SELECT * FRO..level3_summary..." />
+            <marker date="1438770322622" expanded="true" signature="200747:200821" placeholder="SELECT * FRO..level4_summary..." />
+            <marker date="1438770322622" expanded="true" signature="202358:202416" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="202777:202843" placeholder="SELECT * FRO..level4_summary..." />
+            <marker date="1438770322622" expanded="true" signature="206130:206165" placeholder="select marks..marks..." />
+            <marker date="1438770322622" expanded="true" signature="206427:206757" placeholder="Insert into ..." />
+            <marker date="1438770322622" expanded="true" signature="206463:206506" placeholder="select quest..level1_articles..." />
+            <marker date="1438770322622" expanded="true" signature="207048:207105" placeholder="SELECT quest..temp..." />
+            <marker date="1438770322622" expanded="true" signature="209647:209687" placeholder="SELECT user,..marks..." />
+            <marker date="1438770322622" expanded="true" signature="210086:210123" placeholder="update marks..." />
+            <marker date="1438770322622" expanded="true" signature="210572:210615" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="211623:211774" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="212147:212840" placeholder="select u.ima..." />
+            <marker date="1438770322622" expanded="true" signature="212147:212418" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212253:212417" placeholder="SELECT MIN(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212370:212414" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212425:212562" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212569:212840" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212675:212839" placeholder="SELECT MAX(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="212792:212836" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="213362:213514" placeholder="SELECT u.fNa..users..." />
+            <marker date="1438770322622" expanded="true" signature="213893:214589" placeholder="select u.ima..." />
+            <marker date="1438770322622" expanded="true" signature="213893:214165" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="213999:214164" placeholder="SELECT MIN(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214117:214161" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214172:214310" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214317:214589" placeholder="select u.ima..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214423:214588" placeholder="SELECT MAX(m..marks..." />
+            <marker date="1438770322622" expanded="true" signature="214541:214585" placeholder="select m3.ma..marks..." />
+            <marker date="1438770322622" expanded="true" signature="215093:215128" placeholder="select marks..marks..." />
+            <marker date="1438770322622" expanded="true" signature="215512:215565" placeholder="SELECT * FRO..jumblesentences..." />
+            <marker date="1438770322622" expanded="true" signature="215873:215939" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="216369:216547" placeholder="Insert into ..." />
+            <marker date="1438770322622" expanded="true" signature="216406:216446" placeholder="select quest..level2_match..." />
+            <marker date="1438770322622" expanded="true" signature="216845:216903" placeholder="SELECT quest..temp2..." />
+            <marker date="1438770322622" expanded="true" signature="222408:222440" placeholder="SELECT * FRO..dialogs..." />
+            <marker date="1438770322622" expanded="true" signature="223146:223186" placeholder="SELECT user,..marks..." />
+            <marker date="1438770322622" expanded="true" signature="223582:223619" placeholder="update marks..." />
+            <marker date="1438770322622" expanded="true" signature="224068:224111" placeholder="INSERT INTO ..." />
+            <marker date="1438770322622" expanded="true" signature="225223:225358" placeholder="SELECT u.fNa..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

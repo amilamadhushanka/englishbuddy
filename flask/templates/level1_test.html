@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+    <br><br><br>
+    <form style="margin-left: 110px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level1_test" method="post" action="{{ url_for('evaluate_level1_test') }}">
+
+
+    <br>
+    <table>
+        <tr>
+            <td>
+                <label style="font-size: 26px; text-align :left; margin-left: 150px;"><b><font color="black">Elementary Level Test</font></b></label>
+            </td>
+            <td>
+                <div>
+                    <button class="btn-info btn" type="submit"  id="period" style="display: none ;" >Start Quiz</button>
+                </div>
+
+                <div id="getting-started"></div>
+
+                <div style="margin-left: 300px">
+                <label style="font-size: 24px; text-align :left; margin-left: 100px;"><b><font color="#f08080">Time Left :&nbsp;</font></b></label>
+                <snap id="countdown"
+                      style="font-weight: bold;margin-top: -20px ; font-size:30px;color: #f08080;">
+                </snap>
+                    </div>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <div style="overflow: auto; overflow-x: hidden; height: 460px; width: 1150px;margin-left: -50px" >
+
+
+    <div class="form-group" style="text-align :left; margin-left: 150px;">
+
+    <!-- Conjunction Question-->
+    <label style="font-size: 18px"><b><font color="purple">Question : Fill in the blanks with the most suitable
+        conjunction. (Type the correct answer in the relevant text box.)</font></b></label><br><br>
+
+    <!-- Question 1 -->
+    <div class="form-inline">
+        <font style="color: #000000; line-height: 2em">
+            <font style="color: #000000;"  >1.)</font>&nbsp;{{ conjunctionData[0][2].split("#")[0] | safe }}
+        </font>
+
+        <select style="color: #000000; font-size: 16px; height: 30px;border-color: #000000;border-color: #7cfc00" class="form-control" name="conjunction_provided_answer1" autofocus >
+            <option value="" style="display: none">Select answer</option>
+            <option value="{{ shuffledData['shuffledArray'][0] }}">{{ shuffledData['shuffledArray'][0] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][1] }}">{{ shuffledData['shuffledArray'][1] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][2] }}">{{ shuffledData['shuffledArray'][2] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][3] }}">{{ shuffledData['shuffledArray'][3] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][4] }}">{{ shuffledData['shuffledArray'][4] }}</option>
+        </select>
+        <input name="conjunction_correct_answer1" style="display: none" value="{{ conjunctionData[0][3] }}">
+
+        <font style="color: #000000; line-height: 2em">
+            {{ conjunctionData[0][2].split("#")[1] | safe }}
+        </font>
+        <br><br>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-inline">
+        <font style="color: #000000; line-height: 2em">
+            2.)&nbsp;{{ conjunctionData[1][2].split("#")[0] | safe }}
+        </font>
+
+        <select style="color: #000000; font-size: 16px; height: 30px;border-color: #7cfc00" class="form-control" name="conjunction_provided_answer2" autofocus>
+            <option value="" style="display: none">Select answer</option>
+            <option value="{{ shuffledData['shuffledArray'][0] }}">{{ shuffledData['shuffledArray'][0] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][1] }}">{{ shuffledData['shuffledArray'][1] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][2] }}">{{ shuffledData['shuffledArray'][2] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][3] }}">{{ shuffledData['shuffledArray'][3] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][4] }}">{{ shuffledData['shuffledArray'][4] }}</option>
+        </select>
+        <input name="conjunction_correct_answer2" style="display: none" value="{{ conjunctionData[1][3] }}">
+
+        <font style="color: #000000; line-height: 2em">
+            {{ conjunctionData[1][2].split("#")[1] | safe }}
+        </font>
+        <br><br>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-inline">
+        <font style="color: #000000; line-height: 2em">
+            3.)&nbsp;{{ conjunctionData[2][2].split("#")[0] | safe }}
+        </font>
+
+        <select style="color: #000000; font-size: 16px; height: 30px;border-color: #7cfc00" class="form-control" name="conjunction_provided_answer3" autofocus>
+            <option value="" style="display: none">Select answer</option>
+            <option value="{{ shuffledData['shuffledArray'][0] }}">{{ shuffledData['shuffledArray'][0] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][1] }}">{{ shuffledData['shuffledArray'][1] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][2] }}">{{ shuffledData['shuffledArray'][2] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][3] }}">{{ shuffledData['shuffledArray'][3] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][4] }}">{{ shuffledData['shuffledArray'][4] }}</option>
+        </select>
+        <input name="conjunction_correct_answer3" style="display: none" value="{{ conjunctionData[2][3] }}">
+
+        <font style="color: #000000; line-height: 2em">
+            {{ conjunctionData[2][2].split("#")[1] | safe }}
+        </font>
+
+        <br><br>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="form-inline">
+        <font style="color: #000000; line-height: 2em">
+            4.)&nbsp;{{ conjunctionData[3][2].split("#")[0] | safe }}
+        </font>
+
+        <select style="color: #000000; font-size: 16px; height: 30px;border-color: #7cfc00" class="form-control" name="conjunction_provided_answer4" autofocus>
+            <option value="" style="display: none">Select answer</option>
+            <option value="{{ shuffledData['shuffledArray'][0] }}">{{ shuffledData['shuffledArray'][0] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][1] }}">{{ shuffledData['shuffledArray'][1] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][2] }}">{{ shuffledData['shuffledArray'][2] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][3] }}">{{ shuffledData['shuffledArray'][3] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][4] }}">{{ shuffledData['shuffledArray'][4] }}</option>
+        </select>
+        <input name="conjunction_correct_answer4" style="display: none" value="{{ conjunctionData[3][3] }}">
+
+        <font style="color: #000000; line-height: 2em">
+            {{ conjunctionData[3][2].split("#")[1] | safe }}
+        </font>
+
+        <br><br>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="form-inline">
+        <font style="color: #000000; line-height: 2em">
+            5.)&nbsp;{{ conjunctionData[4][2].split("#")[0] | safe }}
+        </font>
+
+        <select style="color: #000000; font-size: 16px; height: 30px;border-color: #7cfc00" class="form-control" name="conjunction_provided_answer5" autofocus>
+            <option value="" style="display: none">Select answer</option>
+            <option value="{{ shuffledData['shuffledArray'][0] }}">{{ shuffledData['shuffledArray'][0] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][1] }}">{{ shuffledData['shuffledArray'][1] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][2] }}">{{ shuffledData['shuffledArray'][2] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][3] }}">{{ shuffledData['shuffledArray'][3] }}</option>
+            <option value="{{ shuffledData['shuffledArray'][4] }}">{{ shuffledData['shuffledArray'][4] }}</option>
+        </select>
+        <input name="conjunction_correct_answer5" style="display: none" value="{{ conjunctionData[4][3] }}">
+
+        <font style="color: #000000; line-height: 2em">
+            {{ conjunctionData[4][2].split("#")[1] | safe }}
+        </font>
+    </div>
+
+    <br><br><br>
+
+
+    <!-- Article Question-->
+    <label style="font-size: 18px"><b><font color="purple">Question : Fill in the blanks with suitable article.(Select correct answer from the given dropdown list)</font></b></label><br><br>
+
+    <div>
+        <table cellspacing="0" cellpadding="0" >
+            <tr class="item">
+
+                <td class="form-inline">
+                    <font style="color: #000000;"  >1.)</font>
+                    <font for="Question1" id="Question1"  style="color: #000000;font-size: 16px" >{{articleData[0][1].split("#")[0]|safe}}</font>
+
+                    <select class="form-control" name="article_provided_answer1" id="AnswerSet1" style="height: 30px;font-size: 16px; color: #000000;border-color: #ff1493">
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            a
+                        </option>
+                        <option>
+                            an
+                        </option>
+                        <option>
+                            the
+                        </option>
+
+                    </select>
+
+                    <font for="Question1" id="Question1"  style="color: #000000;font-size: 16px" >{{articleData[0][1].split("#")[1]|safe}}</font>
+
+                </td>
+
+                <td>
+                    <input type="hidden" id="answer1" name="article_correct_answer1" value="{{ articleData[0][2]|safe  }}"/>
+                </td>
+            </tr>
+            <tr><td> &nbsp;</td></tr>
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >2.)</font>
+                    <font for="Question" id="Question2"  style="color: #000000;font-size: 16px" >{{articleData[1][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="article_provided_answer2" id="AnswerSet2" style="height: 30px;font-size: 16px; color: #000000;border-color: #ff1493">
+                        <option style="color: darkred;display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            a
+                        </option>
+                        <option>
+                            an
+                        </option>
+                        <option>
+                            the
+                        </option>
+
+                    </select>
+
+                    <font for="Question" id="Question2"  style="color: #000000;font-size: 16px" >{{articleData[1][1].split("#")[1]|safe }}</font>
+                </td>
+                <td>
+                    <input type="hidden" id="answer2" name="article_correct_answer2" value="{{ articleData[1][2]|safe  }}"/>
+                </td>
+            </tr>
+            <tr><td> &nbsp;</td></tr>
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >3.)</font>
+                    <font for="Question" id="Question3"  style="color: #000000;font-size: 16px" >{{articleData[2][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="article_provided_answer3" id="AnswerSet3" style="height: 30px;font-size: 16px; color: #000000;border-color: #ff1493">
+                        <option style="color: darkred;display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            a
+                        </option>
+                        <option>
+                            an
+                        </option>
+                        <option>
+                            the
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question3"  style="color: #000000;font-size: 16px" >{{articleData[2][1].split("#")[1]|safe }}</font>
+                </td>
+                <td>
+                    <input type="hidden" id="answer3" name="article_correct_answer3" value="{{ articleData[2][2]|safe }}"/>
+                </td>
+            </tr>
+            <tr><td> &nbsp;</td></tr>
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >4.)</font>
+                    <font for="Question" id="Question4"  style="color: #000000;font-size: 16px" >{{articleData[3][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="article_provided_answer4" id="AnswerSet4" style="height: 30px;font-size: 16px; color: #000000;border-color: #ff1493">
+                        <option style="color: darkred;display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            a
+                        </option>
+                        <option>
+                            an
+                        </option>
+                        <option>
+                            the
+                        </option>
+
+                    </select>
+
+                    <font for="Question" id="Question4"  style="color: #000000;font-size: 16px" >{{articleData[3][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+                    <input type="hidden" id="answer4" name="article_correct_answer4" value="{{ articleData[3][2]|safe  }}"/>
+                </td>
+            </tr>
+            <tr><td> &nbsp;</td></tr>
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >5.)</font>
+                    <font for="Question" id="Question5"  style="color: #000000;font-size: 16px" >{{articleData[4][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="article_provided_answer5" id="AnswerSet5" style="height: 30px;font-size: 16px; color: #000000;border-color: #ff1493">
+                        <option style="color: darkred;display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            a
+                        </option>
+                        <option>
+                            an
+                        </option>
+                        <option>
+                            the
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question5"  style="color: #000000;font-size: 16px" >{{articleData[4][1].split("#")[1]|safe }}</font>
+                </td>
+                <td>
+                    <input type="hidden" id="answer5" name="article_correct_answer5" value="{{ articleData[4][2]|safe  }}"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br>
+
+
+    <!-- Prepositions Question -->
+    <label style="font-size: 18px"><b><font color="purple">Question : Fill in the blanks with suitable prepositions.(Select correct answer from the given dropdown list)</font></b></label><br><br>
+
+    <div>
+        <table cellspacing="0" cellpadding="0" >
+            <tr class="item">
+
+                <td class="form-inline">
+                    <font style="color: #000000;"  ><font style="color: #000000;"  >1.)</font></font>
+                    <font for="Question1" id="Question1"  style="color: #000000;" >{{prepositionData[0][1].split("#")[0]|safe}}</font>
+
+
+                    <select class="form-control" name="preposition_provided_answer1" id="select1" style="height: 30px;font-size: 16px; color: #000000;border-color: gold">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{prepositionData[0][3]|safe }}
+                        </option>
+                        <option>
+                            {{ prepositionData[0][4]|safe }}
+                        </option>
+                        <option>
+                            {{ prepositionData[0][5]|safe }}
+                        </option>
+                        <option>
+                            {{ prepositionData[0][6]|safe  }}
+                        </option>
+                    </select>
+
+                    <font for="Question1" id="Question1"  style="color: #000000;" >{{prepositionData[0][1].split("#")[1]|safe}}</font>
+
+                </td>
+
+                <td >&nbsp;</td>
+
+                <td>
+                    <input type="hidden" id="ans1" name="preposition_correct_answer1" value="{{ prepositionData[0][2]|safe  }}"/>
+                </td>
+            </tr>
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <label for="Question2"   style="color: #000000;"  ></label>
+                    <font style="color: #000000;"  >2.)</font>
+                    <font for="Question" id="Question2"  style="color: #000000;" >{{prepositionData[1][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="preposition_provided_answer2" id="select2" style="height: 30px;font-size: 16px; color: #000000;border-color: gold">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{prepositionData[1][3]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[1][4]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[1][5]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[1][6] |safe }}
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question2"  style="color: #000000;" >{{prepositionData[1][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td >&nbsp;</td>
+                <td>
+                    <input type="hidden" id="ans2" name="preposition_correct_answer2" value="{{ prepositionData[1][2]|safe  }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >3.)</font>
+
+                    <font for="Question" id="Question3"  style="color: #000000;" >{{prepositionData[2][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="preposition_provided_answer3" id="select3" style="height: 30px;font-size: 16px; color: #000000;border-color: gold">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{prepositionData[2][3]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[2][4]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[2][5]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[2][6]|safe  }}
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question3"  style="color: #000000;" >{{prepositionData[2][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td >&nbsp;</td>
+                <td>
+                    <input type="hidden" id="ans3" name="preposition_correct_answer3" value="{{ prepositionData[2][2]|safe }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >4.)</font>
+
+                    <font for="Question" id="Question4"  style="color: #000000;" >{{prepositionData[3][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="preposition_provided_answer4" id="select4" style="height: 30px;font-size: 16px; color: #000000;border-color: gold">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{prepositionData[3][3]|safe }}
+                        </option>
+                        <option>
+                            {{ prepositionData[3][4]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[3][5]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[3][6] |safe }}
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question4"  style="color: #000000;" >{{prepositionData[3][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td >&nbsp;</td>
+                <td>
+                    <input type="hidden" id="ans4" name="preposition_correct_answer4" value="{{ prepositionData[3][2]|safe  }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >5.)</font>
+
+                    <font for="Question" id="Question5"  style="color: #000000;" >{{prepositionData[4][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="preposition_provided_answer5" id="select5" style="height: 30px;font-size: 16px; color: #000000;border-color: gold">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{prepositionData[4][3]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[4][4]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[4][5]|safe  }}
+                        </option>
+                        <option>
+                            {{ prepositionData[4][6]|safe  }}
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question5"  style="color: #000000;" >{{prepositionData[4][1].split("#")[1]|safe }}</font>
+                </td>
+                <td >&nbsp;</td>
+                <td>
+                    <input type="hidden" id="ans5" name="preposition_correct_answer5" value="{{ prepositionData[4][2]|safe  }}"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br>
+
+
+    <!-- Adjectives Question -->
+    <label style="font-size: 18px"><b><font color="purple">Question : Fill in the blanks with suitable adjectives.(Select correct answer from the given dropdown list)</font></b></label><br><br>
+
+    <div>
+        <table  cellspacing="0" cellpadding="0">
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >1.)</font>
+                    <font for="Question1" id="Question1" style="color: #000000;">{{ adjectiveData[0][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="adjectives_provided_answer1" id="select1" style="height: 30px;font-size: 16px; color: #000000;border-color: deepskyblue">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{ adjectiveData[0][2]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[0][3]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[0][4]|safe }}
+                        </option>
+
+                    </select>
+
+                    <font for="Question1" id="Question1" style="color: #000000;">{{ adjectiveData[0][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+                    <input type="hidden" id="ans1" name="adjectives_correct_answer1" value="{{ adjectiveData[0][5]|safe }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  ><font style="color: #000000;"  >2.)</font></font>
+
+                    <font for="Question" id="Question2" style="color: #000000;">{{ adjectiveData[1][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="adjectives_provided_answer2" id="select2" style="height: 30px;font-size: 16px; color: #000000;border-color: deepskyblue">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{ adjectiveData[1][2]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[1][3]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[1][4]|safe }}
+                        </option>
+
+                    </select>
+
+                    <font for="Question" id="Question2" style="color: #000000;">{{ adjectiveData[1][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+                    <input type="hidden" id="ans2" name="adjectives_correct_answer2" value="{{ adjectiveData[1][5]|safe }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >3.)</font>
+
+                    <font for="Question" id="Question3" style="color: #000000;">{{ adjectiveData[2][1].split("#")[0]|safe }}</font>
+
+                    <select class="form-control" name="adjectives_provided_answer3" id="select3" style="height: 30px;font-size: 16px; color: #000000;border-color: deepskyblue">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{ adjectiveData[2][2]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[2][3]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[2][4]|safe }}
+                        </option>
+
+                    </select>
+
+                    <font for="Question" id="Question3" style="color: #000000;">{{ adjectiveData[2][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+                    <input type="hidden" id="ans3" name="adjectives_correct_answer3" value="{{ adjectiveData[2][5]|safe }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >4.)</font>
+
+                    <font for="Question" id="Question4" style="color: #000000;">{{ adjectiveData[3][1].split("#")[0]|safe }}</font>
+
+
+                    <select class="form-control" name="adjectives_provided_answer4" id="select4" style="height: 30px;font-size: 16px; color: #000000;border-color: deepskyblue">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{ adjectiveData[3][2]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[3][3]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[3][4]|safe }}
+                        </option>
+
+                    </select>
+
+                    <font for="Question" id="Question4" style="color: #000000;">{{ adjectiveData[3][1].split("#")[1]|safe }}</font>
+
+                </td>
+                <td>
+                    <input type="hidden" id="ans4" name="adjectives_correct_answer4" value="{{ adjectiveData[3][5]|safe }}"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+
+            <tr class="item">
+                <td class="form-inline">
+                    <font style="color: #000000;"  >5.)</font>
+
+                    <font for="Question" id="Question5" style="color: #000000;">{{ adjectiveData[4][1].split("#")[0]|safe }}</font>
+
+
+                    <select class="form-control" name="adjectives_provided_answer5" id="select5" style="height: 30px;font-size: 16px; color: #000000;border-color: deepskyblue">
+
+                        <option style="display: none">
+                            Select answer
+                        </option>
+                        <option>
+                            {{ adjectiveData[4][2]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[4][3]|safe }}
+                        </option>
+                        <option>
+                            {{ adjectiveData[4][4]|safe }}
+                        </option>
+                    </select>
+
+                    <font for="Question" id="Question5" style="color: #000000;">{{ adjectiveData[4][1].split("#")[1]|safe }}</font>
+                </td>
+                <td>
+                    <input type="hidden" id="ans5" name="adjectives_correct_answer5" value="{{ adjectiveData[4][5]|safe }}"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br>
+
+
+    <input id="yes" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/submit.png" border="0" alt="Submit" name="sub_but"   height="90" width="100" style="outline: none" />
+
+    </div>
+    <br><br>
+
+
+    </div>
+</form>
+
+    <script>
+    function bigImg(x) {
+        x.style.height = "100px";
+        x.style.width = "120px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "90px";
+        x.style.width = "100px";
+    }
+    </script>
+
+    <script type="text/javascript">
+
+        var timeInSecs;
+        var ticker;
+        var s;
+        var count = 0;
+        var secs = 0;
+        window.onload = start;
+
+        function start() {
+            s = document.getElementById("period").value;
+            document.getElementById("period").disabled = true;
+            s = 1860;
+            startTimer(s);
+        }
+
+        function startTimer(secs) {
+            timeInSecs = parseInt(secs);
+            ticker = setInterval("tick()", 1000);
+            tick(); // to start counter display right away
+        }
+
+        function tick() {
+            var secs = timeInSecs;
+            if (secs > 0) {
+                timeInSecs--;
+                showTime(secs);
+            }
+        }
+
+        function showTime(secs) {
+            var hours = Math.floor(secs / 3600);
+            secs %= 3600;
+            var min = Math.floor(secs / 60);
+            secs %= 60;
+            var result = ((hours < 10 ) ? "0" : "" ) + hours + ":" + ( (min < 10) ? "0" : "" ) + min
+                    + ":" + ( (secs < 10) ? "0" : "" ) + secs;
+
+            document.getElementById('countdown').innerHTML = result;
+        }
+
+        var auto =setInterval(function(){
+            submitform();
+        },2401000);
+        function submitform(){
+
+            document.getElementById("form1").submit();
+        }
+    </script>
+
+{% endblock %}

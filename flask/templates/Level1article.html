@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<br><br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')" >
+
+<br>
+<h2 style="margin-left: 150px; color: #A319A3; font-size: 20px; font-weight: bold">Fill in the blanks with the correct article.[a/an/the] (Select the answer from given drop down list.)</h2></br>
+<br>
+<table cellspacing="0" cellpadding="0" style="margin-left: 170px; line-height: 2em;">
+
+        <tr class="item">
+
+        <td class="form-inline">
+            <label for="Question1"   style="font-weight: bold; color: #000000;font-size: 16px"  >1.</label>
+        <font for="Question1" id="Question1"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[0][1].split("#")[0]|safe}}</font>
+
+
+             <select class="form-control" name="answer" id="AnswerSet1" style=" background-color: lightsalmon ;color: #000000;height: 30px;font-size: 16px;border-color: orangered">
+                 <option style="display: none">
+                    Select Answer
+                </option>
+                 <option>
+                     a
+                 </option>
+                  <option>
+                     an
+                 </option>
+                  <option>
+                     the
+                 </option>
+
+             </select>
+
+
+
+        <font for="Question1" id="Question1"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[0][1].split("#")[1]|safe}}</font>
+
+        </td>
+
+        <td>
+             <input type="hidden" id="answer1" name="ans1" value="{{ data[0][2]|safe  }}"/>
+             <div style="display:none" id="validWrong1" >
+                <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #000000;font-size: 16px"> {{data[0][2]|safe  }}</label>
+             </div>
+            <div  style="display:none" id="validRight1">
+                <img src="/static/img/Right.png" height="26" width="26">
+            </div>
+
+
+        </td>
+      </tr>
+    <tr><td> &nbsp;</td></tr>
+    <tr class="item">
+        <td class="form-inline">
+             <label for="Question2"   style="font-weight: bold; color: #000000;font-size: 16px"  >2.</label>
+             <font for="Question" id="Question2"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[1][1].split("#")[0]|safe }}</font>
+
+             <select class="form-control" name="answer" id="AnswerSet2" style=" background-color: lightskyblue;height: 30px;color: #000000;font-size: 16px;border-color: blue">
+                 <option style="color: darkred;display: none">
+                    Select Answer
+                </option>
+                 <option>
+                     a
+                 </option>
+                  <option>
+                     an
+                 </option>
+                  <option>
+                     the
+                 </option>
+
+             </select>
+
+
+
+        <font for="Question" id="Question2"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[1][1].split("#")[1]|safe }}</font>
+
+        </td>
+        <td>
+             <input type="hidden" id="answer2" name="ans" value="{{ data[1][2]|safe  }}"/>
+             <div style="display:none" id="validWrong2" >
+                <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #000000;font-size: 16px">{{ data[1][2]|safe  }}</label>
+            </div>
+
+            <div  style="display:none" id="validRight2">
+
+               <img src="/static/img/Right.png" height="26" width="26">
+            </div>
+
+
+        </td>
+      </tr>
+        <tr><td> &nbsp;</td></tr>
+<tr class="item">
+        <td class="form-inline">
+          <label for="Question3"   style="font-weight: bold; color: #000000;font-size: 16px"  >3.</label>
+          <font for="Question" id="Question3"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[2][1].split("#")[0]|safe }}</font>
+
+             <select class="form-control" name="answer" id="AnswerSet3" style=" background-color: lightpink;color: #000000;height: 30px;font-size: 16px;border-color: #FF0066">
+                 <option style="color: darkred;display: none">
+                    Select Answer
+                 </option>
+                 <option>
+                     a
+                 </option>
+                  <option>
+                     an
+                 </option>
+                  <option>
+                     the
+                 </option>
+
+             </select>
+
+
+
+        <font for="Question" id="Question3"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[2][1].split("#")[1]|safe }}</font>
+
+        </td>
+        <td>
+
+           <input type="hidden" id="answer3" name="ans" value="{{ data[2][2]|safe }}"/>
+           <div style="display:none" id="validWrong3" >
+                <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #000000;font-size: 16px">{{data[2][2]|safe }}</label>
+            </div>
+
+            <div  style="display:none" id="validRight3">
+
+                <img src="/static/img/Right.png" height="26" width="26">
+            </div>
+
+
+        </td>
+      </tr>
+        <tr><td> &nbsp;</td></tr>
+<tr class="item">
+        <td class="form-inline">
+             <label for="Question4"   style="font-weight: bold; color: #000000;font-size: 16px"  >4.</label>
+             <font for="Question" id="Question4"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[3][1].split("#")[0]|safe }}</font>
+
+             <select class="form-control" name="answer" id="AnswerSet4" style=" background-color: plum;height: 30px;color: #000000;font-size: 16px;border-color: purple">
+                 <option style="color: darkred;display: none">
+                    Select Answer
+                 </option>
+                 <option>
+                     a
+                 </option>
+                  <option>
+                     an
+                 </option>
+                  <option>
+                     the
+                 </option>
+
+             </select>
+
+
+
+       <font for="Question" id="Question4"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[3][1].split("#")[1]|safe }}</font>
+
+        </td>
+        <td>
+
+          <input type="hidden" id="answer4" name="ans" value="{{ data[3][2]|safe  }}"/>
+          <div style="display:none" id="validWrong4" >
+               <img src="/static/img/Wrong.png" height="26" width="22">
+               &nbsp;&nbsp;&nbsp;
+               <label class="btn btn-danger btn-xs" style="color: #000000;font-size: 16px">{{ data[3][2]|safe  }}</label>
+          </div>
+
+          <div  style="display:none" id="validRight4">
+
+              <img src="/static/img/Right.png" height="26" width="26">
+          </div>
+
+
+        </td>
+      </tr>
+        <tr><td> &nbsp;</td></tr>
+<tr class="item">
+        <td class="form-inline">
+             <label for="Question5"   style="font-weight: bold; color: #000000;font-size: 16px"  >5.</label>
+             <font for="Question" id="Question5"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[4][1].split("#")[0]|safe }}</font>
+
+             <select class="form-control" name="answer" id="AnswerSet5" style=" background-color: lightgreen;height: 30px;color: #000000;font-size: 16px;border-color: limegreen">
+                 <option style="color: darkred;display: none">
+                    Select Answer
+                 </option>
+                 <option>
+                     a
+                 </option>
+                  <option>
+                     an
+                 </option>
+                  <option>
+                     the
+                 </option>
+
+             </select>
+
+
+
+       <font for="Question" id="Question5"  style="font-weight: bold; color: #000000;font-size: 16px" >{{data[4][1].split("#")[1]|safe }}</font>
+
+        </td>
+        <td>
+
+           <input type="hidden" id="answer5" name="ans" value="{{ data[4][2]|safe  }}"/>
+           <div style="display:none" id="validWrong5" >
+               <img src="/static/img/Wrong.png" height="26" width="22">
+               &nbsp;&nbsp;&nbsp;
+               <label class="btn btn-danger btn-xs" style="color: #000000;font-size: 16px">{{data[4][2]|safe  }}</label>
+           </div>
+
+            <div  style="display:none" id="validRight5">
+
+              <img src="/static/img/Right.png" height="26" width="26">
+            </div>
+
+
+        </td>
+      </tr>
+
+
+
+
+</tbody>
+</table>
+ </br>
+
+    <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/buttonSt.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 20px;margin-top: -125px;outline: none;" onclick="result();"  height="170" width="120" />
+    <label id="marks" class="label " style="background-color: #000000;color: red ;font-size: 20px; display: none;font-style:oblique;" >...</label>
+
+    <div id="disables" style="display: none;margin-left: 550px ;margin-top: -150px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    </div>
+</form>
+
+<script>
+function bigImg(x) {
+    x.style.height = "200px";
+    x.style.width = "150px";
+}
+
+function normalImg(x) {
+    x.style.height = "170px";
+    x.style.width = "120px";
+}
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/Level1article"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level1"
+}
+</script>
+
+<script language="javascript">
+
+function result() {
+
+    var count = 0;
+
+if(document.getElementById('AnswerSet1').value != document.getElementById('answer1').value){
+
+    document.getElementById('validWrong1').style.display = 'block';
+    document.getElementById('validRight1').style.display = 'none';
+    document.getElementById('AnswerSet1').disabled = true;
+
+}
+else if (document.getElementById('AnswerSet1').value == document.getElementById('answer1').value){
+
+    document.getElementById('validWrong1').style.display = 'none';
+    document.getElementById('validRight1').style.display = 'block';
+    document.getElementById('AnswerSet1').disabled = true;
+    count++;
+}
+
+if(document.getElementById('AnswerSet2').value != document.getElementById('answer2').value){
+
+    document.getElementById('validWrong2').style.display = 'block';
+    document.getElementById('validRight2').style.display = 'none';
+    document.getElementById('AnswerSet2').disabled = true;
+}
+else if(document.getElementById('AnswerSet2').value == document.getElementById('answer2').value){
+
+    document.getElementById('validWrong2').style.display = 'none';
+    document.getElementById('validRight2').style.display = 'block';
+    document.getElementById('AnswerSet2').disabled = true;
+    count++;
+}
+
+if(document.getElementById('AnswerSet3').value != document.getElementById('answer3').value ){
+
+    document.getElementById('validWrong3').style.display = 'block';
+    document.getElementById('validRight3').style.display = 'none';
+    document.getElementById('AnswerSet3').disabled = true;
+}
+else if(document.getElementById('AnswerSet3').value == document.getElementById('answer3').value ){
+
+    document.getElementById('validWrong3').style.display = 'none';
+    document.getElementById('validRight3').style.display = 'block';
+    document.getElementById('AnswerSet3').disabled = true;
+    count++;
+}
+if(document.getElementById('AnswerSet4').value != document.getElementById('answer4').value){
+
+    document.getElementById('validWrong4').style.display = 'block';
+    document.getElementById('validRight4').style.display = 'none';
+    document.getElementById('AnswerSet4').disabled = true;
+}
+else if(document.getElementById('AnswerSet4').value == document.getElementById('answer4').value) {
+
+    document.getElementById('validWrong4').style.display = 'none';
+    document.getElementById('validRight4').style.display = 'block';
+    document.getElementById('AnswerSet4').disabled = true;
+    count++;
+}
+if(document.getElementById('AnswerSet5').value!=document.getElementById('answer5').value){
+
+    document.getElementById('validWrong5').style.display = 'block';
+    document.getElementById('validRight5').style.display = 'none';
+    document.getElementById('AnswerSet5').disabled = true;
+
+}
+else if(document.getElementById('AnswerSet5').value==document.getElementById('answer5').value){
+
+    document.getElementById('validWrong5').style.display = 'none';
+    document.getElementById('validRight5').style.display = 'block';
+    document.getElementById('AnswerSet5').disabled = true;
+    count++;
+}
+
+document.getElementById('marks').innerHTML = count+"/5";
+document.getElementById('marks').style.display = 'inline';
+document.getElementById('disables').style.display='block';
+document.getElementById("markAnswers").disabled = true;
+
+
+}
+
+</script>
+
+
+
+{% endblock %}

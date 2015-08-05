@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+{% extends "home_teacher_header.html" %}
+{% block content %}
+<link href="/static/css/addQuestions.css" rel="stylesheet">
+
+    <form class="form-addQuestions" name="drop_list">
+        <center>
+            <br>
+            <h1 style="color:#ffffff;font-family:Verdana;font: bolder">Question Bank</h1>
+            <br>
+            <br>
+
+            <div style="width: 300px">
+                <select class="form-control" id="Category" NAME="Category" onChange="SelectSubCat()">
+                    <option value="title" selected="true" style="display:none;">Select Level</option>
+                    <option value="Level1">Level1</option>
+                    <option value="Level2">Level2</option>
+                    <option value="Level3">Level3</option>
+                    <option value="Level4">Level4</option>
+                </select>
+            </div>
+            <br>
+
+            <div style="width: 300px">
+                <select class="form-control" id="SubCat" NAME="SubCat">
+                    <option value="subCategory" selected="true" style="display:none;">Select Question Type</option>
+                    <option value="">Adjectives</option>
+                    <option value="">Articles</option>
+                    <option value="">Conjunctions</option>
+                    <option value="">Prepositions</option>
+                </select></div>
+
+            <br><br>
+            <button type="button" class="btn btn-primary" onclick="changeFunc();" style="font-size: 18px; width: 280px; height: 45px">Add Question</button>
+            <br><br>
+            <button type="button" class="btn btn-warning" onclick="editChangeFunc();" style="font-size: 18px; width: 280px; height: 45px">Edit Question</button>
+            </div>
+
+        </center>
+    </form>
+
+
+
+    <script language="javascript">
+        function SelectSubCat() {
+// ON selection of category this function will work
+
+            removeAllOptions(document.drop_list.SubCat);
+
+            if (document.drop_list.Category.value == 'Level1') {
+                addOption(document.drop_list.SubCat, "Adjectives", "Adjectives");
+                addOption(document.drop_list.SubCat, "Articles", "Articles");
+                addOption(document.drop_list.SubCat, "Conjunctions", "Conjunctions");
+                addOption(document.drop_list.SubCat, "Prepositions", "Prepositions");
+            }
+            if (document.drop_list.Category.value == 'Level2') {
+                addOption(document.drop_list.SubCat, "Dialogue", "Dialogue");
+                addOption(document.drop_list.SubCat, "Pronouns", "Pronouns");
+                addOption(document.drop_list.SubCat, "Jumble Sentences", "Jumble Sentences");
+                addOption(document.drop_list.SubCat, "Matching Words", "Matching Words");
+            }
+
+            if (document.drop_list.Category.value == 'Level3') {
+                addOption(document.drop_list.SubCat, "Summarization", "Summarization");
+                addOption(document.drop_list.SubCat, "Tenses", "Tenses");
+                addOption(document.drop_list.SubCat, "Notice/Invitation", "Notice/Invitation");
+                addOption(document.drop_list.SubCat, "Conjunctions", "Conjunctions");
+            }
+
+            if (document.drop_list.Category.value == 'Level4') {
+                addOption(document.drop_list.SubCat, "Summarization", "Summarization");
+                addOption(document.drop_list.SubCat, "Grammer", "Grammer");
+                addOption(document.drop_list.SubCat, "Dialogue", "Dialogue");
+                addOption(document.drop_list.SubCat, "Note Writing", "Note Writing");
+            }
+
+
+            function removeAllOptions(selectbox) {
+                var i;
+                for (i = selectbox.options.length - 1; i >= 0; i--) {
+                    //selectbox.options.remove(i);
+                    selectbox.remove(i);
+                }
+            }
+
+
+            function addOption(selectbox, value, text) {
+                var optn = document.createElement("OPTION");
+                optn.text = text;
+                optn.value = value;
+
+                selectbox.options.add(optn);
+            }
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function changeFunc() {
+            var level = document.getElementById("Category");
+            var levelSelectedValue = level.options[level.selectedIndex].value;
+
+            var questionType = document.getElementById("SubCat");
+            var questionTypeSelectedValue = questionType.options[questionType.selectedIndex].value;
+
+            if (levelSelectedValue == "Level1") {
+                if (questionTypeSelectedValue == "Conjunctions") {
+                    window.open("http://127.0.0.1:5000/add_conjunction_questions_new", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Prepositions") {
+                    window.open("http://127.0.0.1:5000/add_prepositions_question", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Articles") {
+                    window.open("http://127.0.0.1:5000/add_articles_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Adjectives") {
+                    window.open("http://127.0.0.1:5000/AddQues_adjectives", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+            }
+            else if (levelSelectedValue == "Level2") {
+                if (questionTypeSelectedValue == "Dialogue") {
+                    window.open("http://127.0.0.1:5000/add_dialog_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Matching Words") {
+                    window.open("http://127.0.0.1:5000/add_matching_words_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Pronouns") {
+                    window.open("http://127.0.0.1:5000/AddQues_pronoun", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Jumble Sentences") {
+                    window.open("http://127.0.0.1:5000/add_jumble_sentences", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+            }
+            else if (levelSelectedValue == "Level3") {
+                if (questionTypeSelectedValue == "Conjunctions") {
+                    window.open("http://127.0.0.1:5000/level3_add_conjunction_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }else if (questionTypeSelectedValue == "Summarization") {
+                    window.open("http://127.0.0.1:5000/loadSummaryQues", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }else if (questionTypeSelectedValue == "Notice/Invitation") {
+                    window.open("http://127.0.0.1:5000/add_notice_invitation_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+            }
+            else if (levelSelectedValue == "Level4") {
+                if (questionTypeSelectedValue == "Dialogue") {
+                    window.open("http://127.0.0.1:5000/level4_add_dialog_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }else if(questionTypeSelectedValue == "Note Writing") {
+                    window.open("http://127.0.0.1:5000/add_note" +
+                            "_questions", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+                else if (questionTypeSelectedValue == "Summarization") {
+                    window.open("http://127.0.0.1:5000/loadSummaryQues_level4", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+                }
+            }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        function editChangeFunc() {
+            var level = document.getElementById("Category");
+            var levelSelectedValue = level.options[level.selectedIndex].value;
+
+            var questionType = document.getElementById("SubCat");
+            var questionTypeSelectedValue = questionType.options[questionType.selectedIndex].value;
+
+            if (levelSelectedValue == "Level1") {
+                if (questionTypeSelectedValue == "Conjunctions") {
+                    window.location.href = "http://127.0.0.1:5000/display_conjunction_questions/?level=level1"
+                }
+                else if (questionTypeSelectedValue == "Prepositions") {
+                    window.location.href = "http://127.0.0.1:5000/editPreQuestions"
+                }
+                else if (questionTypeSelectedValue == "Adjectives") {
+                    window.location.href = "http://127.0.0.1:5000/Update_adjectives"
+                }
+                else if (questionTypeSelectedValue == "Articles") {
+                    window.location.href = "http://127.0.0.1:5000/display_article_questions"
+                }
+            }
+            if (levelSelectedValue == "Level2") {
+                if (questionTypeSelectedValue == "Dialogue") {
+                    window.location.href = "http://127.0.0.1:5000/display_dialog_questions/?level=level2"
+                }
+                else if (questionTypeSelectedValue == "Jumble Sentences") {
+                    window.location.href = "http://127.0.0.1:5000/editJumbleQuestions"
+                }
+                else if (questionTypeSelectedValue == "Pronouns") {
+                    window.location.href = "http://127.0.0.1:5000/Update_pronoun"
+                }
+                else if (questionTypeSelectedValue == "Matching Words") {
+                    window.location.href = "http://127.0.0.1:5000/display_match_words_questions"
+                }
+            }
+            if (levelSelectedValue == "Level3") {
+                if (questionTypeSelectedValue == "Conjunctions") {
+                    window.location.href = "http://127.0.0.1:5000/display_conjunction_questions/?level=level3"
+                }else if (questionTypeSelectedValue == "Notice/Invitation") {
+                    window.location.href = "http://127.0.0.1:5000/display_notice_invitation_questions"
+                }
+            }
+            if(levelSelectedValue == "Level4"){
+                if (questionTypeSelectedValue == "Note Writing") {
+                    window.location.href = "http://127.0.0.1:5000/display_note_questions"
+                }else if (questionTypeSelectedValue == "Dialogue") {
+                    window.location.href = "http://127.0.0.1:5000/display_dialog_questions/?level=level4"
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

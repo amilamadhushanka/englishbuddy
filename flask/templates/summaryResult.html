@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+<br><br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level3_summary">
+<br>
+
+ <textarea name="answer"  rows="15" style="width: 400px;height:200px;margin-left: 680px;margin-top: 70px;background:none;border-width: 2px;border-color: deepskyblue;color: #000000;font-size: 18px;resize: none" id="comment" readonly>
+        {{answer}}
+ </textarea>
+
+{% if status=="" %}
+<table style="margin-left: 750px;">
+ <tr>
+  <td width="20">
+  <div style="border-color: red;border-style:ridge;border-width: 5px;height: 5px ;width: 5px;"></div>
+  </td>
+
+  <td>
+  <label style="color: red; font-style: oblique">Spelling and Grammar Errors </label>
+  </td>
+</tr>
+<tr>&nbsp;</tr>
+<tr>
+  <td width="20">
+  <div style="border-color: green;border-style:ridge;border-width: 5px;height: 5px ;width: 5px;"></div>
+  </td>
+  <td>
+  <label style="color: green;font-style: oblique">Corrected Spellings and Grammar </label>
+  </td>
+</tr>
+</table>
+<div class="panel-body" style="width: 900px;height: 300px ;margin-top: 170px "  >
+
+<div  style="border-color: red;border-style:ridge;margin-left: 100px;margin-top: -440px;border-width: 5px;height: 150px ;width: 550px">
+
+ {{ original|safe }}
+</div>
+
+
+<div style="border-color: green;border-style:ridge;margin-left: 100px;border-width: 5px;margin-top: 20px;height: 150px;width: 550px">
+
+    <br>
+
+    {{fixed|safe }}
+
+</div>
+<label style="margin-left: 100px;margin-top: 30px;font-weight: bold;color: #000000">Word Count: {{ wordCount }}</label>
+&nbsp;
+<label style="margin-left: 100px;margin-top: 30px;font-weight: bold;color: #000000">Grammar: {{ grammar }}</label>
+&nbsp;
+<label style="margin-left: 100px;margin-top: 30px;font-weight: bold;color: #000000">Content: {{ content }}</label>
+</div>
+
+{% else %}
+<div  style="border-color: red;margin-left: 200px;margin-top: -100px;border-width: 5px;height: 150px ;width: 550px;font-family:myFirstFont;font-size: larger;color: red;font-weight: bolder">
+
+ {{ status|safe }}
+</div>
+{% endif %}
+
+<br>
+<div id="disables" style="margin-left: 550px ;margin-top: 30px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+</div>
+
+
+</form>
+ <style type="text/css">
+    .ansi2html-content{
+        height: 250px;
+        width: 500px;
+        background-color: transparent;
+        font-size: 18px;
+        font-family:Georgia, serif ;
+        border: hidden;
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+ </style>
+
+ <script>
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level_3_summary"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level3"
+}
+</script>
+
+
+{% endblock %}

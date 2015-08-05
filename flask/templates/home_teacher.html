@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends "home_teacher_header.html" %}
+{% block content %}
+
+    <form style="background-image: url('/static/img/scrollPage.png'); width: 500px;height: 600px">
+
+    <div style="width:40%; margin-left: 25px;text-align: left; font-size: 30px; color:#000000;font-family:myFirstFont">
+        <label style="margin-top: 10px">Welcome {{ session['fName'] }}</label>
+    </div>
+
+    <br>
+
+    <div style="width:40%;height:42%;float:left;margin-left: 2cm;">
+        <center>
+            <div>
+                <label style="font-size: 24px; color: #FF99FF"></label>
+            </div>
+            <br>
+
+            {% if (session['role']=="Teacher") %}
+                <div>
+                     <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/HomePage/Level1.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px " onclick="openLevel1();return false" height="85" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/HomePage/Level2.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px ;margin-left: 30px " onclick="openLevel2();return false" height="85" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/HomePage/Level3.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px  " onclick="openLevel3();return false" height="85" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/HomePage/Level4.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px ;margin-left: 30px " onclick="openLevel4();return false" height="85" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/HomePage/student%20details.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px  " onclick="openStudents();return false" height="85" width="350" />
+                </div>
+            {% endif %}
+        </center>
+    </div>
+
+    <div style="margin-left: 600px">
+        <object width="560" height="420">
+            <param name="movie" value="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1">
+            <param name="wmode" value="transparent">
+            <param name="allowFullScreen" value="true">
+            <embed src="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1"
+                   type="application/x-shockwave-flash"
+                   wmode="transparent" width="560" height="420" allowFullScreen="true"></embed>
+        </object>
+    </div>
+    </form>
+
+    <br><br><br>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script>
+    function bigImg(x) {
+        x.style.height = "95px";
+        x.style.width = "370px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "85px";
+        x.style.width = "350px";
+    }
+    </script>
+
+    <script type="text/javascript">
+        function openLevel1() {
+            window.location.href = "/level1"
+        }
+        function openLevel2() {
+            window.location.href = "/level2"
+        }
+        function openLevel3() {
+            window.location.href = "/level3"
+        }
+        function openLevel4() {
+            window.location.href = "/level4"
+        }
+        function openStudents() {
+            window.location.href = "/display_subscribe_student_details"
+        }
+    </script>
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#notificationLink").click(function()
+            {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+//Document Click hiding the popup
+            $(document).click(function()
+            {
+                $("#notificationContainer").hide();
+            });
+
+//Popup on click
+            $("#notificationContainer").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+{% endblock %}

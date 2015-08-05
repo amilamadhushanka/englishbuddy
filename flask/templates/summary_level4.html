@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<form style="margin-left: 100px;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="summary" method="post" action="/evaluateSummary_level4">
+
+
+
+ <div class="form-group" style="margin-left: 100px; color: #000000;font-size: 20px;width: 1000px">
+        <label style="margin-top: 40px;">Q.)&nbsp;Write down the main idea of the following paragraph using your own words. Do not use more than 35 words.</label>
+         <textarea id="Ques" style="width: 1000px;margin-top:20px;font-size: 18px;height: 170px;background: none;border: none;color: purple;outline: none"   name="Ques" readonly>{{ data }}</textarea>
+
+
+        <textarea   id="Answer" style="width: 600px;height: 200px;margin-left: 150px;border-width: 2px;background-color: transparent;border-color: deepskyblue;color: #000000;font-size: 15px"   name="Answer" required="required" placeholder="Answer"></textarea>
+            </td>
+   </div>
+<table align = "center">
+            <tr>
+                <td></td>
+                <td>
+                     <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/ship.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: -540px;margin-top: -160px;outline: none;"  height="200" width="250" />
+
+                     </td>
+            </tr>
+        </table>
+</form>
+
+     <script>
+    function bigImg(x) {
+        x.style.height = "220px";
+        x.style.width = "270px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "200px";
+        x.style.width = "250px";
+    }
+
+    </script>
+{% endblock %}

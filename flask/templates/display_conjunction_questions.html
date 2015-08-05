@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+    <center>
+        <div>
+            <table class="table1" id="mytable">
+                <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='15%' style="text-align: center">Level</th>
+                    <th width='56%' style="text-align: center">Question</th>
+                    {% if levelData['level']=='level1' %}
+                        <th width='15%' style="text-align: center">Answers</th>
+                    {% endif %}
+                    <th width='7%' style="text-align: center">Edit</th>
+                    <th width='7%' style="text-align: center">Delete</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {% for key in data %}
+                    <tr>
+                        <td style="text-align: center; vertical-align:middle">
+                            {{ key[1] }} <!-- Level -->
+                        </td>
+                        <td style="vertical-align:middle">
+                            {{ key[2].split("#")[0] |safe }} _________ {{ key[2].split("#")[1] |safe }} <!-- Question -->
+                        </td>
+
+                        {% if levelData['level']=='level1' %}
+                            <td style="text-align: center; vertical-align:middle">
+                                {% if key[1]=='level1' %}
+                                    {{ key[3] |safe }} <!-- Answer -->
+                                {% endif %}
+                            </td>
+                        {% endif %}
+
+                        <td style="text-align: center; vertical-align:middle;">
+                            <!-- Edit Question -->
+                            {% if key[1]=='level1' %}
+                                <button type="button" data-toggle="modal" data-target="#editModel" class="btn btn-info" style="height: 40px; width: 40px" data-id="{{ key[0] }}" data-level="{{ key[1] }}"><span class='glyphicon glyphicon-pencil'></span></button>
+                            {% elif key[1]=='level3' %}
+                                <button type="button" data-toggle="modal" data-target="#edit_level3_Model" class="btn btn-info" style="height: 40px; width: 40px" data-id="{{ key[0] }}" data-level="{{ key[1] }}"><span class='glyphicon glyphicon-pencil'></span></button>
+                            {% endif %}
+                        </td>
+                        <td style="text-align: center; vertical-align:middle">
+                            <!-- Delete Question -->
+                            <a href='http://127.0.0.1:5000/delete_conjunction_questions/?qNo={{ key[0] }}&level={{ key[1] }}' onclick="return doconfirm();"><button class="btn btn-danger" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-trash'></span></button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </center>
+    <br>
+
+
+    <!--  Level 1 Conjunctions Edit Model -->
+
+    <div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="hidePreview();">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <form action="{{ url_for('save_edited_conjunction_question') }}" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <br><br>
+                            <div style="height: 250px;overflow: auto; overflow-x: hidden">
+                                <table align="center" border="0" style="width:auto">
+                                    <col width="200">
+                                    <col width="700">
+
+                                    <tr>&nbsp;</tr>
+                                    <tr>
+                                        <td style="text-align:right;"><label style="color: #000000">Question :
+                                            &nbsp;</label></td>
+                                        <td>
+                                            <input type="text" name="question_1" id="question" class="form-control"
+                                                   style="background-color: #CCF5FF; width: 550px; display: inline; color: #000000; font-size: 16px" required onkeyup="hidePreview()">
+                                            <button type="button" onclick="preview()" id="edit_preview" name="edit_preview" class="btn btn-info" style="margin-left: 20px; width: 40px; display: inline"><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right;"><label style="color: #000000">Answer :
+                                            &nbsp;</label></td>
+                                        <td>
+                                            <div>
+                                                <input type="text" name="answer_1" id="answer" class="form-control"
+                                                       style="background-color:#FFE6F0; width: 200px; color: #000000; font-size: 16px" required>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+
+                                <div id="level1_preview_container" role="menu" style="display: none; margin-left: 37px">
+                                    <div>
+                                        <label id="lblPreview" style="color: green; font-size: 21px">Preview : </label>
+                                        <label id="display_question_level1" style="font-size: 20px"></label>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="qNo" id="qNo">
+                                <input type="hidden" name="level" id="level">
+
+                                <br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="hidePreview();">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="hidePreview();">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  Level 3 Conjunctions Edit Model -->
+
+    <div class="modal fade" id="edit_level3_Model" tabindex="-1" role="dialog" aria-labelledby="edit_level3_Model" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="hidePreview_level3()">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <form action="{{ url_for('save_edited_conjunction_question') }}" method="post">
+                        <div class="form-group">
+                            <div style="height: 300px;overflow: auto; overflow-x: hidden; padding-top: 30px">
+                                <table align="center" border="0" style="width:auto">
+                                    <col width="200">
+                                    <col width="700">
+
+                                    <tr>&nbsp;</tr>
+                                    <tr>
+                                        <td style="text-align:right;"><label style="color: #000000">Question :
+                                            &nbsp;</label></td>
+                                        <td>
+                                            <input type="text" name="question_1" id="level3_question" class="form-control"
+                                                   style="width: 550px; display: inline; color: #000000; font-size: 16px" onkeyup="hidePreview_level3()">
+                                            <button type="button" onclick="preview_level3()" id="edit_preview_level3" class="btn btn-info" style="margin-left: 20px; width: 40px; display: inline"><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </table>
+
+                                <div id="level3_preview_container" role="menu" style="display: none; margin-left: 37px; padding-top: 40px">
+                                    <div>
+                                        <label id="lblPreview" style="color: green; font-size: 21px">Preview : </label>
+                                        <label id="display_question_level3" style="font-size: 20px"></label>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="qNo" id="qNo">
+                                <input type="hidden" name="level" id="level">
+
+                                <br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="hidePreview_level3">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="hidePreview_level3">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Level 1 Conjunctions Edit Model -->
+    <script type="text/javascript">
+        $('#editModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var level = button.data('level')
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_conjunction') }}?qNo=" + id+"&level="+level, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#qNo').val(id)
+                modal.find('#level').val(level)
+                modal.find('#question').val(json.question)
+                modal.find('#answer').val(json.answer)
+            })
+        })
+    </script>
+
+    <!-- Level 3 Conjunctions Edit Model -->
+    <script type="text/javascript">
+        $('#edit_level3_Model').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var level = button.data('level')
+            var modal = $(this)
+
+            $.get("{{ url_for('level3_edit_conjunction') }}?qNo=" + id+"&level="+level, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#qNo').val(id)
+                modal.find('#level').val(level)
+                modal.find('#level3_question').val(json.question)
+            })
+        })
+    </script>
+
+    <!-- Congirm Delete Conjunction Question -->
+    <script>
+        function doconfirm() {
+            var status = confirm("Are you sure you want to delete this question ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <!-- Conjunctions Table -->
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+    <!-- Level 1 Conjunctions Edit Model Validate Question -->
+    <script>
+        function validateForm() {
+
+            var q1 = document.getElementById("question");
+
+            if (q1.value.indexOf('#')==-1) {
+                alert("Blank(#) is missing in question. Please insert # to insert the blank.");
+                q1.focus();
+                return false;
+            }
+        }
+    </script>
+
+
+    <!-- Level 1 Conjunctions Preview Edited Question -->
+
+    <script type="text/javascript" >
+        function preview(){
+            var div=document.getElementById("level1_preview_container");
+
+            if(div.style.display=='none') {
+                var question = document.getElementById("question").value;
+
+                var que = question.split("#");
+                if(que[1]) {
+                    var result = que[0] + " __________ " + que[1];
+                }
+                else{
+                    var result = question;
+                }
+
+                document.getElementById("display_question_level1").textContent=result;
+                $("#level1_preview_container").fadeIn("slow");
+            }
+            else if(div.style.display!='none') {
+                $("#level1_preview_container").fadeOut("slow");
+            }
+        }
+
+        function hidePreview(){
+            $("#level1_preview_container").fadeOut("slow");
+        }
+
+    </script>
+
+
+    <!-- Level 3 Conjunctions Preview Edited Question -->
+
+    <script type="text/javascript" >
+        function preview_level3(){
+            var div=document.getElementById("level3_preview_container");
+
+            if(div.style.display=='none') {
+                var question = document.getElementById("level3_question").value;
+
+                var que = question.split("#");
+                if(que[1]) {
+                    var result = que[0] + " __________ " + que[1];
+                }
+                else{
+                    var result = question;
+                }
+
+                document.getElementById("display_question_level3").textContent=result;
+                $("#level3_preview_container").fadeIn("slow");
+            }
+            else if(div.style.display!='none') {
+                $("#level3_preview_container").fadeOut("slow");
+            }
+        }
+        function hidePreview_level3(){
+            $("#level3_preview_container").fadeOut("slow");
+        }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+    <center>
+        <div>
+          <table class="table1" id="mytable" style="color: #ffffff" >
+             <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='15%' style="text-align: center">Level</th>
+                    <th width='56%' style="text-align: center">Question</th>
+                    <th width='15%' style="text-align: center">Answers</th>
+                    <th width='7%' style="text-align: center">Edit</th>
+                    <th width='7%' style="text-align: center">Delete</th>
+                </tr>
+             </thead>
+
+             <tbody>
+
+             {% for key in data %}
+                <tr>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[4] }}
+                    </td>
+                    <td style="vertical-align:middle">
+                        {{ key[1].split("#")[0] |safe }} _________ {{ key[1].split("#")[1] |safe }}
+
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[2] |safe }}
+
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <button type="button" data-toggle="modal" data-target="#editModel" class="btn btn-info" style="height: 40px; width: 40px" data-id="{{ key[0] }}"><span class='glyphicon glyphicon-pencil'></span></button>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        <a class="btn" href='http://127.0.0.1:5000/delete_article_questions/?qNo={{ key[0] }}'><button class="btn btn-danger" onclick="return doconfirm();" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-trash'></span></button></a>
+                    </td>
+                </tr>
+             {% endfor %}
+             </tbody>
+          </table>
+        </div>
+    </center>
+<br>
+
+
+
+    <div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <form action="{{ url_for('save_edited_article_question') }}" method="post">
+                        <div class="form-group">
+
+                            <table align="center" border="0" style="width:auto">
+                                <col width="200">
+                                <col width="700">
+
+                                <tr>&nbsp;</tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Question  :
+                                        &nbsp;</label></td>
+                                    <td>
+                                        <input type="text" name="question" id="question" class="form-control"
+                                               style="background-color: #CCF5FF;width: 550px; display: inline;font-size: 16px;color: #000000" required onkeyup="hidePreview()">
+                                        <button type="button" onclick="preview()" id="edit_preview" name="edit_preview" class="btn btn-info" style="margin-left: 20px; width: 40px; display: inline"><img src="/static/img/preview.png" style="width: 22px; height: 22px;font-size: 16px;color: #000000"/></button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer  :
+                                        &nbsp;</label></td>
+                                    <td>
+                                        <div>
+                                            <input type="text" name="answer" id="answer" class="form-control"
+                                                   style="background-color:#FFE6F0;width: 200px;font-size: 16px;color: #000000">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <br><br>
+
+                                <div id="level1_preview_container" role="menu" style="display: none; margin-left: 37px">
+                                    <div>
+                                        <label id="lblPreview" style="color: green; font-size: 21px">Preview : </label>
+                                        <label id="display_question_level1" style="font-size: 20px"></label>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="qNo" id="qNo">
+                                <input type="hidden" name="level" id="level">
+
+                                <br>
+
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="hidePreview()" style="font-size: 16px">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="hidePreview()" style="font-size: 16px">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Level 1 Articles Preview Edited Question -->
+
+    <script type="text/javascript" >
+        function preview(){
+            var div=document.getElementById("level1_preview_container");
+
+            if(div.style.display=='none') {
+                var question = document.getElementById("question").value;
+
+                var que = question.split("#");
+                if(que[1]) {
+                    var result = que[0] + " __________ " + que[1];
+                }
+                else{
+                    var result = question;
+                }
+
+                document.getElementById("display_question_level1").textContent=result;
+                $("#level1_preview_container").fadeIn("slow");
+            }
+            else if(div.style.display!='none') {
+                $("#level1_preview_container").fadeOut("slow");
+            }
+        }
+        function hidePreview(){
+            $("#level1_preview_container").fadeOut("slow");
+        }
+    </script>
+
+    <script type="text/javascript">
+        $('#editModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_article') }}?qNo=" + id, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#qNo').val(id)
+                modal.find('#question').val(json.question)
+                modal.find('#answer').val(json.answer)
+            })
+        })
+    </script>
+
+    <script>
+        function doconfirm() {
+            var status = confirm("Are you sure you want to delete this question ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+{% endblock %}

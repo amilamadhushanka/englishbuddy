@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<head>
+    <link href="/static/css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+    <style type="text/css">
+        .ansi2html-content {
+            background-color: transparent;
+            font-size: 16px;
+            font-family: Sans-serif;
+            border: none;
+            display: inline;
+        }
+
+
+    </style>
+</head>
+
+{% extends "home2.html" %}
+
+<style type="text/css">
+    input:focus {
+        outline: none;
+    }
+</style>
+
+{% block content %}
+
+    <br><br>
+
+    <form style="margin-left: 100px; margin-top: -60px; width: 1150px; height: 600px; background-image: url('/static/img/testback.png')"
+          name="level1_dialogs" method="post" action="{{ url_for('evaluate_level4_dialog_activity') }}">
+
+    <div class="form-group"
+         style="text-align :left; margin-left: 50px; height: 630px; overflow: auto; overflow-x: hidden">
+    <br>
+
+    {% for key in data %}
+        <input type="hidden" name="qNo" value="{{ key[0] }}"/>
+
+        <div style="margin-left: 170px">
+        <label style="font-size: 18px; cursor: default"><b><font color="#A319A3">Fill in appropriately the missing parts
+            of the following dialog.<br>(Type the correct answer in the relevant blank.<br>You should use at least one sentence for every response.</font></b></label><br><br>
+
+        <font color="black" style="line-height: 2em; cursor: default"> {{ key[1] |safe }} </font> &nbsp;
+        <input type="hidden" name="question1" value="{{ key[1] |safe }}">
+        <br>
+
+        <!-- Question 1-->
+        <div style="display: inline">
+            <font color="black" style="line-height: 2em; cursor: default">{{ key[2].split("#")[0] |safe }}</font>
+            {% if answer_data %}
+
+                {% if answer_data['a1_wrong_grammar'] != 'none' and answer_data['a1_wrong_grammar'] != "" %}
+                    <div style="display: inline-flex">
+                        {{ answer_data['a1_wrong_grammar'] | safe }}
+                        <div style="display: inline">
+                            {% if answer_data['a1_status'] != 0 and answer_data['a1_wrong_grammar'] == 'none' %}
+                                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                            {% else %}
+                                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                            {% endif %}
+                        </div>
+                        {{ answer_data['a1_corrected_grammar'] |safe }}
+                    </div>
+                {% endif %}
+                {% if answer_data['pa1'] == "" %}
+                    <input type="text"
+                           style="outline: none; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; width: 600px;"
+                           readonly>
+                {% elif answer_data['a1_wrong_grammar'] == 'none' or answer_data['a1_wrong_grammar'] == '' %}
+                    <font color="blue">{{ answer_data['pa1'] }}</font>
+                {% endif %}
+
+                {% if answer_data['a1_status'] != 0 and answer_data['a1_wrong_grammar'] == 'none' %}
+                    &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                {% elif answer_data['a1_wrong_grammar'] == 'none' or answer_data['a1_wrong_grammar'] == "" %}
+                    &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                {% endif %}
+
+            {% else %}
+                <input type="text" name="one"
+                       style="outline: none; color: blue; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; height: 30px; width: 600px;"
+                       autofocus
+                        >
+            {% endif %}
+        </div>
+
+
+        <br>
+
+        <!-- Question 2 -->
+        <div style="display: inline;">
+            <font color="black" style="line-height: 2em; cursor: default"> {{ key[3] |safe }} </font> &nbsp;
+            <input type="hidden" name="question2" value="{{ key[3] |safe }}">
+            <br>
+
+            <font color="black" style="line-height: 2em; cursor: default">{{ key[4].split("#")[0] |safe }}</font>
+            {% if answer_data %}
+                {% if answer_data['a2_wrong_grammar'] != 'none' and answer_data['a2_wrong_grammar'] != "" %}
+                    <div style="display: inline-flex">
+                        {{ answer_data['a2_wrong_grammar'] | safe }}
+
+                        <div style="display: inline">
+                            {% if answer_data['a2_status'] != 0 and answer_data['a2_wrong_grammar'] == 'none' %}
+                                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                            {% else %}
+                                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                            {% endif %}
+                        </div>
+
+                        {{ answer_data['a2_corrected_grammar'] |safe }}
+                    </div>
+                {% endif %}
+                {% if answer_data['pa2'] == "" %}
+                    <input type="text"
+                           style="outline: none; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; width: 600px;"
+                           readonly>
+                {% elif answer_data['a2_wrong_grammar'] == 'none' or answer_data['a2_wrong_grammar'] == '' %}
+                    <font color="blue">{{ answer_data['pa2'] }}</font>
+                {% endif %}
+
+                {% if answer_data['a2_status'] != 0 and answer_data['a2_wrong_grammar'] == 'none' %}
+                    &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                {% elif answer_data['a2_wrong_grammar'] == 'none' or answer_data['a2_wrong_grammar'] == "" %}
+                    &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                {% endif %}
+
+
+            {% else %}
+                <input type="text" name="two"
+                       style="outline: none; color: blue; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; height: 30px; width: 600px"
+                       autofocus
+                        >
+            {% endif %}
+        </div>
+        <br>
+        <font color="black" style="line-height: 2em; cursor: default"> {{ key[5] |safe }} </font> &nbsp;
+        <input type="hidden" name="question3" value="{{ key[5] |safe }}">
+        <br>
+
+        <!-- Question 3 -->
+        <div style="display: inline;">
+            <font color="black" style="line-height: 2em; cursor: default">{{ key[6].split("#")[0] |safe }}</font>
+            {% if answer_data %}
+                {% if answer_data['a3_wrong_grammar'] != 'none' and answer_data['a3_wrong_grammar'] != "" %}
+                    <div style="display: inline-flex">
+                        {{ answer_data['a3_wrong_grammar'] | safe }}
+
+                        <div style="display: inline">
+                            {% if answer_data['a3_status'] != 0 and answer_data['a3_wrong_grammar'] == 'none' %}
+                                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                            {% else %}
+                                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                            {% endif %}
+                        </div>
+
+                        {{ answer_data['a3_corrected_grammar'] |safe }}
+                    </div>
+                {% endif %}
+                {% if answer_data['pa3'] == "" %}
+                    <input type="text"
+                           style="outline: none; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; width: 600px;"
+                           readonly>
+                {% elif answer_data['a3_wrong_grammar'] == 'none' or answer_data['a3_wrong_grammar'] == '' %}
+                    <font color="blue">{{ answer_data['pa3'] }}</font>
+                {% endif %}
+
+                {% if answer_data['a3_status'] != 0 and answer_data['a3_wrong_grammar'] == 'none' %}
+                    &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                {% elif answer_data['a3_wrong_grammar'] == 'none' or answer_data['a3_wrong_grammar'] == "" %}
+                    &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                {% endif %}
+
+
+            {% else %}
+                <input type="text" name="three"
+                       style="outline: none; color: blue; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; height: 30px; width: 600px"
+                       autofocus
+                        >
+            {% endif %}
+        </div>
+        <br>
+        <font color="black" style="line-height: 2em; cursor: default"> {{ key[7] |safe }} </font> &nbsp;
+        <input type="hidden" name="question4" value="{{ key[7] |safe }}">
+        <br>
+
+        <!-- Question 4 -->
+        <div style="display: inline;">
+            <font color="black" style="line-height: 2em; cursor: default">{{ key[8].split("#")[0] |safe }}</font>
+            {% if answer_data %}
+                {% if answer_data['a4_wrong_grammar'] != 'none' and answer_data['a4_wrong_grammar'] != "" %}
+                    <div style="display: inline-flex">
+                        {{ answer_data['a4_wrong_grammar'] | safe }}
+
+                        <div style="display: inline">
+                            {% if answer_data['a4_status'] != 0 and answer_data['a4_wrong_grammar'] == 'none' %}
+                                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                            {% else %}
+                                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                            {% endif %}
+                        </div>
+
+                        {{ answer_data['a4_corrected_grammar'] |safe }}
+                    </div>
+                {% endif %}
+                {% if answer_data['pa4'] == "" %}
+                    <input type="text"
+                           style="outline: none; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; width: 600px;"
+                           readonly>
+                {% elif answer_data['a4_wrong_grammar'] == 'none' or answer_data['a4_wrong_grammar'] == '' %}
+                    <font color="blue">{{ answer_data['pa4'] }}</font>
+                {% endif %}
+
+                {% if answer_data['a4_status'] != 0 and answer_data['a4_wrong_grammar'] == 'none' %}
+                    &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                {% elif answer_data['a4_wrong_grammar'] == 'none' or answer_data['a4_wrong_grammar'] == "" %}
+                    &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                {% endif %}
+
+
+            {% else %}
+                <input type="text" name="four"
+                       style="outline: none; color: blue; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; height: 30px; width: 600px"
+                       autofocus
+                        >
+            {% endif %}
+        </div>
+        <br>
+        <font color="black" style="line-height: 2em; cursor: default"> {{ key[9] |safe }} </font> &nbsp;
+        <input type="hidden" name="question5" value="{{ key[9] |safe }}">
+        <br>
+
+        <!-- Question 5 -->
+        <div style="display: inline;">
+            <font color="black" style="line-height: 2em; cursor: default">{{ key[10].split("#")[0] |safe }}</font>
+            {% if answer_data %}
+                {% if answer_data['a5_wrong_grammar'] != 'none' and answer_data['a5_wrong_grammar'] != "" %}
+                    <div style="display: inline-flex">
+                        {{ answer_data['a5_wrong_grammar'] | safe }}
+
+                        <div style="display: inline">
+                            {% if answer_data['a5_status'] != 0 and answer_data['a5_wrong_grammar'] == 'none' %}
+                                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                            {% else %}
+                                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                            {% endif %}
+                        </div>
+
+                        {{ answer_data['a5_corrected_grammar'] |safe }}
+                    </div>
+                {% endif %}
+                {% if answer_data['pa5'] == "" %}
+                    <input type="text"
+                           style="outline: none; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; width: 600px;"
+                           readonly>
+                {% elif answer_data['a5_wrong_grammar'] == 'none' or answer_data['a5_wrong_grammar'] == '' %}
+                    <font color="blue">{{ answer_data['pa5'] }}</font>
+                {% endif %}
+
+                {% if answer_data['a5_status'] != 0 and answer_data['a5_wrong_grammar'] == 'none' %}
+                    &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+                {% elif answer_data['a5_wrong_grammar'] == 'none' or answer_data['a5_wrong_grammar'] == "" %}
+                    &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                {% endif %}
+
+
+            {% else %}
+                <input type="text" name="five"
+                       style="outline: none; color: blue; background: transparent; border: 0px dashed #f08080; border-bottom-width: 2px; height: 30px; width: 600px"
+                       autofocus>
+            {% endif %}
+        </div>
+
+        <div>
+            {% if key[11] != None %}
+                <font color="black" style="line-height: 2em; cursor: default">{{ key[11] |safe }}</font>
+                <input type="hidden" name="question6" value="{{ key[11] |safe }}">
+            {% else %}
+                <input type="hidden" name="question6" value="">
+                <br>
+            {% endif %}
+        </div>
+
+        <br>
+
+        </div>
+    {% endfor %}
+
+    {% if answer_data %}
+        <div style="margin-left: 500px; display: inline-flex">
+            <div style="margin-left: -300px">
+                <font style="color: red; font-size: 18px;">
+                    Marks : &nbsp;
+                </font>
+                <label id="marks" class="label "
+                       style="color:  red ;font-size: 20px;font-style:oblique;border-style: ridge; border-color: red;border-width: 2px">{{ answer_data['marks'] }}/10</label>
+            </div>
+
+
+            <div id="disables" style="margin-left: 100px; margin-top: -80px" class="form-group"><br><br><br>
+                <label style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+                <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false"
+                       type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"
+                       height="70" width="80" style="outline: none"/>
+                <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false"
+                       type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"
+                       height="70" width="80" style="outline: none"/>
+            </div>
+        </div>
+
+    {% else %}
+        <div>
+            <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image"
+                   src="/static/img/ship.png" border="0" alt="Submit this form" name="sub_but"
+                   style="margin-left: -5px; margin-top: -80px;outline: none;" height="150px" width="200px"/>
+
+            <div style="margin-top: -50px; margin-left: 170px" id="voice">
+            <label style="margin-left: 620px; display: inline;">Listen to the dialog</label>
+            <img id="speak" src="/static/img/play.png" border="0" title="Speak" height="35" style="cursor: pointer">
+            <img id="stop_speak" src="/static/img/stop.png" border="0" title="Stop Speaking" height="35" style="cursor: pointer">
+            </div>
+        </div>
+    {% endif %}
+
+    </div>
+    <br><br>
+
+    </form>
+
+
+
+    <script type="text/javascript">
+        function openWin() {
+            window.location.href = "/level4_dialogs_activity"
+        }
+    </script>
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "170px";
+            x.style.width = "220px";
+            document.getElementById("voice").style.visibility = 'hidden'
+        }
+
+        function normalImg(x) {
+            x.style.height = "150px";
+            x.style.width = "200px";
+            document.getElementById("voice").style.visibility = 'visible'
+        }
+
+    </script>
+
+    <script>
+        function bigYNImg(x) {
+            x.style.height = "80px";
+            x.style.width = "90px";
+        }
+
+        function normalYNImg(x) {
+            x.style.height = "70px";
+            x.style.width = "80px";
+        }
+
+        function yes() {
+            window.location.href = "/level4_dialogs_activity"
+        }
+
+        function no() {
+            window.location.href = "/level4"
+        }
+
+    </script>
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+    <script type=text/javascript>
+        $(function () {
+            $('#speak').bind('click', function () {
+                $.getJSON('/speak_dialog', {
+                    question1: $('input[name="question1"]').val(),
+                    question2: $('input[name="question2"]').val(),
+                    question3: $('input[name="question3"]').val(),
+                    question4: $('input[name="question4"]').val(),
+                    question5: $('input[name="question5"]').val(),
+                    question6: $('input[name="question6"]').val(),
+                    answer1: $('input[name="one"]').val(),
+                    answer2: $('input[name="two"]').val(),
+                    answer3: $('input[name="three"]').val(),
+                    answer4: $('input[name="four"]').val(),
+                    answer5: $('input[name="five"]').val()
+                });
+                return false;
+            });
+        });
+    </script>
+
+    <script type=text/javascript>
+        $(function() {
+            $('#stop_speak').bind('click', function() {
+                $.getJSON('/stop_dialog_reading', {
+                    status: 'Stop'});
+                return false;
+            });
+        });
+    </script>
+
+{% endblock %}

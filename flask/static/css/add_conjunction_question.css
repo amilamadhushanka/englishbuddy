@@ -1,0 +1,38 @@
+body
+{
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	background:url(/static/img/background2_blur.jpg) no-repeat center center fixed;
+	background-size: 100% 100%;
+}
+
+.form-conjunctions {
+
+	margin: 0 auto;
+}
+
+
+.form-conjunctions .form-control {
+
+	position: relative;
+
+	height: auto;
+
+	-webkit-box-sizing: border-box;
+
+   -moz-box-sizing: border-box;
+
+          	box-sizing: border-box;
+
+	padding: 5px;
+  font-size: 14px;
+
+}
+
+
+.form-conjunctions .form-control:focus {
+
+	z-index: 2;
+
+}

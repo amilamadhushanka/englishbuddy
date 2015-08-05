@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% block content %}
+ <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/add_conjunction_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <br>
+
+    <form style="width:850px;height: 600px;background-image: url('/static/img/addquesback.png');margin-left: 50px" method="post" role="form" action="/AddJumbleSentences" class="form-conjunctions">
+
+
+<br>
+
+        <table>
+            <tr>
+                <td>
+                    <h3 style="color: purple; padding-left: 180px">Elementary Level ->  Add Jumble Sentences Question</h3>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+  <div style="height:450px; overflow:auto; overflow-x:hidden;">
+
+ <br>
+
+<div id="question_1_Container" role="menu" style="margin-left: 100px">
+ <div style="display: inline">
+        <label for="usr" style="color: #000000;font-size: 16px" id="lblQuestion1" >Wrong Sentence: </label>
+
+            <input name="txtWrong1" type="text" class="form-control" id="usr" style="border-color: deepskyblue;width: 550px;display: inline;margin-left: 2px;background-color: #CCF5FF;font-size: 16px;color: #000000" required value="{% if errors %}{{ errors['wrongsentence1'] }}{% endif %}">
+     <br><br>
+
+
+
+        <label for="usr" style="color: #000000;font-size: 16px" id="lblAnswer1" >Correct Sentence:</label>
+
+     <input name="txtCorrect1" type="text" class="form-control" id="usr" style="border-color: #d119cf;width: 550px;display: inline;background-color: #FFE6F0;font-size: 16px;color: #000000" required value="{% if errors %}{{ errors['correctSentence1'] }}{% endif %}">
+
+
+  </div>
+    <br><br>
+       <input id="addQuestion2" class="btn btn-warning" type="button" style="border-color:orangered;margin-left: 180px; width: 150px" value="Add Question 2"/>
+            <br><br>
+     </div>
+
+   <div id="question_2_Container" role="menu" style="margin-left: 100px;display: none">
+  <div style="display: inline">
+        <label for="usr" style="color: #000000;font-size: 16px"  >Wrong Sentence :  </label>
+
+       <input name="txtWrong2" type="text" class="form-control" id="txtWrong2"style="border-color: deepskyblue;width: 550px;display: inline;background-color: #CCF5FF;font-size: 16px;color: #000000" value="{% if errors %}{{ errors['wrongsentence2'] }}{% endif %}">
+    <br><br>
+
+
+
+        <label for="usr" style="color: #000000;font-size: 16px" >Correct Sentence : </label>
+
+ <input name="txtCorrect2" type="text" class="form-control" id="txtCorrect2" style="border-color:#d119cf;width: 550px;display: inline;background-color: #FFE6F0;font-size: 16px;color: #000000" value="{% if errors %}{{ errors['correctSentence2'] }}{% endif %}" >
+
+
+  </div>
+     <br><br>
+                <input id="addQuestion3" class="btn btn-warning" type="button" style="border-color: orangered;margin-left: 180px; width: 150px" value="Add Question 3"/>
+            <br><br>
+     </div>
+    <div id="question_3_Container" role="menu" style="margin-left: 100px;display: none">
+  <div style="display: inline">
+        <label for="usr" style="color: #000000;font-size: 16px"  >Wrong Sentence :  </label>
+
+     <input name="txtWrong3" type="text" class="form-control" id="txtWrong3" style="border-color:#d119cf;border-color: deepskyblue;width: 550px;display: inline;background-color: #CCF5FF;font-size: 16px;color: #000000" value="{% if errors %}{{ errors['wrongsentence3'] }}{% endif %}">
+    <br><br>
+
+
+
+        <label for="usr" style="color: #000000;font-size: 16px"  >Correct Sentence :  </label>
+
+      <input name="txtCorrect3" type="text" class="form-control" id="txtCorrect3" style="border-color:#d119cf;width: 550px;display: inline;background-color: #FFE6F0;font-size: 16px;color: #000000" value="{% if errors %}{{ errors['correctSentence3'] }}{% endif %}">
+    </div>
+
+
+     </div>
+
+
+
+        </div>
+
+    </br></br>
+
+   <table align = "center">
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn btn-primary" style="border-color: deepskyblue;margin-left: 225px;margin-top:-20px;width:150px;font-size: 16px" id="save" value="Save Question"/>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" style="border-color: red;margin-top:-20px;width:150px;font-size: 16px " onclick="window.close()">Cancel</button>
+                </td>
+            </tr>
+        </table></form>
+
+
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion2").click(function()
+            {
+                $("#question_2_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion2");
+                if (el.value == "Add Question 2")
+                {
+                    el.value = "Remove Question 2";
+                    document.getElementById("txtWrong2").required=true;
+                    document.getElementById("txtCorrect2").required=true;
+                    document.getElementById("save").value="Save Questions";
+
+                }
+                else
+                {
+                      el.value = "Add Question 2";
+                    document.getElementById("txtWrong2").value='';
+                    document.getElementById("txtCorrect2").value='';
+                    document.getElementById("txtWrong2").required=false;
+                    document.getElementById("txtCorrect2").required=false;
+                    document.getElementById("save").value="Save Question";
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_2_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+        <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion3").click(function()
+            {
+                $("#question_3_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion3");
+                if (el.value == "Add Question 3")
+                {
+                    document.getElementById("addQuestion2").style.visibility = 'hidden';
+                    document.getElementById("txtWrong3").required=true;
+                    document.getElementById("txtCorrect3").required=true;
+                    el.value = "Remove Question 3";
+                }
+                else
+                {
+                    el.value = "Add Question 3";
+                    document.getElementById("addQuestion2").style.visibility = 'visible';
+                    document.getElementById("txtWrong3").value='';
+                    document.getElementById("txtCorrect3").value='';
+                    document.getElementById("txtWrong3").required=false;
+                    document.getElementById("txtCorrect3").required=false;
+
+
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_3_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+{% endblock %}

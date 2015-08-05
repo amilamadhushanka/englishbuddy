@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+	<head>
+	<title>English Buddy</title>
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+{% block content %}
+	<center>
+	<form name="myForm" class="form-group">
+		<br><font color="#FF99FF"><b>
+		Objective : Assess the ability to use conjunctions correctly.<br><br>
+		Question  : Fill in the blanks with the most suitable words.<br><br>
+		</b></font>
+		<table>
+			<tr>
+				<td valign="top"><font color="pink">Lasith : </font></td>
+				<td><font color="white">Happy birthday Manori. Here are some cards for you.<br>
+					They came
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					you were having breakfast. well, all your friends seem to know
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					your birthday is.</font>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td valign="top"><font color="pink">Manori : </font></td>
+				<td><font color="white">Thank you Lasith. I have told my friends to come in the evening
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					before 4 o' clock.</font>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td valign="top"><font color="pink">Lasith : </font></td>
+				<td><font color="white">I'm sorry. I could not buy a present for you
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					I was not able to go to town yesterday,
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					I will provide music at the party.</font>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td valign="top"><font color="pink">Manori : </font></td>
+				<td><font color="white">That's very nice of you. Let's start the party
+					<input type="text" name="regNo" class="form-control" style="background-color:#CEF6D8" placeholder="Provide answer">
+					my friends come.</font>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="Submit Answer" name="Submit" class="btn btn-warning" >
+	</form>
+
+</center>
+
+{% endblock %}

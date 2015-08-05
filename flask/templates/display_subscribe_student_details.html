@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% extends "home_teacher_header.html" %}
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+
+    {% if data %}
+    <center>
+        <div style="width: 90%">
+          <table class="table1" id="mytable" style="color: #ffffff" >
+             <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='10%' style="text-align: center">&nbsp;</th>
+                    <th width='25%' style="text-align: center">Full Name</th>
+                    <th width='25%' style="text-align: center">School</th>
+                    <th width='20%' style="text-align: center">Level</th>
+                    <th width='10%' style="text-align: center">More Info.</th>
+                    <th width='10%' style="text-align: center">Delete</th>
+                </tr>
+             </thead>
+
+             <tbody>
+             {% for key in data %}
+
+                <tr>
+                    <td style="text-align: center; vertical-align:middle">
+                        <img src="/static/uploads/{{ key[3] }}" height="45px" width="45px"/>
+                    </td>
+                    <td style="text-align:center ;vertical-align:middle">
+                        {{ key[0] }}&nbsp;{{ key[1] }}
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[2] }}
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        {{ key[4] }}
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <a class="btn" href='http://127.0.0.1:5000/#/?email={{ key[6] }}'><button class="btn btn-info" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-info-sign'></span></button></a>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <a class="btn" href='http://127.0.0.1:5000/decline_teacher_subscribe_request/?email={{ key[6] }}'><button onclick="return doconfirm();" class="btn btn-danger" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-remove-sign'></span></button></a>
+                    </td>
+                </tr>
+             {% endfor %}
+             </tbody>
+          </table>
+        </div>
+    </center>
+    {% else %}
+        <center>
+            <div style="padding-top: 100px">
+                <font color="white"> There are no subscribed students. </font>
+            </div>
+        </center>
+    {% endif %}
+<br>
+
+
+
+    <script>
+        function doconfirm() {
+            var status = confirm("Are you sure you want remove this student ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+{% endblock %}

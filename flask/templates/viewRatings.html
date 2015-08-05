@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% extends "homeViewRatings.html" %}
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+    <link href="/static/css/rating.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+
+    <table  class="table" cellspacing="0" style="margin-left: 150px; margin-top: 10px; overflow: auto; overflow-x: hidden; width: 900px;">
+        <thead>
+        <tr><th></th></tr>
+        <tr>
+            {% if includeFirstFive=='true' %}
+                <th width="10%" style="text-align: center;">Place</th>
+            {% elif includeFirstFive=='false' %}
+                <th width="10%" style="text-align: center;">&nbsp;</th>
+            {% endif %}
+            <th width="10%" style="text-align: center;">&nbsp;</th>
+            <th width="40%" style="text-align: center;">Name</th>
+            <th width="10%" style="text-align: center;">Marks</th>
+            <th width="30%" style="text-align: center;">Rank</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set count=0 %}
+
+        {% if includeFirstFive=='true' %}
+            {% for key in firstFive %}
+                {% set count = count + 1 %}
+
+                <tr {% if key[4]== session['username'] %}style="color: red; font-weight: bold ;"{% else %}style="color: #000000;" {% endif %}>
+                    <td style="text-align: center; vertical-align: middle; font-size: 18px; font-weight: bold"> {{ count }} </td>
+                    <td style="text-align: center; vertical-align: middle"><img src="/static/uploads/{{ key[2] }}"  width="50px" height="50px" /></td>
+                    <td style="text-align: center; vertical-align: middle">{{ key[0]}} {{'  '}}{{ key[1] }}</td>
+                    <td style="text-align: center; vertical-align: middle">{{ key[3] }}</td>
+                    <td style="text-align: center; vertical-align: middle; font-size: 18px">
+                        <span class="starRating">
+{#                            <input id="rating10" type="radio" value="10" disabled >#}
+{#                            <label for="rating10">10</label>#}
+{#                            <input id="rating9" type="radio" value="9" disabled>#}
+{#                            <label for="rating9">9</label>#}
+{#                            <input id="rating8" type="radio" value="8" disabled>#}
+{#                            <label for="rating8">8</label>#}
+{#                            <input id="rating7" type="radio" value="7" disabled>#}
+{#                            <label for="rating7">7</label>#}
+{#                            <input id="rating6" type="radio" value="6" disabled>#}
+{#                            <label for="rating6">6</label>#}
+                            <input id="rating5" type="radio" value="5"  {% if key[3]>=75 %}checked{% endif %} disabled>
+                            <label for="rating5">5</label>
+                            <input id="rating4" type="radio" value="4" disabled {% if key[3]>=65 and key[3]<75 %}checked{% endif %}>
+                            <label for="rating4">4</label>
+                            <input id="rating3" type="radio" value="3" disabled {% if key[3]>=55 and key[3]<65 %}checked{% endif %}>
+                            <label for="rating3">3</label>
+                            <input id="rating2" type="radio" value="2" disabled {% if key[3]>=45 and key[3]<55 %}checked{% endif %}>
+                            <label for="rating2">2</label>
+                            <input id="rating1" type="radio" value="1" disabled {% if key[3]>=35 and key[3]<45 %}checked{% endif %}>
+                            <label for="rating1">1</label>
+                        </span>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        {% elif includeFirstFive=='false' %}
+
+            {% for key in data %}
+
+                <tr {% if key[4]== session['username'] %}style="color: red; font-weight: bold ;"{% else %}style="color: #000000;" {% endif %}>
+                    <td style="text-align: center; vertical-align: middle; font-size: 18px; font-weight: bold"> &nbsp; </td>
+                    <td style="text-align: center; vertical-align: middle"><img src="/static/uploads/{{ key[0] }}"  width="50px" height="50px" /></td>
+                    <td style="text-align: center; vertical-align: middle">{{ key[1]}} {{'  '}}{{ key[2] }}</td>
+                    <td style="text-align: center; vertical-align: middle">{{ key[3] }}</td>
+                    <td style="text-align: center; vertical-align: middle; font-size: 18px">
+                        <span class="starRating">
+{#                            <input id="rating10" type="radio" value="10" disabled >#}
+{#                            <label for="rating10">10</label>#}
+{#                            <input id="rating9" type="radio" value="9" disabled>#}
+{#                            <label for="rating9">9</label>#}
+{#                            <input id="rating8" type="radio" value="8" disabled>#}
+{#                            <label for="rating8">8</label>#}
+{#                            <input id="rating7" type="radio" value="7" disabled>#}
+{#                            <label for="rating7">7</label>#}
+{#                            <input id="rating6" type="radio" value="6" disabled>#}
+{#                            <label for="rating6">6</label>#}
+                            <input id="rating5" type="radio" value="5"  {% if key[3]>=75 %}checked{% endif %} disabled>
+                            <label for="rating5">5</label>
+                            <input id="rating4" type="radio" value="4" disabled {% if key[3]>=65 and key[3]<75 %}checked{% endif %}>
+                            <label for="rating4">4</label>
+                            <input id="rating3" type="radio" value="3" disabled {% if key[3]>=55 and key[3]<65 %}checked{% endif %}>
+                            <label for="rating3">3</label>
+                            <input id="rating2" type="radio" value="2" disabled {% if key[3]>=45 and key[3]<55 %}checked{% endif %}>
+                            <label for="rating2">2</label>
+                            <input id="rating1" type="radio" value="1" disabled {% if key[3]>=35 and key[3]<45 %}checked{% endif %}>
+                            <label for="rating1">1</label>
+                        </span>
+                    </td>
+                </tr>
+            {% endfor %}
+
+
+        {% endif %}
+        </tbody>
+    </table>
+
+    <input onclick="openGame();return false" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/button.png" border="0" alt="Submit this form" name="sub_but" style="outline: none;margin-left: 600px;" height="150" width="300" />
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "200px";
+            x.style.width = "350px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "150px";
+            x.style.width = "300px";
+        }
+
+        function openGame(){
+            window.location.href ="http://127.0.0.1:5000/level1_ranking"
+        }
+    </script>
+
+
+{% endblock %}

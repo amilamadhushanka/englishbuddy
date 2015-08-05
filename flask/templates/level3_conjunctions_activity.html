@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<head>
+    <style type="text/css">
+        .form-group {
+            width: 976px;
+        }
+    </style>
+    <link href="/static/css/main2.css" rel="stylesheet">
+</head>
+
+{% extends "home2.html" %}
+{% block content %}
+
+    <br><br>
+
+    <body style="overflow: auto; overflow-x: hidden;">
+
+    <form style="margin-left: 80px; margin-top: -60px; width: 1150px; height: 600px; background-image: url('/static/img/testback.png')" name="level1_conjunctions" method="post" action="{{ url_for('evaluate_level3_conjunction_activity') }}">
+    <div class="form-group" style="text-align :left; margin-left: 150px;">
+
+    <input type="hidden" name="qNo" value=""/>
+    <br><br>
+
+    <label style="font-size: 18px"><b><font color="#A319A3">Fill in the blanks with the most suitable
+        conjunction. (Type the correct answer in the relevant text box.)</font></b></label><br><br>
+
+    <br>
+
+    <!-- Question 1 -->
+    <div class="form-inline">
+        <input type="hidden" name="question1" value="{{ data[0][2] }}"/>
+        <img id="speak_q1" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em">
+            1)&nbsp;{{ data[0][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a1_status']=='Correct') %}
+                <font color="blue" size="4"><b>{{ answer_data['pa1'] }}</b></font>
+            {% else %}
+                <font color="red" size="4"><b>{% if answer_data['pa1'] =="" %}<font color="#f08080">__________</font>{% else %}{{ answer_data['pa1'] }}{% endif %}</b></font>
+            {% endif %}
+        {% else %}
+            <input type="text" name="one" id="one" onkeyup="changeFunc('one', 'speak_q1')" placeholder="Answer" autofocus autocomplete="off" style="background-color: #F4FA58; color: #000000; font-size: 16px; border-color: darkorange; height: 30px;" class="form-control">
+            <input name="correctAnswer1" style="display: none" value="{{ data[0][3] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em">
+            {{ data[0][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a1_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a1'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="form-inline">
+        <input type="hidden" name="question2" value="{{ data[1][2] }}"/>
+        <img id="speak_q2" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em">
+            2)&nbsp;{{ data[1][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a2_status']=='Correct') %}
+                <font color="blue" size="4"><b>{{ answer_data['pa2'] }}</b></font>
+            {% else %}
+                <font color="red" size="4"><b>{% if answer_data['pa2'] =="" %}<font color="#f08080">__________</font>{% else %}{{ answer_data['pa2'] }}{% endif %}</b></font>
+            {% endif %}
+        {% else %}
+            <input type="text" name="two" id="two" onkeyup="changeFunc('two', 'speak_q2')" placeholder="Answer" autofocus autocomplete="off" style="background-color: lightskyblue; height: 30px; color: #000000; font-size: 16px; border-color: blue" class="form-control">
+            <input name="correctAnswer2" style="display: none" value="{{ data[1][3] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em">
+            {{ data[1][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a2_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a2'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="form-inline">
+        <input type="hidden" name="question3" value="{{ data[2][2] }}"/>
+        <img id="speak_q3" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em">
+            3)&nbsp;{{ data[2][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a3_status']=='Correct') %}
+                <font color="blue" size="4"><b>{{ answer_data['pa3'] }}</b></font>
+            {% else %}
+                <font color="red" size="4"><b>{% if answer_data['pa3'] =="" %}<font color="#f08080">__________</font>{% else %}{{ answer_data['pa3'] }}{% endif %}</b></font>
+            {% endif %}
+        {% else %}
+            <input type="text" name="three" id="three" onkeyup="changeFunc('three', 'speak_q3')" placeholder="Answer" autofocus autocomplete="off" style="background-color: lightpink; color: #000000; height: 30px; font-size: 16px; border-color: #FF0066" class="form-control">
+            <input name="correctAnswer3" style="display: none" value="{{ data[2][3] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em">
+            {{ data[2][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a3_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a3'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="form-inline">
+        <input type="hidden" name="question4" value="{{ data[3][2] }}"/>
+        <img id="speak_q4" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em">
+            4)&nbsp;{{ data[3][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a4_status']=='Correct') %}
+                <font color="blue" size="4"><b>{{ answer_data['pa4'] }}</b></font>
+            {% else %}
+                <font color="red" size="4"><b>{% if answer_data['pa4'] =="" %}<font color="#f08080">__________</font>{% else %}{{ answer_data['pa4'] }}{% endif %}</b></font>
+            {% endif %}
+        {% else %}
+            <input type="text" name="four" id="four" onkeyup="changeFunc('four', 'speak_q4')" placeholder="Answer" autofocus autocomplete="off" style="background-color: plum; height: 30px; color: #000000; font-size: 16px; border-color: purple" class="form-control">
+            <input name="correctAnswer4" style="display: none" value="{{ data[3][3] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em">
+            {{ data[3][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a4_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a4'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="form-inline">
+        <input type="hidden" name="question5" value="{{ data[4][2] }}"/>
+        <img id="speak_q5" src="/static/img/play.png" border="0" title="Speak" style="height: 25px; width: 25px; visibility: hidden; cursor: pointer">
+        <font style="color: #000000; line-height: 2em">
+            5)&nbsp;{{ data[4][2].split("#")[0] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a5_status']=='Correct') %}
+                <font color="blue" size="4"><b>{{ answer_data['pa5'] }}</b></font>
+            {% else %}
+                <font color="red" size="4"><b>{% if answer_data['pa5'] =="" %}<font color="#f08080">__________</font>{% else %}{{ answer_data['pa5'] }}{% endif %}</b></font>
+            {% endif %}
+        {% else %}
+            <input type="text" name="five" id="five" onkeyup="changeFunc('five', 'speak_q5')" placeholder="Answer" autofocus autocomplete="off" style="background-color: greenyellow; height: 30px; color: #000000; font-size: 16px; border-color: limegreen" class="form-control">
+            <input name="correctAnswer5" style="display: none" value="{{ data[4][3] }}">
+        {% endif %}
+
+        <font style="color: #000000; line-height: 2em">
+            {{ data[4][2].split("#")[1] | safe }}
+        </font>
+
+        {% if answer_data %}
+            {% if (answer_data['a5_status']=='Correct') %}
+                &nbsp; <img src="/static/img/Right.png" height="26" width="26">
+            {% else %}
+                &nbsp; <img src="/static/img/Wrong.png" height="26" width="22">
+                &nbsp;&nbsp;&nbsp;
+                <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{ answer_data['a5'] }}</label>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+    </div>
+
+    <br><br>
+    {% if answer_data %}
+        <div style="margin-left: 500px">
+        <br>
+        <div style="margin-left: -500px;">
+            <font style="color: darkorange; font-size: 18px;">
+                Correct Answers : &nbsp;
+            </font>
+            <label id="marks" class="label " style="color:  orangered ;font-size: 20px;font-style:oblique;border-style: ridge; border-color: red;border-width: 2px" >{{ answer_data['marks'] }}/5</label>
+        </div>
+        <br>
+        <div id="disables" style="margin-left: -100px ;margin-top: -100px" class="form-group"><br><br><br>
+            <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+            <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    </div>
+        </div>
+
+    {% else %}
+        <br>
+        <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image" src="/static/img/snail.png" border="0" alt="Submit this form" name="sub_but" style="margin-left: 650px;margin-top: -60px;outline: none;"  height="170" width="200" />
+
+
+    {% endif %}
+
+
+    </div>
+    </form>
+    </body>
+
+    <script type="text/javascript">
+        function openWin() {
+            window.location.href = "http://127.0.0.1:5000/level3_conjunctions_activity"
+        }
+    </script>
+
+    <script>
+        function bigYNImg(x) {
+            x.style.height = "80px";
+            x.style.width = "90px";
+        }
+
+        function normalYNImg(x) {
+            x.style.height = "70px";
+            x.style.width = "80px";
+        }
+
+
+        function yes() {
+            window.location.href = "/level3_conjunctions_activity"
+        }
+
+        function no() {
+            window.location.href = "/level3"
+        }
+    </script>
+
+
+    <script type=text/javascript>
+        $(function () {
+            $('#speak_q1').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question1"]').val(),
+                    answer: $('input[name="one"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q2').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question2"]').val(),
+                    answer: $('input[name="two"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q3').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question3"]').val(),
+                    answer: $('input[name="three"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q4').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question4"]').val(),
+                    answer: $('input[name="four"]').val()
+                });
+                return false;
+            });
+        });
+
+        $(function () {
+            $('#speak_q5').bind('click', function () {
+                $.getJSON('/speak_conjunction', {
+                    question: $('input[name="question5"]').val(),
+                    answer: $('input[name="five"]').val()
+                });
+                return false;
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        function changeFunc(textBox, icon) {
+            var question = document.getElementById(textBox).value;
+
+            if(question != ""){
+                document.getElementById(icon).style.visibility = 'visible'
+            }
+            else{
+                document.getElementById(icon).style.visibility = 'hidden'
+            }
+        }
+    </script>
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "200px";
+            x.style.width = "230px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "170px";
+            x.style.width = "200px";
+        }
+    </script>
+
+{% endblock %}

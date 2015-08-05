@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<br><br>
+<form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 600px; background-image: url('/static/img/testback.png')" name="level3_notice_Invitation_grammar" >
+<br><br><br><br>
+<div class="form-control" style="margin-left: 250px;margin-top: 3px; color: #000000;font-size: 20px;width: 650px;border-width: 2px;border-color: deepskyblue;background-color: transparent;height: 420px">
+    <label name="answer1" style="text-align: center;width: 400px;height:5px;margin-left: 50px;background:none;outline: none;border:none;color: red;font-style: oblique;font-family:comic;font-size: 20px" >
+        {% if statN == 'Wrong' %}"Notice" has not been mentioned
+        {% elif statI == 'Wrong' %}"Invitation" has not been mentioned
+        {% endif %}
+    </label>
+    <textarea name="answer"  rows="15" style="width: 600px;height:250px;margin-left: 10px;background:none;outline: none;border:none;color: #000000;font-size: 15px;resize: none" id="comment" readonly>
+        {{ ans|safe }}
+    </textarea>
+    <label name="answer2" style="margin-top: -60px;text-align: right;width: 500px;height:5px;margin-left: 50px;background:none;outline: none;font-style: oblique;font-family:comic;border:none;color: red;font-size: 16px" >
+        {% if post == 'Wrong' %}No Designation or Writer's Name..!!
+        {% endif %}<br>
+        {% if add == 'Wrong' %}No Designation Address or Issuing Authority Name..!!
+        {% endif %}<br>
+    </label><br/><br>
+    <label name="answer2" style="text-align: center;width: 500px;height:5px;margin-left: 50px;background:none;font-style: oblique;font-family:comic;outline: none;border:none;color: red;font-size: 16px" >
+        {% if date == 'false' %}DATE has not been mentioned ..!!
+        {% endif %}<br>
+        {% if time == 'false' %}TIME has not been mentioned..!!
+        {% endif %}<br>
+        {% if venue == 'false' %}VENUE has not been mentioned..!!
+        {% endif %}
+
+    </label>
+</div>
+<table style="margin-left: 40px;margin-top: -50px">
+<tr>
+    <td style="width:300px">
+        <label class="label " style="width: 5px;color: #ff1493 ;font-size: 20px;font-style:oblique;" >Content: </label>
+        <label id="marks" class="label " style="height:2px;border-color: #000000;border-width:2px;border-style:ridge;color: #ff1493 ;font-size: 20px;font-style:oblique;" >{{ tot }} / 2</label>
+    </td>
+</tr>
+</table>
+
+<table style="margin-left: 900px;margin-top: -200px">
+<tr>
+    <td height="50">
+        <label class="label " style="color: orangered ;font-size: 20px;font-style:oblique;" >C: </label>
+    </td><td>
+        <label id="marks" class="label " style="height:2px;border-color: #000000;border-width:2px;border-style:ridge;color:  orangered ;font-size: 20px;font-style:oblique;" >{{ tot }} / 2</label>
+    </td>
+</tr>
+<tr>
+    <td height="50">
+        <label class="label " style="color:  orangered ;font-size: 20px;font-style:oblique;" >L:&nbsp; </label>
+    </td><td>
+        <label id="marks" class="label " style="height:2px;border-color: #000000;border-width:2px;border-style:ridge;color:  orangered ;font-size: 20px;font-style:oblique;" >{{ gramm_tot }} / 3</label>
+    </td>
+</tr>
+<tr>
+    <td height="50">
+        <label class="label " style="color:  orangered ;font-size: 20px;font-style:oblique;" >Total:&nbsp; </label>
+    </td><td>
+        <label id="marks" class="label " style="height:2px;border-color: #000000;border-width:2px;border-style:ridge;color:  orangered ;font-size: 20px;font-style:oblique;" >{{  total }} / 5</label>
+    </td>
+</tr>
+</table>
+
+<br>
+<div id="disables" style="margin-left: 550px ;margin-top: -30px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+</div>
+
+</form>
+
+<script>
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level3_Notice_Invitation"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level3"
+}
+</script>
+
+{% endblock %}

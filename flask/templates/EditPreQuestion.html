@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+
+        <table  class="table1" id="mytable" cellspacing="0" width="100%" >
+            <thead>
+            <tr><th></th></tr>
+            <tr>
+                <th width="70%" style="text-align: center;">Question</th>
+                <th width="15%" style="text-align: center;">Edit</th>
+                <th width="15%" style="text-align: center;">Delete</th>
+            </tr>
+            </thead>
+        <tbody>
+            {% for key in data %}
+
+                <tr>
+                    <td>{{ key[1].split("#")[0]|safe }}_________{{ key[1].split("#")[1]|safe }}</td>
+                    <td style="text-align: center;">
+
+                        <button type="button" data-toggle="modal" data-target="#editPModel" class="btn btn-info btn-sm" data-id="{{ key[0] }}" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-pencil'></span></button></td>
+
+                    <td style="text-align: center;">
+                        <a onclick="return doconfirm();" href="http://127.0.0.1:5000/delete_preposition/?qNo={{ key[0] }}"><button class="btn btn-danger" style="height: 40px; width: 40px"><span class="glyphicon glyphicon-trash"></span></button></a>
+                    </td>
+                </tr>
+
+
+
+
+            {% endfor %}
+        </tbody>
+        </table>
+
+
+
+     <div class="modal fade" id="editPModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('save_edited_preposition') }}" method="post" onsubmit="return validateForm()" >
+
+                        <div class="form-group">
+                            <label for="lblquestion" class="col-sm-4 control-label" style="font-size: medium;font-size: 16px">Question
+                            </label>
+
+                            <div class="col-sm-6" >
+                                <input type="inputQues" class="form-control" id="inputQues" name="inputQues" required=""
+                                       autofocus="" onkeyup="hidePreview()" style="background-color: #CCF5FF;font-size: 16px;color: #000000">
+                                 </div> </div>
+                                <div class="form-group">
+                                <button type="button" onclick="preview()" id="edit_preview_level3" class="btn btn-info" style=" margin-left: 650px; width: 40px; display: inline;margin-top: -50px"><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                                </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="lblanswer1" class="col-sm-4 control-label" style="font-size: medium;font-size: 16px">Correct Answer</label>
+
+                            <div class="col-sm-4">
+                                <input type="correct" class="form-control" id="correct" name="correct" required=""
+                                       autofocus="" style="background-color: #FFE6F0;font-size: 16px;color: #000000">
+                            </div>
+                        </div>
+                        </br>
+                        </br>
+                        </br>
+                        <div class="form-group">
+                            <label for="answer2" class="col-sm-4 control-label"
+                                   style="font-size: medium;font-size: 16px">Answer1</label>
+
+                            <div class="col-sm-4">
+                                <input type="Answer1" class="form-control" id="Answer1" name="Answer1" required=""
+                                       autofocus="" style="background-color: #FFE6F0;font-size: 16px;color: #000000">
+                            </div>
+                        </div>
+                        </br>
+                        </br>
+                        <div class="form-group">
+                            <label for="answer2" class="col-sm-4 control-label"
+                                   style="font-size: medium;font-size: 16px">Answer2</label>
+
+                            <div class="col-sm-4">
+                                <input type="Answer2" class="form-control" id="Answer2" name="Answer2" required=""
+                                       autofocus="" style="background-color: #FFE6F0;font-size: 16px;color: #000000">
+                            </div>
+                        </div>
+                        </br>
+                        </br>
+                        <div class="form-group">
+                            <label for="answer3" class="col-sm-4 control-label"
+                                   style="font-size: medium;font-size: 16px">Answer3</label>
+
+                            <div class="col-sm-4">
+                                <input type="Answer3" class="form-control" id="Answer3" name="Answer3" required=""
+                                       autofocus="" style="background-color: #FFE6F0;font-size: 16px;color: #000000">
+                            </div>
+                        </div>
+
+                        </br>
+                        </br>
+                        <div class="form-group">
+                            <label for="answer4" class="col-sm-4 control-label"
+                                   style="font-size: medium;font-size: 16px">Answer4</label>
+
+                            <div class="col-sm-4">
+                                <input type="Answer4" class="form-control" id="Answer4" name="Answer4" required=""
+                                       autofocus="" style="background-color:#FFE6F0;font-size: 16px;color: #000000">
+                            </div>
+                        </div>
+
+
+
+                         <div id="preview_container" role="menu" style="display: none; margin-left: 37px; padding-top: 40px">
+                                    <div>
+                                        <label id="lblPreview" style="color: green; font-size: 21px">Preview : </label>
+                                        <label id="display_question" style="font-size: 20px"></label>
+                                    </div>
+                                </div>
+                        <input type="hidden" name="id" id="IdInput">
+                         <br>
+                        <br>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" onclick="hidePreview()" style="font-size: 16px">Update</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="hidePreview()" style="font-size: 16px">Cancel</button>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+ <script>
+        function doconfirm()
+        {
+            job=confirm("Are you sure You want to delete this permanently?");
+            if(job!=true)
+            {
+                return false;
+            }
+        }
+    </script>
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+
+    <script type="text/javascript">
+        $('#editPModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_preposition') }}?id=" + id, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#inputQues').val(json.question)
+                modal.find('#correct').val(json.correct)
+                modal.find('#Answer1').val(json.answer1)
+                modal.find('#Answer2').val(json.answer2)
+                modal.find('#Answer3').val(json.answer3)
+                modal.find('#Answer4').val(json.answer4)
+                modal.find('#IdInput').val(id)
+            })
+        })
+    </script>
+
+<script type="text/javascript" >
+        function preview(){
+            var div=document.getElementById("preview_container");
+
+            if(div.style.display=='none') {
+                var question = document.getElementById("inputQues").value;
+
+                var que = question.split("#");
+                if(que[1]) {
+                    var result = que[0] + " __________ " + que[1];
+                }
+                else{
+                    var result = question;
+                }
+
+                document.getElementById("display_question").textContent=result;
+                $("#preview_container").fadeIn("slow");
+            }
+            else if(div.style.display!='none') {
+                $("#preview_container").fadeOut("slow");
+            }
+        }
+        function hidePreview(){
+            $("#preview_container").fadeOut("slow");
+        }
+    </script>
+
+    <!-- validate answrs-->
+     <script>
+        function validateForm() {
+
+            var q1 = document.getElementById("inputQues");
+
+            if (q1.value.indexOf('#')==-1) {
+                alert("Blank(#) is missing in question. Please insert # to insert the blank.");
+                q1.focus();
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

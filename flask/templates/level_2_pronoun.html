@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+    <br><br><br>
+    <form style="margin-left: 100px;margin-top: -60px ;width: 1150px;height: 550px; background-image: url('/static/img/formback.png')">
+    <br><br>
+
+    <div style="margin-left: 50px">
+    <label style="margin-left: 100px; color: #A319A3;font-size: 20px; margin-top: -5px">Fill in the blanks with the correct pronoun.(Type
+        the correct answer in given text box.)</label><br><br>
+
+
+    <table cellspacing="0" cellpadding="0" style="margin-left: 50px">
+
+        <tr class="item">
+            <td class="form-inline">
+                <label for="Question1" style="font-weight: bold; color: #000000;font-size: 16px">1.</label>
+                <font for="Question1" id="Question1" style="font-weight: bold;color: #000000">{{ data[0][1].split("#")[0]|safe }}</font>
+
+
+                <input type="AnswerSet1" class="form-control" id="AnswerSet1" placeholder="Type Answer"
+                       style="background-color: lightsalmon ;border-color: orangered;color: #000000">
+
+                <font for="Question1" id="Question1"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[0][1].split("#")[1]|safe }}</font>
+
+            </td>
+            <td>
+
+                <input type="hidden" id="ans1" name="ans1" style="color: #000000;font-size: 16px"
+                       value="{{ data[0][2]|safe }}"/>
+
+                <div style="display:none" id="wrongDiv1">
+
+                    <img src="/static/img/Wrong.png" height="26" width="22">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-xs" style="color: #ffffff">{{ data[0][2]|safe }}</label>
+                </div>
+
+                <div style="display:none" id="correctDiv1">
+
+                    <img src="/static/img/Right.png" height="26" width="26">
+                </div>
+
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr class="item">
+            <td class="form-inline">
+                <label for="Question2" style="font-weight: bold; color: #000000;font-size: 16px">2.</label>
+
+                <font for="Question" id="Question2"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[1][1].split("#")[0]|safe }}</font>
+
+
+                <input type="AnswerSet2" class="form-control" id="AnswerSet2" placeholder="Type Answer"
+                       style="background-color: lightskyblue;border-color: blue;color: #000000">
+
+                <font for="Question" id="Question2"
+                      style="font-weight:bold;color: #000000;font-size: 16px">{{ data[1][1].split("#")[1]|safe }}</font>
+
+            </td>
+            <td>
+
+                <input type="hidden" id="ans2" name="ans" style="color: #000000;font-size: 16px"
+                       value="{{ data[1][2]|safe }}"/>
+
+                <div style="display:none" id="wrongDiv2">
+
+                    <img src="/static/img/Wrong.png" height="26" width="22">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-xs" style="color: #ffffff">{{ data[1][2]|safe }}</label>
+                </div>
+
+                <div style="display:none" id="correctDiv2">
+
+                    <img src="/static/img/Right.png" height="26" width="26">
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr class="item">
+            <td class="form-inline">
+                <label for="Question3" style="font-weight: bold; color: #000000;font-size: 16px">3.</label>
+
+                <font for="Question" id="Question3"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[2][1].split("#")[0]|safe }}</font>
+
+
+                <input type="AnswerSet3" class="form-control" id="AnswerSet3" placeholder="Type Answer"
+                       style="background-color: plum;border-color: purple;color: #000000">
+
+                <font for="Question" id="Question3"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[2][1].split("#")[1]|safe }}</font>
+
+            </td>
+            <td>
+
+                <input type="hidden" id="ans3" name="ans" value="{{ data[2][2]|safe }}"/>
+
+                <div style="display:none" id="wrongDiv3">
+
+                    <img src="/static/img/Wrong.png" height="26" width="22">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-xs" style="color: #ffffff">{{ data[2][2]|safe }}</label>
+                </div>
+
+                <div style="display:none" id="correctDiv3">
+
+                    <img src="/static/img/Right.png" height="26" width="26">
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr class="item">
+            <td class="form-inline">
+                <label for="Question4" style="font-weight: bold; color: #000000;font-size: 16px">4.</label>
+
+                <font for="Question" id="Question4"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[3][1].split("#")[0]|safe }}</font>
+
+                <input type="AnswerSet4" class="form-control" id="AnswerSet4" placeholder="Type Answer"
+                       style="background-color: lightgreen;border-color: limegreen;color: #000000">
+
+                <font for="Question" id="Question4"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[3][1].split("#")[1]|safe }}</font>
+
+            </td>
+            <td>
+
+                <input type="hidden" id="ans4" style="color: #000000;font-size: 16px" name="ans"
+                       value="{{ data[3][2]|safe }}"/>
+
+                <div style="display:none" id="wrongDiv4">
+
+                    <img src="/static/img/Wrong.png" height="26" width="22">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-xs" style="color: #ffffff">{{ data[3][2]|safe }}</label>
+                </div>
+
+                <div style="display:none" id="correctDiv4">
+
+                    <img src="/static/img/Right.png" height="26" width="26">
+                </div>
+
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr class="item">
+            <td class="form-inline">
+                <label for="Question5" style="font-weight: bold; color: #000000;font-size: 16px">5.</label>
+
+                <font for="Question" id="Question5"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[4][1].split("#")[0]|safe }}</font>
+
+
+                <input type="AnswerSet5" class="form-control" id="AnswerSet5" placeholder="Type Answer"
+                       style="border-color: #FF0066;background-color:lightpink ;color: #000000">
+
+                <font for="Question" id="Question5"
+                      style="font-weight: bold;color: #000000;font-size: 16px">{{ data[4][1].split("#")[1]|safe }}</font>
+
+            </td>
+            <td>
+
+                <input type="hidden" id="ans5" name="ans" value="{{ data[4][2]|safe }}"/>
+
+                <div style="display:none" id="wrongDiv5">
+
+                    <img src="/static/img/Wrong.png" height="26" width="22">
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-danger btn-xs" style="color: #ffffff">{{ data[4][2]|safe }}</label>
+
+
+                </div>
+
+                <div style="display:none" id="correctDiv5">
+
+                    <img src="/static/img/Right.png" height="26" width="26">
+                </div>
+
+
+            </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+    </br></br>
+
+    <input id="markAnswers" onmouseover="bigImg(this)" onmouseout="normalImg(this)" type="image"
+           src="/static/img/buttonMs.png" border="0" alt="Submit this form" name="sub_but"
+           style="margin-left: -20px;margin-top: -60px;outline: none;" onclick="DisplayDiv();" height="170"
+           width="150"/>
+    <label id="marks" class="label "
+           style="background-color: #000000;color: red ;font-size: 20px; display: none;font-style:oblique;">...</label>
+
+    <div id="disables" style="display: none;margin-left: 550px ;margin-top: -150px" class="form-group"><br>
+        <label style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+        <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false"
+               type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but" height="70"
+               width="80" style="outline: none"/>
+        <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false"
+               type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but" height="70"
+               width="80" style="outline: none"/>
+    </div>
+
+
+    </div>
+    </form>
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "200px";
+            x.style.width = "170px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "170px";
+            x.style.width = "150px";
+        }
+
+        function bigYNImg(x) {
+            x.style.height = "80px";
+            x.style.width = "90px";
+        }
+
+        function normalYNImg(x) {
+            x.style.height = "70px";
+            x.style.width = "80px";
+        }
+
+        function yes() {
+            window.location.href = "http://127.0.0.1:5000/Level2Match"
+        }
+
+        function no() {
+            window.location.href = "http://127.0.0.1:5000/level2"
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        var count = 0;
+
+
+        function DisplayDiv() {
+
+
+            if (document.getElementById('AnswerSet1').value == document.getElementById('ans1').value) {
+
+                document.getElementById('correctDiv1').style.display = 'block';
+                document.getElementById('wrongDiv1').style.display = 'none';
+                count = count + 1;
+            }
+            else if (document.getElementById('AnswerSet1').value != document.getElementById('ans1').value) {
+
+                document.getElementById('correctDiv1').style.display = 'none';
+                document.getElementById('wrongDiv1').style.display = 'block';
+            }
+
+            if (document.getElementById('AnswerSet2').value == document.getElementById('ans2').value) {
+
+                document.getElementById('correctDiv2').style.display = 'block';
+                document.getElementById('wrongDiv2').style.display = 'none';
+                count = count + 1;
+
+            }
+            else if (document.getElementById('AnswerSet2').value != document.getElementById('ans2').value) {
+
+                document.getElementById('correctDiv2').style.display = 'none';
+                document.getElementById('wrongDiv2').style.display = 'block';
+
+            }
+
+            if (document.getElementById('AnswerSet3').value == document.getElementById('ans3').value) {
+
+                document.getElementById('correctDiv3').style.display = 'block';
+                document.getElementById('wrongDiv3').style.display = 'none';
+                count = count + 1;
+            }
+            else if (document.getElementById('AnswerSet3').value != document.getElementById('ans3').value) {
+
+                document.getElementById('correctDiv3').style.display = 'none';
+                document.getElementById('wrongDiv3').style.display = 'block';
+
+            }
+            if (document.getElementById('AnswerSet4').value == document.getElementById('ans4').value) {
+
+                document.getElementById('correctDiv4').style.display = 'block';
+                document.getElementById('wrongDiv4').style.display = 'none';
+                count = count + 1;
+            }
+            else if (document.getElementById('AnswerSet4').value != document.getElementById('ans4').value) {
+
+                document.getElementById('correctDiv4').style.display = 'none';
+                document.getElementById('wrongDiv4').style.display = 'block';
+
+            }
+            if (document.getElementById('AnswerSet5').value == document.getElementById('ans5').value) {
+
+                document.getElementById('correctDiv5').style.display = 'block';
+                document.getElementById('wrongDiv5').style.display = 'none';
+                count = count + 1;
+            }
+            else if (document.getElementById('AnswerSet5').value != document.getElementById('ans5').value) {
+
+                document.getElementById('correctDiv5').style.display = 'none';
+                document.getElementById('wrongDiv5').style.display = 'block';
+
+            }
+
+            document.getElementById('marks').innerHTML = count + "/5";
+            document.getElementById('marks').style.display = 'inline';
+            document.getElementById('disables').style.display = 'block';
+            document.getElementById("markAnswers").disabled = true;
+        }
+
+
+    </script>
+
+{% endblock %}

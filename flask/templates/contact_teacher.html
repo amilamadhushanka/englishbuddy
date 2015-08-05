@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+     <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>Contact Teacher</title>
+</head>
+
+{% block content %}
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="/static/bootstrap/js/nicEdit-latest.js"></script> -->
+    <link href="/static/css/add_dialog_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({menubar : false, browser_spellcheck : true, auto_focus: "question", selector:'textarea'});</script>
+
+
+    <form class="form-dialog" name="drop_list" method="post" action="{{ url_for('contact_teacher') }}" style="margin-left: -100px">
+
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <h3 style="color: #FF99FF; padding-left: 220px">Contact Teacher</h3>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <div style="height:500px; overflow:auto; overflow-x:hidden; border:thin solid; border-color:DarkGray;">
+            <br><br>
+
+            {% if data %}
+
+            <input type="hidden" name="student" value="{{ session['username'] }}">
+            <input type="hidden" name="teacher" value="{{ data[0][3] }}">
+
+            <table align = "center" border="0" style="width:auto" >
+            <col width="150">
+            <col width="610">
+            <col width="50">
+
+            <tr>&nbsp;</tr>
+            <tr>
+                <td style="text-align:right;"><label style="font-size: 16px; color: #FFFFFF">Teacher : &nbsp;</label></td>
+                <td>
+                    <img src="/static/uploads/{{ data[0][2] }}" class="img-circle" height="50px" width="50px"/>&nbsp;
+                    <input type="text" style="width: 400px; border: none; background: transparent; font-size: 17px; color: #ffd700" readonly value="{% if data %}{{ data[0][0] }}&nbsp;{{ data[0][1] }}{% endif %} ">
+                </td>
+            </tr>
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><font color="#ffd700">Enter your question below.</font></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;"><label style="font-size: 16px; color: #FFFFFF">Message : &nbsp;</label></td>
+                <td>
+                    <div style="background-color: #ffffff; width: 600px;">
+                        <textarea id="question" name="question" rows="6" cols="70" class="form-control" style="height: 200px; width: 650px"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr >
+                <td >&nbsp;</td>
+            </tr>
+        </table>
+        <br>
+        </div>
+        <br>
+        <table align = "center">
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-primary" style="font-size: 16px; margin-left: 225px;width:150px ">Send</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" style="font-size: 16px; width:150px " onclick="window.close()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+
+       {% else %}
+
+        <center>
+                <br><br><br><br>
+                <font color="white" style="font-size: 17px">You are not subscribe a teacher yet. Please Subscribe a teacher to send messages.</font>
+                <br><br>
+                <a class="btn"><button onclick="window.close()" class="btn btn-danger" style="height: 40px; width: 150px"><span class='glyphicon glyphicon-remove-sign'></span>&nbsp;Close</button></a>
+            </center>
+
+
+
+       {% endif %}
+
+    </form>
+
+
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+
+
+{% endblock %}

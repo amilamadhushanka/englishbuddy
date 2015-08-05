@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<head>
+
+    <title>English Buddy</title>
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/home.css" rel="stylesheet">
+    <link href="/static/css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+     <link href="/static/css/notification.css" rel="stylesheet" media="screen">
+    <link href="/static/css/font.css" rel="stylesheet" >
+
+
+</head>
+
+{% block content %}
+
+    <div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ url_for('home') }}"><img src="/static/img/home.png" height="25px" width="25px"><span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Resources
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Conjunctions</a></li>
+                                <li><a href="#">Dialogs</a></li>
+                                <li><a href="#">Grammer</a></li>
+                                <li><a href="#">Notes</a></li>
+                                <li><a href="#">Summary</a></li>
+                            </ul>
+                        </li>
+
+                        {% if (session['role']=="Teacher") %}
+                            <li><a href="http://127.0.0.1:5000/view_addQuestions">Question Bank</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if (session['role']=="Teacher") %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false">Switch to
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="http://127.0.0.1:5000/level1">Level 1</a></li>
+                                    <li><a href="http://127.0.0.1:5000/level2">Level 2</a></li>
+                                    <li><a href="http://127.0.0.1:5000/level3">Level 3</a></li>
+                                    <li><a href="http://127.0.0.1:5000/level4">Level 4</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+
+                        <li id="notification_li" class="dropdown" >
+
+                            <a href="#" id="notificationLink" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"><span class="glyphicon glyphicon-globe"></span></a>
+                            <span id="notification_count">{{ count[0][0] }}</span>
+                            <div id="notificationContainer" class="dropdown-menu" role="menu">
+                                <div id="notificationTitle" >Notifications</div>
+                                <div id="notificationsBody" class="notifications" >
+                                    {% for key in query %}
+
+                                        {% if session['role']=='Student' %}
+                                            &nbsp;
+                                            <label style="font-size: small">Parent Request</label><br>&nbsp;
+                                            <img src="/static/uploads/{{key[3]}}" class="img-circle" height="40px" width="40px"/>
+                                            &nbsp;  <label style="font-size: small; color: #000000">{{ key[1]}} {{ key[2]}}</label>
+                                            &nbsp; <a type="button"href="http://127.0.0.1:5000/accept_request/?no={{ key[0] }}" style="font-size: small; color: blue">Accept</a>
+                                            &nbsp; <a type="button"href="http://127.0.0.1:5000/delete_request/?id={{ key[0] }}"style="font-size: small; color: red">Decline</a>
+                                            <br>
+                                            <hr>
+                                        {% elif session['role']=='Teacher' %}
+                                            &nbsp;
+                                            <label style="font-size: small">Student Request</label><br>&nbsp;
+                                            <a href="/display_student_subscribe_requests"><img src="/static/uploads/{{key[3]}}" class="img-circle" height="40px" width="40px"/></a>
+                                            &nbsp; <a href="/display_student_subscribe_requests"><label style="font-size: small; color: #000000">{{ key[0]}} {{ key[1]}}</label></a>
+                                            &nbsp;&nbsp; <a type="button" href="/accept_teacher_subscribe_request/?email={{ key[6] }}" style="font-size: small; color: blue">Accept</a>
+                                            &nbsp; <a type="button" href="/decline_teacher_subscribe_request/?email={{ key[6] }}" style="font-size: small; color: red">Decline</a>
+                                            <br>
+                                            <hr>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                </div>
+                                <div id="notificationFooter"><a href="#">See All</a></div>
+                            </div>
+
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"><img src="/static/uploads/{{ session['profilePic'] }}" class="img-circle" height="28px" width="28px"/>
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://127.0.0.1:5000/view_profile">Profile</a></li>
+                                {% if (session['role']=="Student") %}
+                                    <li><a href="/display_teachers">Subscribe Teacher</a></li>
+                                    <li onclick="openContactTeacher()" style="cursor: pointer"><a>Contact Teacher</a></li>
+                                {% endif %}
+                                <li class="divider"></li>
+                                <li><a href="/logout">Sign out &nbsp;<span class="glyphicon glyphicon-log-out"></span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <form style="background-image: url('/static/img/scrollPage.png'); width: 500px;height: 600px;margin-left: 120px">
+
+    <div style="padding-top: 7px; width:82%;  margin-left: 25px;text-align: left; font-size: 30px; color:#000000;font-family:myFirstFont">
+        <label>Welcome {{ session['fName'] }}</label>
+        <label style="font-size: 25px; color: darkgreen;font-family:myFirstFont; float: right">Advanced Level</label>
+    </div>
+
+    <br>
+
+    <div style="width:40%;height:42%;float:left;margin-left: 2cm;">
+        <center>
+
+            <br><br>
+                <div>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/dialogus.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px " onclick="openDialogs();return false" height="75" width="350" />
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/grammar.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: 30px " onclick="openGrammar();return false" height="75" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/note.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px " onclick="openNote();return false" height="75" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/summarize.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: 30px " onclick="openSummary();return false" height="75" width="350" />
+
+                    <br><br><br>
+                   <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/leadboard.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px " onclick="openLeadBoard();return false" height="75" width="350" />
+
+                    <br><br><br>
+                    <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/Level4/AdvancedTest.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: 30px " onclick="openTest4();return false" height="75" width="350" />
+
+                </div>
+        </center>
+    </div>
+
+
+
+    <div style="margin-left: 600px">
+        <object width="560" height="420">
+            <param name="movie" value="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1">
+            <param name="wmode" value="transparent">
+            <param name="allowFullScreen" value="true">
+            <embed src="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1"
+                   type="application/x-shockwave-flash"
+                   wmode="transparent" width="560" height="420" allowFullScreen="true"></embed>
+        </object>
+    </div>
+    </form>
+
+    <br><br><br>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <script>
+    function bigImg(x) {
+        x.style.height = "85px";
+        x.style.width = "370px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "75px";
+        x.style.width = "350px";
+    }
+    </script>
+
+
+    <script type="text/javascript">
+        function openDialogs() {
+            window.location.href = "http://127.0.0.1:5000/level4_dialogs_activity"
+        }
+        function openSummary() {
+              window.location.href = "http://127.0.0.1:5000/level_4_summary"
+        }
+        function openNote() {
+            window.location.href = "http://127.0.0.1:5000/level4_Note"
+        }
+        function openGrammar() {
+            window.location.href = "http://127.0.0.1:5000/level4_active_passive"
+        }
+        function openTest4() {
+
+        }
+        function openLeadBoard(){
+
+        }
+
+        function openContactTeacher(){
+            window.open("/view_contact_teacher", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=200, width=900, height=640");
+        }
+    </script>
+
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" >
+$(document).ready(function()
+{
+$("#notificationLink").click(function()
+{
+$("#notificationContainer").fadeToggle(300);
+$("#notification_count").fadeOut("slow");
+   return false;
+});
+
+//Document Click hiding the popup
+$(document).click(function()
+{
+$("#notificationContainer").hide();
+});
+
+//Popup on click
+$("#notificationContainer").click(function()
+{
+e.stopPropagation();
+});
+
+});
+</script>
+
+{% endblock %}

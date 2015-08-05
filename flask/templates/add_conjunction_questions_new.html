@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<head>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>Add Conjunction Question</title>
+</head>
+
+{% block content %}
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/add_conjunction_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <br>
+    <form style="width:850px;height: 600px;background-image: url('/static/img/addquesback.png');margin-left: 50px" class="form-conjunctions" name="drop_list" id="conjunctionsForm" method="post" action="{{ url_for('save_conjunction_question_new') }}" onsubmit="return validateForm()">
+
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <h3 style="color: purple; padding-left: 180px">Elementary Level ->  Add Conjunctions Question</h3>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <div style="height:450px; overflow:auto; overflow-x:hidden; ">
+
+            <br>
+
+            <!-- Question 1 -->
+            <div id="question_1_Container" role="menu">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;" id="lblQuestion1">Question : </label>
+                    <input type="text" name="question_1" id="question_1" onkeyup="changeFunc()" class="form-control" style="background-color: #CCF5FF ;width: 550px;display: inline; color:#000000; font-size: 16px;border-color: deepskyblue" placeholder="Enter your question here, insert # to indicate the blank line in the question" required autofocus value="{% if errors %}{{ errors['question1'] }}{% endif %}">
+                    <button type="button" id="preview1" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="1" style="border-color: blue;margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                    <br><br>
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;" id="lblAnswer1">Answer : </label>
+                    <input type="text" name="answer_1" class="form-control" style="border-color:#d119cf;background-color:#FFE6F0; width: 200px; display: inline; color:#000000; font-size: 16px" required value="{% if errors %}{{ errors['answer1'] }}{% endif %}">
+                </div>
+            </div>
+            <br>
+
+            {% if errors %}{% if errors['question1Status'] %}<label style="margin-left: 180px; color:#f08080; font-size: 16px">Question already exists!</label><br><br>{% endif %}{% endif %}
+
+            <input id="addQuestion2" class="btn btn-warning" type="button" style="border-color: orangered;margin-left: 180px; width: 150px" value="Add Question 2"/>
+            <br><br>
+
+            <!-- Question 2 -->
+            <div id="question_2_Container" role="menu" style="display: none">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;">Question 2 : </label>
+                    <input type="text" name="question_2" id="question_2" onkeyup="changeFunc2()" class="form-control" style="background-color: #CCF5FF; width: 550px;display: inline; color:#000000; font-size: 16px;border-color: deepskyblue" placeholder="Enter your question here, insert # to indicate the blank line in the question" value="{% if errors %}{{ errors['question2'] }}{% endif %}">
+                    <button type="button" id="preview2" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="2" style="border-color: blue;margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                    <br><br>
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;">Answer 2 : </label>
+                    <input type="text" name="answer_2" id="answer_2" class="form-control" style="border-color:#d119cf;background-color:#FFE6F0; width: 200px; display: inline; color:#000000; font-size: 16px" value="{% if errors %}{{ errors['answer2'] }}{% endif %}">
+                </div>
+                <br><br>
+
+                {% if errors %}{% if errors['question2Status'] %}<label style="margin-left: 180px; color:#f08080; font-size: 16px">Question already exists!</label><br><br>{% endif %}{% endif %}
+
+                <input id="addQuestion3" class="btn btn-warning" type="button" style="border-color: orangered;margin-left: 180px; width: 150px" value="Add Question 3"/>
+            </div>
+            <br>
+
+            <!-- Question 3 -->
+            <div id="question_3_Container" role="menu" style="display: none">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;">Question 3 : </label>
+                    <input type="text" name="question_3" id="question_3" onkeyup="changeFunc3()" class="form-control" style="background-color: #CCF5FF; width: 550px;display: inline; color:#000000; font-size: 16px;border-color: deepskyblue" placeholder="Enter your question here, insert # to indicate the blank line in the question" value="{% if errors %}{{ errors['question3'] }}{% endif %}">
+                    <button type="button" id="preview3" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="3" style="border-color: blue;margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                    <br><br>
+                    <label style="font-size: 16px; color: #000000; width: 175px; text-align:right;">Answer 3 : </label>
+                    <input type="text" name="answer_3" id="answer_3" class="form-control" style="border-color:#d119cf;background-color:#FFE6F0; width: 200px; display: inline; color:#000000; font-size: 16px" value="{% if errors %}{{ errors['answer3'] }}{% endif %}">
+                </div>
+
+                {% if errors %}{% if errors['question3Status'] %}<br><br><label style="margin-left: 180px; color:#f08080; font-size: 16px">Question already exists!</label><br><br>{% endif %}{% endif %}
+
+            </div>
+        </div>
+        <br>
+        <table align = "center" style="margin-top: -40px">
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn btn-primary" style="border-color: deepskyblue;font-size: 16px; margin-left: 225px;width:150px" id="save" value="Save Question"/>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" style="border-color: red;font-size: 16px; width:150px " onclick="window.close()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+
+    <!--  Preview Question Model -->
+
+    <div class="modal fade" id="previewModel" tabindex="-1" role="dialog" aria-labelledby="previewModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Preview</h4>
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <br>
+                    <label style="color: green; font-size: 21px">Question : </label>
+                    <label id="display_question" style="font-size: 20px"></label>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pass Data to Preview Model -->
+
+    <script type="text/javascript">
+        $('#previewModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+
+            if (id==1){
+                var question = document.getElementById("question_1").value;
+            }
+            else if(id==2){
+                var question = document.getElementById("question_2").value;
+            }
+            else if(id==3){
+                var question = document.getElementById("question_3").value;
+            }
+
+            var que = question.split("#");
+            if(que[1]) {
+                var result = que[0] + " __________ " + que[1];
+            }
+            else{
+                var result = question;
+            }
+            que[1]=" ";
+            var modal = $(this)
+            //modal.find('#question').val(result);
+            document.getElementById('display_question').textContent=result;
+
+        })
+    </script>
+
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+    <!-- Add Question 2 -->
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion2").click(function()
+            {
+                $("#question_2_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion2");
+                if (el.value == "Add Question 2")
+                {
+                    document.getElementById("lblQuestion1").textContent="Question 1 : "
+                    document.getElementById("lblAnswer1").textContent="Answer 1 : "
+                    el.value = "Remove Question 2";
+                    document.getElementById("question_2").required=true;
+                    document.getElementById("answer_2").required=true;
+                    document.getElementById("question_2").focus();
+                    document.getElementById("save").value="Save Questions";
+
+                }
+                else
+                {
+                    document.getElementById("lblQuestion1").textContent="Question : "
+                    document.getElementById("lblAnswer1").textContent="Answer : "
+                    el.value = "Add Question 2";
+                    document.getElementById("question_2").value='';
+                    document.getElementById("answer_2").value='';
+                    document.getElementById("question_2").required=false;
+                    document.getElementById("answer_2").required=false;
+                    document.getElementById("save").value="Save Question";
+                    document.getElementById("question_1").focus();
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_2_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+
+    <!-- Add Question 3 -->
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion3").click(function()
+            {
+                $("#question_3_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion3");
+                if (el.value == "Add Question 3")
+                {
+                    document.getElementById("addQuestion2").style.visibility = 'hidden';
+                    document.getElementById("question_3").required=true;
+                    document.getElementById("answer_3").required=true;
+                    document.getElementById("question_3").focus();
+                    el.value = "Remove Question 3";
+                }
+                else
+                {
+                    el.value = "Add Question 3";
+                    document.getElementById("addQuestion2").style.visibility = 'visible';
+                    document.getElementById("question_2").focus();
+                    document.getElementById("question_3").value='';
+                    document.getElementById("answer_3").value='';
+                    document.getElementById("question_3").required=false;
+                    document.getElementById("answer_3").required=false;
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_3_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+
+    <!-- Enable/Disable Preview Buttons -->
+
+    <script type="text/javascript">
+        // Question 1
+        function changeFunc() {
+            var question = document.getElementById("question_1").value;
+
+            if(!question){
+                document.getElementById("preview1").disabled = true;
+            }
+            else{
+                document.getElementById("preview1").disabled = false;
+            }
+        }
+
+        // Question 2
+        function changeFunc2() {
+            var question = document.getElementById("question_2").value;
+
+            if(!question){
+                document.getElementById("preview2").disabled = true;
+            }
+            else{
+                document.getElementById("preview2").disabled = false;
+            }
+        }
+
+        // Question 3
+        function changeFunc3() {
+            var question = document.getElementById("question_3").value;
+
+            if(!question){
+                document.getElementById("preview3").disabled = true;
+            }
+            else{
+                document.getElementById("preview3").disabled = false;
+            }
+        }
+    </script>
+
+
+    <!-- Validate Questions -->
+
+    <script>
+        function validateForm() {
+
+            var q1 = document.getElementById("question_1");
+            var q2 = document.getElementById("question_2");
+            var q3 = document.getElementById("question_3");
+            var showQuestion2=document.getElementById("addQuestion2").value;
+            var showQuestion3=document.getElementById("addQuestion3").value;
+
+            if (q1.value.indexOf('#')==-1) {
+                alert("Blank(#) is missing in question 1. Please insert # to insert the blank.");
+                q1.focus();
+                return false;
+            }
+            else if((q2.value.indexOf('#')==-1)&& showQuestion2=='Remove Question 2'){
+                alert("Blank(#) is missing in question 2. Please insert # to insert the blank.");
+                q2.focus();
+                return false;
+            }
+            else if((q3.value.indexOf('#')==-1)&& showQuestion3=='Remove Question 3'){
+                alert("Blank(#) is missing in question 3. Please insert # to insert the blank.");
+                q3.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <!-- Enable Question 1 preview button when question exists -->
+    {% if errors %}{% if errors['question1'] %}
+        <script>
+            document.getElementById("preview1").disabled = false;
+        </script>
+    {% endif %}{% endif %}
+
+    <!-- Question 2 Display when question exists -->
+    {% if errors %}{% if errors['question2'] %}
+        <script>
+            document.getElementById("preview2").disabled = false;
+            $("#question_2_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion2");
+                if (el.value == "Add Question 2")
+                {
+                    document.getElementById("lblQuestion1").textContent="Question 1 : "
+                    document.getElementById("lblAnswer1").textContent="Answer 1 : "
+                    el.value = "Remove Question 2";
+                    document.getElementById("question_2").required=true;
+                    document.getElementById("answer_2").required=true;
+                    document.getElementById("question_2").focus();
+                    document.getElementById("save").value="Save Questions";
+
+                }
+                else
+                {
+                    document.getElementById("lblQuestion1").textContent="Question : "
+                    document.getElementById("lblAnswer1").textContent="Answer : "
+                    el.value = "Add Question 2";
+                    document.getElementById("question_2").value='';
+                    document.getElementById("answer_2").value='';
+                    document.getElementById("question_2").required=false;
+                    document.getElementById("answer_2").required=false;
+                    document.getElementById("save").value="Save Question";
+                    document.getElementById("question_1").focus();
+                }
+        </script>
+    {% endif %}{% endif %}
+
+    <!-- Question 3 Display when question exists -->
+    {% if errors %}{% if errors['question3'] %}
+        <script>
+            document.getElementById("preview3").disabled = false;
+            $("#question_3_Container").fadeToggle(300);
+            var el = document.getElementById("addQuestion3");
+            if (el.value == "Add Question 3")
+                {
+                    document.getElementById("addQuestion2").style.visibility = 'hidden';
+                    document.getElementById("question_3").required=true;
+                    document.getElementById("answer_3").required=true;
+                    document.getElementById("question_3").focus();
+                    el.value = "Remove Question 3";
+                }
+                else
+                {
+                    el.value = "Add Question 3";
+                    document.getElementById("addQuestion2").style.visibility = 'visible';
+                    document.getElementById("question_2").focus();
+                    document.getElementById("question_3").value='';
+                    document.getElementById("answer_3").value='';
+                    document.getElementById("question_3").required=false;
+                    document.getElementById("answer_3").required=false;
+                }
+        </script>
+    {% endif %}{% endif %}
+
+{% endblock %}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+<form name="level3_grammar_evaluate"
+      style="margin-left: 100px;margin-top: -5px ;width: 1150px;height: 600px;background-image: url('/static/img/testback.png')">
+<table>
+    <td class="form-inline">
+        <tr>
+            <label style="margin-left:300px;  color: darkmagenta; font-size: 20px; font-weight: bold; margin-top: 40px"><b><font
+                    color="purple">Fill in the blanks with the correct verb form.</font></b></label><br><br>
+        </tr>
+    </td>
+</table>
+
+<div class="form-inline" style="font-size: 16px;padding-left: 100px">
+<!--simple present tense----------------------------------------------------------------->
+
+<div style="margin-left: 100px">
+    <label for="txtQuestion1" style="color: #000000; line-height: 2em; font-weight: bold">1.</label>
+
+    <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question1'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet1" id="txtAnswerSet1"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer1']}}</label>
+
+    <font for="Question1" id="Question1" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question1'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['present_simple1']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_simple1']}}</label>
+
+    {% elif (data_set['present_simple2']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_simple2']}}</label>
+
+    {% elif (data_set['present_simple3']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_simple3']}}</label>
+
+    {% elif (data_set['present_simple4']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_simple4']}}</label>
+
+    {% elif (data_set['present_simple5']==data_set['answer1']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_simple5']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_simple1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_simple2']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_simple3']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_simple4']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_simple5']}}</label>
+    {% endif %}
+
+</div>
+<br>
+
+
+<!--past tense----------------------------------------------------------------->
+<div style="margin-left: 100px">
+    <label for="txtQuestion2" style="color: #000000; line-height: 2em; font-weight: bold">2.</label>
+
+    <font for="Question2" id="Question2" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question2'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet2" id="txtAnswerSet2"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer2']}}</label>
+
+    <font for="Question2" id="Question2" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question2'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['past_plural_1']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_1']}}</label>
+
+    {% elif (data_set['past_singular_1']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_1']}}</label>
+
+    {% elif (data_set['past_plural_2']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_2']}}</label>
+
+    {% elif (data_set['past_singular_2']==data_set['answer2']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_2']}}</label>
+
+    {% elif data_set['answer2'] =="" %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_2']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_2']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['past_plural_2']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_singular_2']}}</label>
+    {% endif %}
+
+</div>
+<br>
+
+<!--present participle----------------------------------------------------------------->
+
+<div style="margin-left: 100px">
+    <label for="txtQuestion3" style="color: #000000; line-height: 2em; font-weight: bold">3.</label>
+
+    <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question3'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet3" id="txtAnswerSet3"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer3']}}</label>
+
+    <font for="Question3" id="Question3" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question3'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['present_participle1']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle1']}}</label>
+
+    {% elif (data_set['present_participle2']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle2']}}</label>
+
+    {% elif (data_set['present_participle3']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle3']}}</label>
+
+    {% elif (data_set['present_participle4']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle4']}}</label>
+
+    {% elif (data_set['present_participle5']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle5']}}</label>
+
+    {% elif (data_set['present_participle6']==data_set['answer3']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['present_participle6']}}</label>
+
+    {% elif (data_set['answer3'] == '') %}
+    <img src="/static/img/Wrong.png" height="26" width="26">
+    <label class="btn-danger" style="color: #ffffff; font-size: 16px;">You haven't answer this question</label>
+
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle2']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle3']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle4']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle5']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['present_participle6']}}</label>
+    {% endif %}
+
+</div>
+<br>
+
+<!--past participle----------------------------------------------------------------->
+<div style="margin-left: 100px">
+    <label for="txtQuestion4" style="color: #000000; line-height: 2em; font-weight: bold">4.</label>
+
+    <font for="Question4" id="Question4" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question4'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet4" id="txtAnswerSet4"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer4']}}</label>
+
+    <font for="Question4" id="Question4" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question4'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['past_participle1']==data_set['answer4']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_participle1']}}</label>
+
+    {% elif (data_set['past_participle2']==data_set['answer4']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_participle2']}}</label>
+
+    {% elif (data_set['past_participle3']==data_set['answer4']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_participle3']}}</label>
+
+    {% elif (data_set['past_participle4']==data_set['answer4']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['past_participle4']}}</label>
+
+    {% elif (data_set['answer4'] == '') %}
+    <img src="/static/img/Wrong.png" height="26" width="26">
+    <label class="btn-danger" style="color: #ffffff; font-size: 16px;">You haven't answer this question</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_participle1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_participle2']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_participle3']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['past_participle4']}}</label>
+    {% endif %}
+
+</div>
+
+<br>
+
+
+<!--Future Tense participle----------------------------------------------------------------->
+<div style="margin-left: 100px">
+    <label for="txtQuestion5" style="color: #000000; line-height: 2em; font-weight: bold">5.</label>
+
+    <font for="Question5" id="Question5" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question5'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet5" id="txtAnswerSet5"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer5']}}</label>
+
+    <font for="Question5" id="Question5" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question5'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['Future_tense1']==data_set['answer5']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['Future_tense1']}}</label>
+
+    {% elif (data_set['Future_tense2']==data_set['answer5']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['Future_tense2']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['Future_tense1']}}</label>
+    <label class="btn btn-danger btn-xs" style="color: #ffffff; font-size: 16px;">{{data_set['Future_tense2']}}</label>
+    {% endif %}
+
+</div>
+
+<br>
+
+
+<!--Future Tense participle----------------------------------------------------------------->
+<div style="margin-left: 100px">
+    <label for="txtQuestion6" style="color: #000000; line-height: 2em; font-weight: bold">6.</label>
+
+    <font for="Question6" id="Question6" style="color: #000000; line-height: 2em; font-weight: bold">{{
+        data_set['question6'].split("#")[0]|safe}}</font>
+
+    <label name="txtAnswerSet6" id="txtAnswerSet6"
+           style="color:orangered; font-weight: bold; font-size: 18px; text-align: center; width: 150px; background-color: transparent; border: 0px solid darkmagenta; border-bottom-width: 2px;">{{data_set['answer6']}}</label>
+
+    <font for="Question6" id="Question6" style="color: #000000; line-height: 2em; font-weight: bold">{{data_set['question6'].split("#")[1]|safe}}</font>
+
+    {% if (data_set['Future_continous_1']==data_set['answer6']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['Future_continous_1']}}</label>
+
+    {% elif (data_set['Future_continous_2']==data_set['answer6']) %}
+    <img src="/static/img/Right.png" height="26" width="26">
+    <label class="btn-success" style="color: #ffffff; font-size: 16px;">{{data_set['Future_continous_2']}}</label>
+
+    {% else %}
+    <img src="/static/img/Wrong.png" height="26" width="22">
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['Future_continous_1']}}</label>
+    <label class="btn btn-danger btn-xs"
+           style="color: #ffffff; font-size: 16px;">{{data_set['Future_continous_2']}}</label>
+    {% endif %}
+
+</div>
+<br>
+<br>
+<label id="marks" class="label " style="margin-left: 100px;color:  orangered ;font-size: 20px;font-style:oblique;border-style: ridge; border-color: red;border-width: 2px">marks
+    :{{ data_set['count'] }}/6</label>
+<br><br>
+<div id="disables" style="margin-left: 450px ;margin-top: -120px" class="form-group"><br><br><br>
+    <label  style="color:green;font-size: 20px">Do you need to do more Questions?</label>
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="yes();return false" type="image" src="/static/img/yes.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+    <input id="yes" onmouseover="bigYNImg(this)" onmouseout="normalYNImg(this)" onclick="no();return false" type="image" src="/static/img/no.png" border="0" alt="Submit this form" name="sub_but"   height="70" width="80" style="outline: none" />
+</div>
+
+</div>
+</form>
+
+<script>
+
+function bigYNImg(x) {
+    x.style.height = "80px";
+    x.style.width = "90px";
+}
+
+function normalYNImg(x) {
+    x.style.height = "70px";
+    x.style.width = "80px";
+}
+
+function yes() {
+    window.location.href = "http://127.0.0.1:5000/level3_grammar_activity"
+}
+
+function no() {
+    window.location.href = "http://127.0.0.1:5000/level3"
+}
+</script>
+
+{% endblock %}

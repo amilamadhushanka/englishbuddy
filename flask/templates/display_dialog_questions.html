@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+    <script type="text/javascript" src="/static/bootstrap/js/nicEdit-latest.js"></script>
+
+    <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({menubar : false, browser_spellcheck : true, auto_focus: "question", selector:'textarea'});</script>
+
+    <center>
+        <div>
+          <table class="table1" id="mytable" style="color: #ffffff" >
+             <thead>
+                <tr><th></th></tr>
+                <tr>
+                    <th width='40%' style="text-align: center">Question</th>
+                    <th width='38%' style="text-align: center">Answers</th>
+                    <th width='8%' style="text-align: center">&nbsp;</th>
+                    <th width='7%' style="text-align: center">Edit</th>
+                    <th width='7%' style="text-align: center">Delete</th>
+                </tr>
+             </thead>
+
+             <tbody>
+
+             {% for key in data %}
+                <tr>
+                    <td style="vertical-align:middle">
+                        {{ key[2].split("1)")[0] |safe }} &nbsp;______________________________________________
+                        {{ key[2].split("1)")[1].split("2)")[0] |safe }} &nbsp;______________________________________________
+                        {{ key[2].split("2)")[1].split("3)")[0] |safe }} &nbsp;______________________________________________
+                        {{ key[2].split("3)")[1].split("4)")[0] |safe }} &nbsp;______________________________________________
+                        {{ key[2].split("4)")[1].split("5)")[0] |safe }} &nbsp;______________________________________________
+                        {{ key[2].split("5)")[1] |safe }}
+                    </td>
+                    <td style="vertical-align:middle">
+                        {{ key[3] |safe }}
+                    </td>
+                    <td style="vertical-align:middle; text-align: center">
+                        1) {{ key[4] |safe }} <br><br>
+                        2) {{ key[5] |safe }} <br><br>
+                        3) {{ key[6] |safe }} <br><br>
+                        4) {{ key[7] |safe }} <br><br>
+                        5) {{ key[8] |safe }} <br>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle;">
+                        <button type="button" data-toggle="modal" data-target="#editModel" class="btn btn-info" style="height: 40px; width: 40px" data-id="{{ key[0] }}"><span class='glyphicon glyphicon-pencil'></span></button>
+                    </td>
+                    <td style="text-align: center; vertical-align:middle">
+                        <a href='http://127.0.0.1:5000/delete_dialog_questions/?qNo={{ key[0] }}'><button class="btn btn-danger" style="height: 40px; width: 40px" onclick="return doconfirm();"><span class='glyphicon glyphicon-trash'></span></button></a>
+                    </td>
+                </tr>
+
+             {% endfor %}
+          </tbody>
+          </table>
+        </div>
+    </center>
+<br>
+
+
+    <div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 900px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <form action="{{ url_for('save_edited_dialog_question') }}" method="post">
+                        <div class="form-group">
+                        <div style="height: 420px;overflow: scroll; overflow-x: hidden">
+
+                            <table align = "center" border="0" style="width:auto" >
+                                <col width="150">
+                                <col width="700">
+
+                                <tr>&nbsp;</tr>
+                                <tr>
+                                    <td></td>
+                                    <td><font color="red">Enter your question below, type blank number like 1) / 2) / 3) / 4) / 5) to indicate the blank line in the question. (There should be 5 blank lines in one question)</font></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Question : &nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 650px">
+                                            <textarea id="question" name="question" rows="6" cols="70" class="form-control">{{ session['level2DialogQuestion'] }}</textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><font color="red">Enter your Answers below, type answers like a), b), c), d), e) &nbsp;&nbsp;&nbsp;(There should be 5 answers)</font></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answers : &nbsp;</label></td>
+                                    <td>
+                                        <div style="width: 650px">
+                                            <textarea id="answers" name="answers" rows="6" cols="70" class="form-control">{{ session['level2DialogAnswer'] }}</textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer for 1 : &nbsp;</label></td>
+                                    <td>
+                                        <div style="color: #000000; font-size: 16px; font-weight: bold">
+                                            <input type="radio" name="answer1" id="answer1_a" value="a">a &nbsp;&nbsp;
+                                            <input type="radio" name="answer1" id="answer1_b" value="b">b &nbsp;&nbsp;
+                                            <input type="radio" name="answer1" id="answer1_c" value="c">c &nbsp;&nbsp;
+                                            <input type="radio" name="answer1" id="answer1_d" value="d">d &nbsp;&nbsp;
+                                            <input type="radio" name="answer1" id="answer1_e" value="e">e
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer for 2 : &nbsp;</label></td>
+                                    <td>
+                                        <div style="color: #000000; font-size: 16px; font-weight: bold">
+                                            <input type="radio" name="answer2" id="answer2_a" value="a">a &nbsp;&nbsp;
+                                            <input type="radio" name="answer2" id="answer2_b" value="b">b &nbsp;&nbsp;
+                                            <input type="radio" name="answer2" id="answer2_c" value="c">c &nbsp;&nbsp;
+                                            <input type="radio" name="answer2" id="answer2_d" value="d">d &nbsp;&nbsp;
+                                            <input type="radio" name="answer2" id="answer2_e" value="e">e
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer for 3 : &nbsp;</label></td>
+                                    <td>
+                                        <div style="color: #000000; font-size: 16px; font-weight: bold">
+                                            <input type="radio" name="answer3" id="answer3_a" value="a">a &nbsp;&nbsp;
+                                            <input type="radio" name="answer3" id="answer3_b" value="b">b &nbsp;&nbsp;
+                                            <input type="radio" name="answer3" id="answer3_c" value="c">c &nbsp;&nbsp;
+                                            <input type="radio" name="answer3" id="answer3_d" value="d">d &nbsp;&nbsp;
+                                            <input type="radio" name="answer3" id="answer3_e" value="e">e
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer for 4 : &nbsp;</label></td>
+                                    <td>
+                                        <div style="color: #000000; font-size: 16px; font-weight: bold">
+                                            <input type="radio" name="answer4" id="answer4_a" value="a">a &nbsp;&nbsp;
+                                            <input type="radio" name="answer4" id="answer4_b" value="b">b &nbsp;&nbsp;
+                                            <input type="radio" name="answer4" id="answer4_c" value="c">c &nbsp;&nbsp;
+                                            <input type="radio" name="answer4" id="answer4_d" value="d">d &nbsp;&nbsp;
+                                            <input type="radio" name="answer4" id="answer4_e" value="e">e
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;"><label style="color: #000000">Answer for 5 : &nbsp;</label></td>
+                                    <td>
+                                        <div style="color: #000000; font-size: 16px; font-weight: bold">
+                                            <input type="radio" name="answer5" id="answer5_a" value="a">a &nbsp;&nbsp;
+                                            <input type="radio" name="answer5" id="answer5_b" value="b">b &nbsp;&nbsp;
+                                            <input type="radio" name="answer5" id="answer5_c" value="c">c &nbsp;&nbsp;
+                                            <input type="radio" name="answer5" id="answer5_d" value="d">d &nbsp;&nbsp;
+                                            <input type="radio" name="answer5" id="answer5_e" value="e">e
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <input type="hidden" name="qNo" id="qNo">
+
+                            <br>
+
+                        </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $('#editModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_dialog') }}?qNo=" + id, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#qNo').val(id)
+
+                if(json.a1=='a') {
+                    document.getElementById("answer1_a").checked = true;
+                }
+                else if(json.a1=='b'){
+                    document.getElementById("answer1_b").checked = true;
+                }
+                else if(json.a1=='c'){
+                    document.getElementById("answer1_c").checked = true;
+                }
+                else if(json.a1=='d'){
+                    document.getElementById("answer1_d").checked = true;
+                }
+                else if(json.a1=='e'){
+                    document.getElementById("answer1_e").checked = true;
+                }
+
+
+                if(json.a2=='a') {
+                    document.getElementById("answer2_a").checked = true;
+                }
+                else if(json.a2=='b'){
+                    document.getElementById("answer2_b").checked = true;
+                }
+                else if(json.a2=='c'){
+                    document.getElementById("answer2_c").checked = true;
+                }
+                else if(json.a2=='d'){
+                    document.getElementById("answer2_d").checked = true;
+                }
+                else if(json.a2=='e'){
+                    document.getElementById("answer2_e").checked = true;
+                }
+
+
+                if(json.a3=='a') {
+                    document.getElementById("answer3_a").checked = true;
+                }
+                else if(json.a3=='b'){
+                    document.getElementById("answer3_b").checked = true;
+                }
+                else if(json.a3=='c'){
+                    document.getElementById("answer3_c").checked = true;
+                }
+                else if(json.a3=='d'){
+                    document.getElementById("answer3_d").checked = true;
+                }
+                else if(json.a3=='e'){
+                    document.getElementById("answer3_e").checked = true;
+                }
+
+
+                if(json.a4=='a') {
+                    document.getElementById("answer4_a").checked = true;
+                }
+                else if(json.a4=='b'){
+                    document.getElementById("answer4_b").checked = true;
+                }
+                else if(json.a4=='c'){
+                    document.getElementById("answer4_c").checked = true;
+                }
+                else if(json.a4=='d'){
+                    document.getElementById("answer4_d").checked = true;
+                }
+                else if(json.a4=='e'){
+                    document.getElementById("answer4_e").checked = true;
+                }
+
+
+                if(json.a5=='a') {
+                    document.getElementById("answer5_a").checked = true;
+                }
+                else if(json.a5=='b'){
+                    document.getElementById("answer5_b").checked = true;
+                }
+                else if(json.a5=='c'){
+                    document.getElementById("answer5_c").checked = true;
+                }
+                else if(json.a5=='d'){
+                    document.getElementById("answer5_d").checked = true;
+                }
+                else if(json.a5=='e'){
+                    document.getElementById("answer5_e").checked = true;
+                }
+            })
+        })
+    </script>
+
+    <script>
+        function doconfirm() {
+            var status = confirm("Are you sure you want to delete this question ?");
+            if(status==true)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<head>
+     <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+    <title>Add Conjunction Question</title>
+</head>
+
+{% block content %}
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          xmlns="http://www.w3.org/1999/html">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/add_conjunction_question.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <form class="form-conjunctions" name="drop_list" method="post" action="{{ url_for('level3_save_conjunction_question') }}">
+
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <h3 style="color: #FF99FF; padding-left: 180px">Intermediate Level ->  Add Conjunctions Question</h3>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <div style="height:500px; overflow:auto; overflow-x:hidden; border:thin solid; border-color:DarkGray;">
+
+            <br>
+
+            <!-- Question 1 -->
+            <div id="question_1_Container" role="menu" style="margin-top: 40px">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #FFFFFF; width: 175px; text-align:right;" id="lblQuestion1">Question : </label>
+                    <input type="text" name="question_1" id="question_1" onkeyup="changeFunc()" class="form-control" style="background-color: #CCF5FF; color: #000000; font-size: 16px; width: 600px;display: inline" placeholder="Enter your question here, insert # to indicate the blank line in the question" required autofocus>
+                    <button type="button" id="preview1" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="1" style="margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                </div>
+            </div>
+            <br>
+            <input id="addQuestion2" class="btn btn-warning" type="button" style="margin-left: 180px; width: 150px" value="Add Question 2"/>
+            <br><br>
+
+            <!-- Question 2 -->
+            <div id="question_2_Container" role="menu" style="display: none">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #FFFFFF; width: 175px; text-align:right;">Question 2 : </label>
+                    <input type="text" name="question_2" id="question_2" onkeyup="changeFunc2()" class="form-control" style="background-color: #CCF5FF; color: #000000; font-size: 16px; width: 600px;display: inline" placeholder="Enter your question here, insert # to indicate the blank line in the question">
+                    <button type="button" id="preview2" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="2" style="margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                </div>
+                <br><br>
+                <input id="addQuestion3" class="btn btn-warning" type="button" style="margin-left: 180px; width: 150px" value="Add Question 3"/>
+            </div>
+            <br>
+
+            <!-- Question 3 -->
+            <div id="question_3_Container" role="menu" style="display: none">
+                <div style="display: inline">
+                    <label style="font-size: 16px; color: #FFFFFF; width: 175px; text-align:right;">Question 3 : </label>
+                    <input type="text" name="question_3" id="question_3" onkeyup="changeFunc3()" class="form-control" style="background-color: #CCF5FF; color: #000000; font-size: 16px; width: 600px;display: inline" placeholder="Enter your question here, insert # to indicate the blank line in the question">
+                    <button type="button" id="preview3" data-toggle="modal" data-target="#previewModel" class="btn btn-info" data-id="3" style="margin-left: 20px; width: 40px" disabled><img src="/static/img/preview.png" style="width: 22px; height: 22px"/></button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <table align = "center">
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn btn-primary" style="font-size: 16px; margin-left: 225px;width:150px" id="save" value="Save Question"/>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" style="font-size: 16px; width:150px " onclick="window.close()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+
+    <!--  Preview Question Model -->
+
+    <div class="modal fade" id="previewModel" tabindex="-1" role="dialog" aria-labelledby="previewModel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Preview</h4>
+                </div>
+                <div class="modal-body"> <!-- style="background-image:url(/static/img/background2_blur.jpg);" -->
+                    <br>
+                    <label style="color: green; font-size: 21px">Question : </label>
+                    <label id="display_question" style="font-size: 20px"></label>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pass Data to Preview Model -->
+
+    <script type="text/javascript">
+        $('#previewModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+
+            if (id==1){
+                var question = document.getElementById("question_1").value;
+            }
+            else if(id==2){
+                var question = document.getElementById("question_2").value;
+            }
+            else if(id==3){
+                var question = document.getElementById("question_3").value;
+            }
+
+            var que = question.split("#");
+            if(que[1]) {
+                var result = que[0] + " __________ " + que[1];
+            }
+            else{
+                var result = question;
+            }
+            que[1]=" ";
+            var modal = $(this)
+            //modal.find('#question').val(result);
+            document.getElementById('display_question').textContent=result;
+
+        })
+    </script>
+
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+    <!-- Add Question 2 -->
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion2").click(function()
+            {
+                $("#question_2_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion2");
+                if (el.value == "Add Question 2")
+                {
+                    document.getElementById("lblQuestion1").textContent="Question 1 : "
+                    el.value = "Remove Question 2";
+                    document.getElementById("question_2").required=true;
+                    document.getElementById("question_2").focus();
+                    document.getElementById("save").value="Save Questions";
+
+                }
+                else
+                {
+                    document.getElementById("lblQuestion1").textContent="Question : "
+                    el.value = "Add Question 2";
+                    document.getElementById("question_2").required=false;
+                    document.getElementById("save").value="Save Question";
+                    document.getElementById("question_1").focus();
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_2_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+
+    <!-- Add Question 3 -->
+
+    <script type="text/javascript" >
+        $(document).ready(function()
+        {
+            $("#addQuestion3").click(function()
+            {
+                $("#question_3_Container").fadeToggle(300);
+                var el = document.getElementById("addQuestion3");
+                if (el.value == "Add Question 3")
+                {
+                    document.getElementById("addQuestion2").style.visibility = 'hidden';
+                    document.getElementById("question_3").required=true;
+                    document.getElementById("question_3").focus();
+                    el.value = "Remove Question 3";
+                }
+                else
+                {
+                    el.value = "Add Question 3";
+                    document.getElementById("addQuestion2").style.visibility = 'visible';
+                    document.getElementById("question_2").required=false;
+                    document.getElementById("question_2").focus();
+
+                }
+                return false;
+            });
+
+            //Popup on click
+            $("#question_2_Container").click(function()
+            {
+                e.stopPropagation();
+            });
+
+        });
+    </script>
+
+
+    <!-- Enable/Disable Preview Buttons -->
+
+    <script type="text/javascript">
+        // Question 1
+        function changeFunc() {
+            var question = document.getElementById("question_1").value;
+
+            if(!question){
+                document.getElementById("preview1").disabled = true;
+            }
+            else{
+                document.getElementById("preview1").disabled = false;
+            }
+        }
+
+        // Question 2
+        function changeFunc2() {
+            var question = document.getElementById("question_2").value;
+
+            if(!question){
+                document.getElementById("preview2").disabled = true;
+            }
+            else{
+                document.getElementById("preview2").disabled = false;
+            }
+        }
+
+        // Question 3
+        function changeFunc3() {
+            var question = document.getElementById("question_3").value;
+
+            if(!question){
+                document.getElementById("preview3").disabled = true;
+            }
+            else{
+                document.getElementById("preview3").disabled = false;
+            }
+        }
+    </script>
+
+
+    <!-- Validate Questions -->
+
+    <script>
+        function validateForm() {
+
+            var q1 = document.getElementById("question_1");
+            var q2 = document.getElementById("question_2");
+            var q3 = document.getElementById("question_3");
+            var showQuestion2=document.getElementById("addQuestion2").value;
+            var showQuestion3=document.getElementById("addQuestion3").value;
+
+            if (q1.value.indexOf('#')==-1) {
+                alert("Blank(#) is missing in question 1. Please insert # to insert the blank.");
+                q1.focus();
+                return false;
+            }
+            else if((q2.value.indexOf('#')==-1)&& showQuestion2=='Hide Question'){
+                alert("Blank(#) is missing in question 2. Please insert # to insert the blank.");
+                q2.focus();
+                return false;
+            }
+            else if((q3.value.indexOf('#')==-1)&& showQuestion2=='Hide Question'){
+                alert("Blank(#) is missing in question 3. Please insert # to insert the blank.");
+                q3.focus();
+                return false;
+            }
+        }
+    </script>
+
+{% endblock %}

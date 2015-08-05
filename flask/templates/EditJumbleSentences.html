@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% extends "home2.html" %}
+{% block content %}
+
+    <link href="/static/css/table_style.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/css/dataTables.keyTable.css">
+
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/datatables/js/dataTables.keyTable.js"></script>
+
+
+        <table class="table1" id="mytable" cellspacing="0" width="100%" >
+            <thead>
+            <tr><th></th></tr>
+            <tr>
+                <th style="text-align: center;">Correct Sentence</th>
+                <th style="text-align: center;">Wrong Sentence</th>
+                <th style="text-align: center;">Edit</th>
+                <th style="text-align: center;">Delete</th>
+            </tr>
+            </thead>
+            {% for key in data %}
+                <tbody>
+
+                <tr>
+
+                    <td>{{ key[2]|safe }}</td>
+
+                    <td>{{ key[1]|safe }}</td>
+                    <td style="text-align: center;">
+
+                        <button type="button" data-toggle="modal" data-target="#editJModel" class="btn btn-info btn-sm" data-id="{{ key[0] }}" style="height: 40px; width: 40px"><span class='glyphicon glyphicon-pencil'></span></button></td>
+
+                    <td style="text-align: center;">
+                        <a onclick="return doconfirm();" href="http://127.0.0.1:5000/delete_jumbleSentences/?qNo={{ key[0] }}"><button class="btn btn-danger" style="height: 40px; width: 40px"><span class="glyphicon glyphicon-trash"></span></button></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+    <div class="modal fade" id="editJModel" tabindex="-1" role="dialog" aria-labelledby="editModel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: greenyellow">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Question</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('save_edited_jumbleSentences') }}" method="post" >
+                        <div class="form-group">
+                            <label for="lblquestion" class="col-sm-4 control-label" style="font-size: medium;font-size: 16px">Correct Sentence
+                            </label>
+
+                            <div class="col-sm-8">
+                                <input type="correct" class="form-control" id="correct" name="correct" style="background-color:#CCF5FF;font-size: 16px;color: #000000" required=""
+                                       autofocus="">
+                            </div>
+                        </div>
+                        </br>
+                        </br>
+                        </br>
+                        <div class="form-group">
+                            <label for="lblanswer1" class="col-sm-4 control-label" style="font-size: medium;font-size: 16px">Wrong Sentence</label>
+
+                            <div class="col-sm-8">
+                                <input type="wrong" class="form-control" id="wrong" name="wrong" style="background-color:#FFE6F0;font-size: 16px;color: #000000" required=""
+                                       autofocus="">
+                            </div>
+                        </div>
+
+
+
+                        </br>
+                        </br>
+                        <input type="hidden" name="id" id="IdInput">
+
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" style="font-size: 16px">Update</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="font-size: 16px">Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function doconfirm()
+        {
+            job=confirm("Are you sure You want to delete this permanently?");
+            if(job!=true)
+            {
+                return false;
+            }
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#mytable').DataTable();
+
+            new $.fn.dataTable.KeyTable( table );
+        } );
+
+        $('#mytable').DataTable( {
+            scrollY: 400
+        } );
+
+    </script>
+
+
+    <script type="text/javascript">
+        $('#editJModel').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id') // Extract info from data-* attributes
+            var modal = $(this)
+
+            $.get("{{ url_for('edit_jumbleSentences') }}?id=" + id, function (data) {
+                var json = JSON.parse(data);
+                modal.find('#wrong').val(json.wrong)
+                modal.find('#correct').val(json.correct)
+                modal.find('#IdInput').val(id)
+
+            })
+        })
+    </script>
+
+{% endblock %}

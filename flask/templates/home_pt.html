@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+
+    <title>English Buddy</title>
+
+     <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/home.css" rel="stylesheet">
+    <link href="/static/css/main2.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/static/css/font.css" rel="stylesheet" >
+
+</head>
+
+{% block content %}
+
+<div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ url_for('home') }}"><img src="/static/img/home.png" height="25px" width="25px"><span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Resources
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Conjunctions</a></li>
+                                <li><a href="#">Dialogs</a></li>
+                                <li><a href="#">Grammer</a></li>
+                                <li><a href="#">Notes</a></li>
+                                <li><a href="#">Summary</a></li>
+                            </ul>
+                        </li>
+                        {% if (session['role']=="Teacher") %}
+                            <li><a href="http://127.0.0.1:5000/view_addQuestions">Question Bank</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"><img src="/static/uploads/{{ session['profilePic'] }}" class="img-circle" height="28px" width="28px"/>
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://127.0.0.1:5000/view_profile">Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/logout">Sign out &nbsp;<span class="glyphicon glyphicon-log-out"></span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+
+<form style="background-image: url('/static/img/scrollPage.png'); width: 500px;height: 600px;margin-left: 120px">
+
+<div style="width:40%;margin-left: 25px;text-align: left; font-size: 30px; color:#000000;font-family:myFirstFont">
+    {% if 'username' in session %}
+        <label>Welcome {{ session['fName'] }}</label>
+    {% endif %}
+</div>
+
+<br>
+
+<div style="width:40%;height:40%;float:left;margin-left: 2cm;">
+    <br><br><br><br>
+    <center>
+        <label style="font-family:hobo;color: #000000;margin-left: 50px;font-size: 20px;width: 350px" > Please complete the Placement Test &nbsp;&nbsp; to measure your skill level of English.
+            &nbsp;&nbsp;You must complete the test within </label><label style="font-family:hobo;color: red;font-size: 20px;margin-left: 50px;width: 200px">30 minutes.</label>
+        <br><br><br>
+        <input onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+                            type="image" src="/static/img/attempt.png" border="0" alt="Submit this form" name="sub_but"
+                            style="outline: none;margin-top: -50px;margin-left: -30px " onclick="openPlacementTest();return false" height="70" width="350" />
+    </center>
+</div>
+<div style="margin-left: 600px">
+    <object width="560" height="420">
+        <param name="movie" value="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1">
+        <param name="wmode" value="transparent">
+        <param name="allowFullScreen" value="true">
+        <embed src="http://pf.kizoa.com/sflite.swf?did=19228815&k=7732171&loop=1" type="application/x-shockwave-flash"
+               wmode="transparent" width="560" height="420" allowFullScreen="true"></embed>
+    </object>
+</div>
+</form>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+ <script type="text/javascript">
+        function openPlacementTest() {
+            window.location.href = "http://127.0.0.1:5000/Placement_T"
+        }
+ </script>
+
+<script>
+    function bigImg(x) {
+        x.style.height = "80px";
+        x.style.width = "370px";
+    }
+
+    function normalImg(x) {
+        x.style.height = "70px";
+        x.style.width = "350px";
+    }
+    </script>
+
+
+{% endblock %}
